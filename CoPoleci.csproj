@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8593ADB-C6F1-49DC-B297-3C90EE13A6C0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CoPoleci</RootNamespace>
+    <AssemblyName>CoPoleci</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ikona.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="DataPrep.cs" />
+    <Compile Include="KNN.cs" />
+    <Compile Include="Koniec.xaml.cs">
+      <DependentUpon>Koniec.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Movie.cs" />
+    <Compile Include="QuestionPage.xaml.cs">
+      <DependentUpon>QuestionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PosterPage.xaml.cs">
+      <DependentUpon>PosterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Questions.cs" />
+    <Compile Include="Ratings.cs" />
+    <Compile Include="SplashScreen.xaml.cs">
+      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Start.xaml.cs">
+      <DependentUpon>Start.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Koniec.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="QuestionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PosterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SplashScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Start.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\gwiazda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\gwiazdaSzara.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MoviePosters\Les Miserables Nędznicy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\film.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\filmImage2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\popcorn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\splashscreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ikona.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MoviePosters\Alicja w Krainie Czarów.jpg" />
+    <Resource Include="MoviePosters\Amen.jpg" />
+    <Resource Include="MoviePosters\Avatar.jpg" />
+    <Resource Include="MoviePosters\Baby Driver.jpg" />
+    <Resource Include="MoviePosters\Bezwstydny Mortdecai.jpg" />
+    <Resource Include="MoviePosters\Big Short.jpg" />
+    <Resource Include="MoviePosters\Bogowie.jpg" />
+    <Resource Include="MoviePosters\Bonnie i Clyde.jpg" />
+    <Resource Include="MoviePosters\Brzdąc.jpg" />
+    <Resource Include="MoviePosters\Casablanca.jpg" />
+    <Resource Include="MoviePosters\Charlie i fabryka czekolady.jpg" />
+    <Resource Include="MoviePosters\Chłopcy z ferajny.jpg" />
+    <Resource Include="MoviePosters\Cudowny chłopak.jpg" />
+    <Resource Include="MoviePosters\Cztery wesela i pogrzeb.jpg" />
+    <Resource Include="MoviePosters\Człowiek z blizną.jpg" />
+    <Resource Include="MoviePosters\Deadpool.jpg" />
+    <Resource Include="MoviePosters\Deszczowa piosenka.jpg" />
+    <Resource Include="MoviePosters\Diabeł ubiera się u Prady.jpg" />
+    <Resource Include="MoviePosters\Droga bez powrotu.jpg" />
+    <Resource Include="MoviePosters\Duma i uprzedzenie.jpg" />
+    <Resource Include="MoviePosters\Dwunastu gniewnych ludzi %281957%29.jpg" />
+    <Resource Include="MoviePosters\ET.jpg" />
+    <Resource Include="MoviePosters\Ex Machina.jpg" />
+    <Resource Include="MoviePosters\Fabryka zła.jpg" />
+    <Resource Include="MoviePosters\Fala.jpg" />
+    <Resource Include="MoviePosters\Forrest Gump.jpg" />
+    <Resource Include="MoviePosters\Gra tajemnic.jpg" />
+    <Resource Include="MoviePosters\Grawitacja.jpg" />
+    <Resource Include="MoviePosters\Grease.jpg" />
+    <Resource Include="MoviePosters\Gwiezdne Wojny Nowa Nadzieja.jpg" />
+    <Resource Include="MoviePosters\Herkules.jpg" />
+    <Resource Include="MoviePosters\I kto to mówi.jpg" />
+    <Resource Include="MoviePosters\Iluzja.jpg" />
+    <Resource Include="MoviePosters\Incepcja.jpg" />
+    <Resource Include="MoviePosters\Interstellar.jpg" />
+    <Resource Include="MoviePosters\Jak stracić chłopaka w 10 dni.jpg" />
+    <Resource Include="MoviePosters\Jak zostać królem.jpg" />
+    <Resource Include="MoviePosters\Jeden dzień.jpg" />
+    <Resource Include="MoviePosters\Jeszcze dalej niż Północ.jpg" />
+    <Resource Include="MoviePosters\Joker.jpg" />
+    <Resource Include="MoviePosters\Kac Vegas.jpg" />
+    <Resource Include="MoviePosters\Kiedy Harry poznał Sally.jpg" />
+    <Resource Include="MoviePosters\Kill Bill.jpg" />
+    <Resource Include="MoviePosters\Klatka dla ptaków.jpg" />
+    <Resource Include="MoviePosters\Kocha lubi szanuje.jpg" />
+    <Resource Include="MoviePosters\Kogel-mogel.jpg" />
+    <Resource Include="MoviePosters\Koszmar Z Ulicy Wiązów.jpg" />
+    <Resource Include="MoviePosters\Król Lew.jpg" />
+    <Resource Include="MoviePosters\La La Land.jpg" />
+    <Resource Include="MoviePosters\Lakier do włosów.jpg" />
+    <Resource Include="MoviePosters\LEGO PRZYGODA.jpg" />
+    <Resource Include="MoviePosters\Leon zawodowiec.jpg" />
+    <Resource Include="MoviePosters\Lśnienie.jpg" />
+    <Resource Include="MoviePosters\Mamma Mia! Here We Go Again.jpg" />
+    <Resource Include="MoviePosters\Mamma Mia!.jpg" />
+    <Resource Include="MoviePosters\Masz wiadomość.jpg" />
+    <Resource Include="MoviePosters\Memento.jpg" />
+    <Resource Include="MoviePosters\Mia i biały lew.jpg" />
+    <Resource Include="MoviePosters\Mulan.jpg" />
+    <Resource Include="MoviePosters\Mój brat niedzwiedź.jpg" />
+    <Resource Include="MoviePosters\Mój przyjaciel Hachiko.jpg" />
+    <Resource Include="MoviePosters\Narzeczony mimo woli.jpg" />
+    <Resource Include="MoviePosters\Nienawistna ósemka.jpg" />
+    <Resource Include="MoviePosters\Nietykalni.jpg" />
+    <Resource Include="MoviePosters\Notting Hill.jpg" />
+    <Resource Include="MoviePosters\Obecność.jpg" />
+    <Resource Include="MoviePosters\Ocean%27s 8.jpg" />
+    <Resource Include="MoviePosters\Och życie.jpg" />
+    <Resource Include="MoviePosters\Ogniem i mieczem.jpg" />
+    <Resource Include="MoviePosters\Ojciec chrzestny.jpg" />
+    <Resource Include="MoviePosters\Pamiętnik.jpg" />
+    <Resource Include="MoviePosters\Pani Doubtfire.jpg" />
+    <Resource Include="MoviePosters\Paranormal Activity.jpg" />
+    <Resource Include="MoviePosters\Parasite.jpg" />
+    <Resource Include="MoviePosters\Patch Adams.jpg" />
+    <Resource Include="MoviePosters\Pewnego razu w Hollywood.jpg" />
+    <Resource Include="MoviePosters\Piękny umysł.jpg" />
+    <Resource Include="MoviePosters\Podziemny krąg.jpg" />
+    <Resource Include="MoviePosters\Prestiż.jpg" />
+    <Resource Include="MoviePosters\Pretty Woman.jpg" />
+    <Resource Include="MoviePosters\Przeminęło z wiatrem.jpg" />
+    <Resource Include="MoviePosters\Pulp Fiction.jpg" />
+    <Resource Include="MoviePosters\Rec.jpg" />
+    <Resource Include="MoviePosters\Rodzina Addamsów.jpg" />
+    <Resource Include="MoviePosters\Sami swoi.jpg" />
+    <Resource Include="MoviePosters\Sekretne okno.jpg" />
+    <Resource Include="MoviePosters\Sekretne życie pszczół.jpg" />
+    <Resource Include="MoviePosters\Seksmisja.jpg" />
+    <Resource Include="MoviePosters\Siedem.jpg" />
+    <Resource Include="MoviePosters\Skazani na Shawshank.jpg" />
+    <Resource Include="MoviePosters\Skrzypek na dachu.jpg" />
+    <Resource Include="MoviePosters\Starsza pani musi zniknąć.jpg" />
+    <Resource Include="MoviePosters\Stowarzyszenie Umarłych Poetów.jpg" />
+    <Resource Include="MoviePosters\Służące.jpg" />
+    <Resource Include="MoviePosters\The Boy.jpg" />
+    <Resource Include="MoviePosters\The Social Network.jpg" />
+    <Resource Include="MoviePosters\To my.jpg" />
+    <Resource Include="MoviePosters\To tylko seks.jpg" />
+    <Resource Include="MoviePosters\To właśnie miłość.jpg" />
+    <Resource Include="MoviePosters\To.jpg" />
+    <Resource Include="MoviePosters\Tramwaj zwany pożądaniem.jpg" />
+    <Resource Include="MoviePosters\Troja.jpg" />
+    <Resource Include="MoviePosters\Uciekaj!.jpg" />
+    <Resource Include="MoviePosters\Uprowadzona.jpg" />
+    <Resource Include="MoviePosters\Uwierz w ducha.jpg" />
+    <Resource Include="MoviePosters\Whiplash.jpg" />
+    <Resource Include="MoviePosters\Za jakie grzechy dobry Boże.jpg" />
+    <Resource Include="MoviePosters\Zakonnica w przebraniu.jpg" />
+    <Resource Include="MoviePosters\Zapach kobiety.jpg" />
+    <Resource Include="MoviePosters\Zielona mila.jpg" />
+    <Resource Include="MoviePosters\Ziemia niczyja.jpg" />
+    <Resource Include="MoviePosters\Zycie jest piękne.jpg" />
+    <Resource Include="MoviePosters\Zła kobieta.jpg" />
+    <Resource Include="MoviePosters\Śniadanie u Tiffany%27ego.jpg" />
+    <Resource Include="MoviePosters\Żona na niby.jpg" />
+    <Resource Include="MoviePosters\Żywot Briana.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\filmFlipped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MoviePosters\Iron Man.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MoviePosters\Titanic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MoviePosters\Mój chłopak się żeni.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MoviePosters\Dyktator.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

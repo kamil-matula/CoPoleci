@@ -1,0 +1,42 @@
+﻿<Page x:Class="CoPoleci.QuestionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="380" d:DesignWidth="580"
+      Title="CoPoleci?">
+
+    <Grid>
+        <Frame x:Name="MainFrame"/>
+
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="460">
+            <StackPanel>
+
+                <TextBlock x:Name="QuestionBlock" FontSize="30" TextAlignment="Center"/>
+                <Separator Margin="0,10,0,10"/>
+                <TextBlock x:Name="Above" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock x:Name="LeftEnd" Margin="10,24,10,24" FontSize="14"/>
+                    <Grid Name="starRating" MouseLeave="starRating_MouseLeave" Margin="0,15" HorizontalAlignment="Center">
+                        <WrapPanel Name="greyStarRate"/>
+                        <WrapPanel Name="goldStarRate"/>
+                    </Grid>
+                    <TextBlock x:Name="RightEnd" Margin="10,24,10,24" FontSize="14"/>
+                </StackPanel>
+
+                <WrapPanel HorizontalAlignment="Center">
+                    <TextBlock x:Name="rateCaption" Text="Twoja ocena: " FontSize="18" Margin="5"/>
+                    <TextBlock x:Name="rateValue" Text="" FontSize="18" Margin="5"/>
+                </WrapPanel>
+
+                <Button x:Name="nextQuestionButton" Content="Następne pytanie" FontSize="16"
+                    Margin="0,30,0,40" Click="nextQuestionButton_Click" HorizontalAlignment="Center"
+                    Width="160" Height="60" Background="Gold"/>
+            </StackPanel>
+        </Grid>
+
+        <TextBlock x:Name="QuestionNumber" HorizontalAlignment="Right" Background="LightGray" 
+                   Width="70" TextAlignment="Center" Height="20" Margin="0,280,15,40"/>
+    </Grid>
+</Page>
