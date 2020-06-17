@@ -21,3 +21,36 @@ C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\Co
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\CoPoleci.pdb
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\QuestionPage.baml
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\QuestionPage.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\CoPoleci.csprojAssemblyReference.cache
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Koniec.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\MainWindow.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\QuestionPage.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\PosterPage.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\SplashScreen.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Start.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Koniec.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\MainWindow.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\QuestionPage.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\PosterPage.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\SplashScreen.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Start.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\App.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\CoPoleci_MarkupCompile.cache
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\CoPoleci.g.resources
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\CoPoleci.Properties.Resources.resources
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\CoPoleci.csproj.GenerateResource.cache
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\CoPoleci.csproj.CoreCompileInputs.cache
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\CoPoleci.exe
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\CoPoleci.pdb
+C:\Users\domin\source\repos\CoPoleci\bin\Debug\CoPoleci.exe.config
+C:\Users\domin\source\repos\CoPoleci\bin\Debug\CoPoleci.exe
+C:\Users\domin\source\repos\CoPoleci\bin\Debug\CoPoleci.pdb
+C:\Users\domin\source\repos\CoPoleci\bin\Debug\MaterialDesignColors.dll
+C:\Users\domin\source\repos\CoPoleci\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\domin\source\repos\CoPoleci\bin\Debug\MaterialDesignColors.pdb
+C:\Users\domin\source\repos\CoPoleci\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\domin\source\repos\CoPoleci\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\CoPoleci.csproj.CopyComplete
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\CoPoleci_MarkupCompile.lref
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Movies.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Movies.baml
