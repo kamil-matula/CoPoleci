@@ -7,6 +7,6 @@
         Title="CoPoleci?" Height="380" Width="580" ResizeMode="NoResize" Background="Black">
 
     <StackPanel VerticalAlignment="Center">
-        <Image Source="/Images/splashscreen.png" Height="380" Width="580"></Image>
+        <Image Source="/Images/splashscreen.png" Height="380" Width="580"/>
     </StackPanel>
 </Window>

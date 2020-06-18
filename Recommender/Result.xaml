@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="CoPoleci.Result"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="380" d:DesignWidth="580">
+
+    <Grid>
+        <Frame x:Name="MainFrame"/>
+
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="530">
+            <StackPanel>
+
+                <TextBlock x:Name="QuestionBlock" FontSize="25" HorizontalAlignment="Center" TextAlignment="Center" Foreground="White">
+                    Na podstawie Twoich odpowiedzi, zostały <LineBreak/> dopasowane Ci następujące filmy:
+                </TextBlock>
+
+                <Separator Margin="0,10,0,10"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <WrapPanel Name="filmImage" Margin="20,0"/>
+                    <ListBox x:Name="listaFilmow" HorizontalAlignment="Left" FontSize="16" 
+                             BorderThickness="0" SelectionChanged="listaFilmow_SelectionChanged"/>
+                    <WrapPanel Name="popcornImage" Margin="20,0"/>
+                </StackPanel>
+
+                <Separator Margin="0,10,0,10"/>
+                <TextBlock Text="Kliknij na tytuł, aby zobaczyć plakat wybranego filmu." HorizontalAlignment="Center" FontSize="15" Foreground="White"/>
+                <TextBlock Text="Miłego oglądania! :)" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold" Foreground="White"/>
+
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</UserControl>

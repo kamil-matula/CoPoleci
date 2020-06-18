@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\domin\source\repos\CoPoleci\obj\Debug\
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\
 CoPoleci
 none
 false
 DEBUG;TRACE
-C:\Users\domin\source\repos\CoPoleci\App.xaml
-12934980522
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\App.xaml
+121004416417
 
-21-2079448056
-15-215802240
-Actors.xaml;Companies.xaml;Directors.xaml;Koniec.xaml;MainWindow.xaml;MovieRankings.xaml;Movies.xaml;QuestionPage.xaml;PosterPage.xaml;SeenMovies.xaml;SplashScreen.xaml;Start.xaml;
+21-1744195819
+15-1982024511
+Tabs\Actors.xaml;Tabs\Companies.xaml;Tabs\Directors.xaml;Recommender\Result.xaml;MainWindow.xaml;Tabs\MovieRankings.xaml;Tabs\Movies.xaml;Recommender\QuestionPage.xaml;PosterPage.xaml;Tabs\SeenMovies.xaml;SplashScreen.xaml;Recommender\Start.xaml;
 
 False
 

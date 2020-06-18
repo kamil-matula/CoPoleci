@@ -13,72 +13,68 @@
     </Window.Background>
 
     <Grid>
-        <Button BorderBrush="{x:Null}" Foreground="{x:Null}" Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" Click="PowerButton_Click">
-            <Image Source="Images/powerbtn.png"> </Image>
+        <Button BorderBrush="{x:Null}" Foreground="{x:Null}" Width="30" Height="30" 
+                HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" 
+                Click="PowerButton_Click">
+            <Image Source="Images/powerbtn.png"/>
         </Button>
-            <Grid x:Name="GridMenu" Width="250" HorizontalAlignment="Left" Background="Black">
+        <Grid x:Name="GridMenu" Width="250" HorizontalAlignment="Left" Background="Black">
             <StackPanel>
                 <Image Height="140" Source="Images/COPOLECI1.png"/>
-                <ListView x:Name="ListViewMenu" Foreground="AntiqueWhite" Background="Black"  FontFamily="Champagne &amp; Limousines" FontSize="21" BorderBrush="{x:Null}" SelectionChanged="ListViewMenu_SelectionChanged" SelectedIndex="-1">
+                <ListView x:Name="ListViewMenu" Foreground="AntiqueWhite" Background="Black"  
+                          FontFamily="Champagne &amp; Limousines" FontSize="21" BorderBrush="{x:Null}" 
+                          SelectionChanged="ListViewMenu_SelectionChanged" SelectedIndex="-1">
                     <ListViewItem Height="45" Padding="0">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Images/seen.png"></Image>
-                            <TextBlock Text="Obejrzane" Margin="10"></TextBlock>
+                            <Image Source="Images/seen.png"/>
+                            <TextBlock Text="Obejrzane" Margin="10"/>
                         </StackPanel>
 
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Images/movie.png"></Image>
-                            <TextBlock Text="Filmy" Margin="10"></TextBlock>
+                            <Image Source="Images/movie.png"/>
+                            <TextBlock Text="Filmy" Margin="10"/>
                         </StackPanel>
 
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Images/actors.png"></Image>
-                            <TextBlock Text="Aktorzy" Margin="10"></TextBlock>
+                            <Image Source="Images/actors.png"/>
+                            <TextBlock Text="Aktorzy" Margin="10"/>
                         </StackPanel>
 
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Images/directors.png"></Image>
-                            <TextBlock Text="Reżyserowie" Margin="10"></TextBlock>
+                            <Image Source="Images/directors.png"/>
+                            <TextBlock Text="Reżyserowie" Margin="10"/>
                         </StackPanel>
 
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Images/companies.png"></Image>
-                            <TextBlock Text="Wytwórnie" Margin="10"></TextBlock>
+                            <Image Source="Images/companies.png"/>
+                            <TextBlock Text="Wytwórnie" Margin="10"/>
                         </StackPanel>
 
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Images/ranking.png"></Image>
-                            <TextBlock Text="Rankingi" Margin="10"></TextBlock>
+                            <Image Source="Images/ranking.png"/>
+                            <TextBlock Text="Rankingi" Margin="10"/>
                         </StackPanel>
 
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Images/recommendator.png"></Image>
-                            <TextBlock Text="Co Poleci?" Margin="10"></TextBlock>
+                            <Image Source="Images/recommendator.png"/>
+                            <TextBlock Text="Co Poleci?" Margin="10"/>
                         </StackPanel>
-
                     </ListViewItem>
-
                 </ListView>
-
-
             </StackPanel>
-
         </Grid>
-        <Grid Margin="250,35,0,0">
-            <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Grid>
-
+        <Grid Margin="250,35,0,0" x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center" x:FieldModifier="public"/>
     </Grid>
 </Window>

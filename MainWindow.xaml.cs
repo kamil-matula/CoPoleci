@@ -57,8 +57,9 @@ namespace CoPoleci
                     break;
                 // trzeba zmienić albo nawigację, albo strony na kontrolki w rekomendatorze
                 case 6:
+                    Questions.Number = 0;
                     GridPrincipal.Children.Clear();
-                  //  GridPrincipal.Children.Add(new Start());
+                    GridPrincipal.Children.Add(new Start());
                     break;
                 default:
                     break;

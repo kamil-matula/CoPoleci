@@ -28,7 +28,7 @@ namespace CoPoleci
 
         private void ButtonOK_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Koniec());
+            NavigationService.Navigate(new Result());
         }
     }
 }
