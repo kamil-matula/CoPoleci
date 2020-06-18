@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\domin\source\repos\CoPoleci\App.xaml
-71535288385
+12934980522
 
-20-421133368
+251014801720
 15-215802240
-Koniec.xaml;MainWindow.xaml;Movies.xaml;QuestionPage.xaml;PosterPage.xaml;SplashScreen.xaml;Start.xaml;
+Actors.xaml;Companies.xaml;Directors.xaml;Koniec.xaml;MainWindow.xaml;MovieRankings.xaml;Movies.xaml;QuestionPage.xaml;PosterPage.xaml;SeenMovies.xaml;SplashScreen.xaml;Start.xaml;
 
-True
+False
 

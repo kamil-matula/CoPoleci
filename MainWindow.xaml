@@ -13,10 +13,13 @@
     </Window.Background>
 
     <Grid>
-        <Grid x:Name="GridMenu" Width="250" HorizontalAlignment="Left" Background="Black">
+        <Button BorderBrush="{x:Null}" Foreground="{x:Null}" Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" Click="PowerButton_Click">
+            <Image Source="Images/powerbtn.png"> </Image>
+        </Button>
+            <Grid x:Name="GridMenu" Width="250" HorizontalAlignment="Left" Background="Black">
             <StackPanel>
                 <Image Height="140" Source="Images/COPOLECI1.png"/>
-                <ListView x:Name="ListViewMenu" Foreground="AntiqueWhite" Background="Black"  FontFamily="Champagne &amp; Limousines" FontSize="21" BorderBrush="#FF650210" SelectionChanged="ListViewMenu_SelectionChanged" SelectedIndex="1">
+                <ListView x:Name="ListViewMenu" Foreground="AntiqueWhite" Background="Black"  FontFamily="Champagne &amp; Limousines" FontSize="21" BorderBrush="{x:Null}" SelectionChanged="ListViewMenu_SelectionChanged" SelectedIndex="-1">
                     <ListViewItem Height="45" Padding="0">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Images/seen.png"></Image>
@@ -69,10 +72,11 @@
 
                 </ListView>
 
+
             </StackPanel>
 
         </Grid>
-        <Grid Margin="250 55 0 0">
+        <Grid Margin="250,35,0,0">
             <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
 

@@ -54,3 +54,13 @@ C:\Users\domin\source\repos\CoPoleci\obj\Debug\CoPoleci.csproj.CopyComplete
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\CoPoleci_MarkupCompile.lref
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Movies.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Movies.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Actors.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Companies.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Directors.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\MovieRankings.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\SeenMovies.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Actors.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Companies.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Directors.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\MovieRankings.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\SeenMovies.baml
