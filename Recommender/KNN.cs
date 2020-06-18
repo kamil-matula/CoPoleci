@@ -6,11 +6,10 @@ namespace CoPoleci
 {
     class KNN
     {
-        private int k;
-        private Movie[] movieBase;
-        private Movie idealMovie;
-        private double[] distances = { };
-        private Dictionary<int, double> nearestNeighbours;
+        private readonly int k;
+        private readonly Movie[] movieBase;
+        private readonly Movie idealMovie;
+        private double[] distances;
 
         public KNN(int k, Movie[] movieBase, Movie idealMovie)
         {
@@ -20,7 +19,7 @@ namespace CoPoleci
         }
 
         // Obliczanie metryki Manhattan
-        private double[] CalculateManhattan()
+        private void CalculateManhattan()
         {
             double[] d = new double[movieBase.Length];
             for (int i = 0; i < movieBase.Length; i++)
@@ -32,7 +31,6 @@ namespace CoPoleci
                     Math.Abs(movieBase[i].X_criticrate - idealMovie.X_criticrate) + Math.Abs(movieBase[i].X_scary - idealMovie.X_scary);
             }
             distances = d;
-            return d;
         }
         
         // Tworzenie slownika z najblizszymi sasiadami, gdzie kluczem jest indeks "sasiada", 
@@ -40,8 +38,7 @@ namespace CoPoleci
         private Dictionary<int, double> FindNearestNeighbours()
         {
             Dictionary<int, double> nearestneighbours = new Dictionary<int, double>();
-            for (int i = 0; i < k; i++)
-                nearestneighbours.Add(i, distances[i]);
+            for (int i = 0; i < k; i++) nearestneighbours.Add(i, distances[i]);
             for (int j = k; j < distances.Length; j++)
             {
                 double max = nearestneighbours.Max(kvp => kvp.Value);
@@ -52,7 +49,6 @@ namespace CoPoleci
                     nearestneighbours.Add(j, distances[j]);
                 }
             }
-            nearestNeighbours = nearestneighbours;
             return nearestneighbours;
         }
 

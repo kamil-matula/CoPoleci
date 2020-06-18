@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
@@ -65,7 +66,14 @@ namespace CoPoleci
         private void listaFilmow_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Ratings.currentItem = (listaFilmow.SelectedItem.ToString()).Substring(3);
-            //this.NavigationService.Navigate(new PosterPage());
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    (window as MainWindow).GridPrincipal.Children.Clear();
+                    (window as MainWindow).GridPrincipal.Children.Add(new PosterPage());
+                }
+            }
         }
     }
 }
