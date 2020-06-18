@@ -86,3 +86,5 @@ C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\SeenMovies.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\TextBoxLogin.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\TextBoxLogin.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\RegisterWindow.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\RegisterWindow.baml
