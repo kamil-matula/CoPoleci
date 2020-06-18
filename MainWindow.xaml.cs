@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace CoPoleci
 {
@@ -10,15 +9,8 @@ namespace CoPoleci
         {
             InitializeComponent();
         }
-        private void ButtonFechar_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
 
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            DragMove();
-        }
+        #region Events
         private void PowerButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -28,7 +20,6 @@ namespace CoPoleci
         {
             int index = ListViewMenu.SelectedIndex;
             
-
             switch (index)
             {
                 case 0:
@@ -55,7 +46,6 @@ namespace CoPoleci
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new MovieRankings());
                     break;
-                // trzeba zmienić albo nawigację, albo strony na kontrolki w rekomendatorze
                 case 6:
                     Questions.Number = 0;
                     GridPrincipal.Children.Clear();
@@ -65,5 +55,6 @@ namespace CoPoleci
                     break;
             }
         }
+        #endregion
     }
 }

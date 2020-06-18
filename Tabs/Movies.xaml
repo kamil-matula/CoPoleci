@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CoPoleci"
-             mc:Ignorable="d" 
-Height="auto" Width="auto">
+             mc:Ignorable="d" Height="auto" Width="auto">
+
     <Grid>
-        <TextBlock Text="Tutaj będą wyświetlane wszystkie filmy" Foreground="WhiteSmoke" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Text="Tutaj będą wyświetlane wszystkie filmy" Foreground="WhiteSmoke" 
+                   FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </UserControl>

@@ -3,12 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CoPoleci"
-             mc:Ignorable="d" 
-             Height="565" Width="550">
+             mc:Ignorable="d" Height="565" Width="550">
+    
     <Grid>
-       
-        
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="5*" />
@@ -17,19 +14,22 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
-
         </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Left" Margin="10" Text="Ile filmów?" VerticalAlignment="Bottom" FontSize="30" Foreground="White"> </TextBlock>
-        <ComboBox VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Right" Width="100" Height="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <ComboBoxItem Content="TOP 3" ></ComboBoxItem>
-            <ComboBoxItem Content="TOP 5" ></ComboBoxItem>
-            <ComboBoxItem Content="TOP 10" ></ComboBoxItem>
+        <TextBlock HorizontalAlignment="Left" Margin="10" Text="Ile filmów?" VerticalAlignment="Bottom" 
+                   FontSize="30" Foreground="White"> </TextBlock>
+        <ComboBox VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Right" Width="100" Height="40"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <ComboBoxItem Content="TOP 3"/>
+            <ComboBoxItem Content="TOP 5"/>
+            <ComboBoxItem Content="TOP 10"/>
         </ComboBox>
-        <TextBlock HorizontalAlignment="Left" Margin="10" Text="Kategoria?" VerticalAlignment="Bottom" FontSize="30" Foreground="White" Grid.Column="1"></TextBlock>
-        <ComboBox VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Right" Width="100" Height="40" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <ComboBoxItem Content="Najśmieszniejsze" ></ComboBoxItem>
-            <ComboBoxItem Content="Najnowsze" ></ComboBoxItem>
-            <ComboBoxItem Content="Najstarsze" ></ComboBoxItem>
+        <TextBlock HorizontalAlignment="Left" Margin="10" Text="Kategoria?" 
+                   VerticalAlignment="Bottom" FontSize="30" Foreground="White" Grid.Column="1"/>
+        <ComboBox VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Right" Width="100" 
+                  Height="40" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <ComboBoxItem Content="Najśmieszniejsze"/>
+            <ComboBoxItem Content="Najnowsze"/>
+            <ComboBoxItem Content="Najstarsze"/>
         </ComboBox>
     </Grid>
 </UserControl>
