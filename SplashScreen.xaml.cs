@@ -11,7 +11,7 @@ namespace CoPoleci
         {
             InitializeComponent();
             dt.Tick += new EventHandler(dt_Tick);
-            dt.Interval = new TimeSpan(0, 0, 2);
+            dt.Interval = new TimeSpan(0, 0, 5);
             dt.Start();
         }
 
