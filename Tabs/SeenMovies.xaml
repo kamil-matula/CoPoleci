@@ -30,33 +30,33 @@
                             <GridViewColumn Width="250">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding Name}" FontSize="14"/>
+                                        <TextBlock Text="{Binding Name}" FontSize="14" Foreground="WhiteSmoke"/>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                                 <GridViewColumn.Header>
-                                    <TextBlock Text="Country Name"/>
+                                        <TextBlock Text="Country Name" Foreground="WhiteSmoke"/>
                                 </GridViewColumn.Header>
                             </GridViewColumn>
 
                             <GridViewColumn>
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding Code}"/>
+                                            <TextBlock Text="{Binding Code}" Foreground="WhiteSmoke"/>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                                 <GridViewColumn.Header>
-                                    <TextBlock Text="Code"/>
+                                        <TextBlock Text="Code" Foreground="WhiteSmoke"/>
                                 </GridViewColumn.Header>
                             </GridViewColumn>
 
                             <GridViewColumn Width="100">
                                 <GridViewColumn.CellTemplate >
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding Population}" Foreground="Red" HorizontalAlignment="Stretch"/>
+                                            <TextBlock Text="{Binding Population}" Foreground="WhiteSmoke" HorizontalAlignment="Stretch"/>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                                 <GridViewColumn.Header>
-                                    <TextBlock Text="Population"/>
+                                        <TextBlock Text="Population" Foreground="WhiteSmoke"/>
                                 </GridViewColumn.Header>
                             </GridViewColumn>
 

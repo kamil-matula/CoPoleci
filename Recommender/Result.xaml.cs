@@ -44,6 +44,7 @@ namespace CoPoleci
             LoadImages();
         }
 
+        // Załadowanie grafiki na stronie końcowej:
         private void LoadImages()
         {
             Image img = new Image
@@ -63,6 +64,7 @@ namespace CoPoleci
             filmImage.Children.Add(img2);
         }
 
+        // Przejście do strony plakatu wybranego filmu:
         private void listaFilmow_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Ratings.currentItem = (listaFilmow.SelectedItem.ToString()).Substring(3);

@@ -14,6 +14,7 @@ namespace CoPoleci.DAL
             {
                 using (var connection = DBConnection.Instance.Connection)
                 {
+                    DBConnection.Instance.printBuilder();
                     MySqlCommand command = new MySqlCommand(ALL_COUNTRY_QUERY, connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();

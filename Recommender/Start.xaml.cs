@@ -13,6 +13,7 @@ namespace CoPoleci
             LoadImages();
         }
 
+        // Przejście do strony z pierwszym pytaniem:
         private void firstQuestionButton_Click(object sender, RoutedEventArgs e)
         {
             foreach (Window window in Application.Current.Windows)
@@ -25,6 +26,7 @@ namespace CoPoleci
             }
         }
 
+        // Załadowanie grafiki na stronie startowej:
         private void LoadImages()
         {
             Image img = new Image

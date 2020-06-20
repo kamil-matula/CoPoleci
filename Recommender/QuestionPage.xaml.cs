@@ -17,6 +17,8 @@ namespace CoPoleci
         {
             InitializeComponent();
             LoadImages();
+
+            // Zaktualizowanie zawartości strony:
             QuestionNumber.Text = $"Pytanie nr {++Questions.Number}";
             QuestionBlock.Text = Questions.questions[Questions.Number - 1];
             LeftEnd.Text = Questions.leftEnds[Questions.Number - 1];
@@ -36,7 +38,7 @@ namespace CoPoleci
                 Ratings.RatingsList.Add(wynik);
                 rateValue.Text = "";
 
-                // Przejście na kolejną stronę
+                // Przejście na kolejną stronę (kolejne pytanie lub końcową):
                 foreach (Window window in Application.Current.Windows)
                 {
                     if (window.GetType() == typeof(MainWindow))

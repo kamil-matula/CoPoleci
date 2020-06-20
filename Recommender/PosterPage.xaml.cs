@@ -13,6 +13,7 @@ namespace CoPoleci
             LoadImages();
         }
 
+        // Załadowanie grafiki będącej plakatem:
         private void LoadImages()
         {
             movieTitle.Text = Ratings.currentItem;
@@ -26,6 +27,7 @@ namespace CoPoleci
             posterImage.Children.Add(img);
         }
 
+        // Powrót do strony końcowej:
         private void ButtonOK_Click(object sender, RoutedEventArgs e)
         {
             foreach (Window window in Application.Current.Windows)

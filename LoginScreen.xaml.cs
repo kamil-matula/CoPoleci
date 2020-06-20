@@ -1,0 +1,61 @@
+﻿using System.Diagnostics;
+using System.Windows;
+using System.Collections.Generic;
+using CoPoleci.DAL;
+
+namespace CoPoleci
+{
+    public partial class LoginScreen : Window
+    {
+        #region Własności
+        public string Login { get; set; }
+        public string Password { get; set; }
+        #endregion
+
+        public LoginScreen()
+        {
+            InitializeComponent();
+        }
+
+        #region Metody zdarzeń
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            // ODKOMENTOWAĆ PONIŻSZE LINIE KODU JEŚLI W BAZIE ŚWIAT ISTNIEJE TABLICA 
+            // USERS(nickname char(16), password char(41)) Z CONAJMNIEJ JEDNYM UŻYTKOWNIKIEM!
+
+            //string nick = textBoxLogin.Text, pwd = textBoxPassword.Text;
+            //if (AccountCheck(nick, pwd) == false) return;
+            //DBConnection.Login(nick, pwd);
+
+            MainWindow win = new MainWindow();
+            win.Show();
+            Close();
+        }
+
+        // Sprawdzenie czy jest dostęp do bazy danych i czy istnieje użytkownik o podanych danych (nick + hasło):
+        private bool AccountCheck(string nickname, string password)
+        {
+            List<User> ExistingUsers = QueryManager.Users; // root pobiera listę użytkowników z bazy
+            if (ExistingUsers.Count == 0)
+            {
+                MessageBox.Show("Brak dostępu do bazy użytkowników!");
+                return false;
+            }
+
+            int user_index = 0;
+            while (user_index < ExistingUsers.Count)
+            {
+                if (ExistingUsers[user_index].UserID == nickname) break;
+                user_index++;
+            }
+            if (user_index == ExistingUsers.Count || UserRepo.HashPassword(password) != ExistingUsers[user_index].Password)
+            {
+                MessageBox.Show("Nieprawidłowa nazwa użytkownika lub hasło!");
+                return false;
+            }
+
+            return true;
+        }
+        #endregion
+    }
+}

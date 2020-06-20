@@ -117,8 +117,10 @@
     </ApplicationDefinition>
     <Compile Include="DAL\DBConnection.cs" />
     <Compile Include="DAL\Entities\Country.cs" />
+    <Compile Include="DAL\Entities\User.cs" />
     <Compile Include="DAL\Repositories\CountryRepo.cs" />
     <Compile Include="DAL\QueryManager.cs" />
+    <Compile Include="DAL\Repositories\UserRepo.cs" />
     <Compile Include="RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
@@ -154,8 +156,8 @@
     <Compile Include="Tabs\SeenMovies.xaml.cs">
       <DependentUpon>SeenMovies.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SplashScreen.xaml.cs">
-      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    <Compile Include="LoginScreen.xaml.cs">
+      <DependentUpon>LoginScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Recommender\Start.xaml.cs">
       <DependentUpon>Start.xaml</DependentUpon>
@@ -215,7 +217,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SplashScreen.xaml">
+    <Page Include="LoginScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
