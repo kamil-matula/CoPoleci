@@ -22,9 +22,9 @@
                 <RowDefinition Height="2*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <Button Background="#FF090606" Width="160" Height="70"  Grid.Row="5" HorizontalAlignment="Right" Margin="20" Foreground="#FFC20505" FontSize="25" Content="ZALOGUJ SIĘ">
+            <Button Background="#FF090606" Width="160" Height="70"  Grid.Row="5" HorizontalAlignment="Right" Margin="20" Foreground="#FFC20505" FontSize="21" Content="ZALOGUJ SIĘ">
             </Button>
-            <Button Background="#FF090606" Width="160" Height="50"  Grid.Row="0" HorizontalAlignment="Right" Margin="20" Foreground="#FFC20505" FontSize="20" Content="ZAŁÓŻ KONTO">
+            <Button Background="#FF090606" Width="160" Height="50"  Grid.Row="0" HorizontalAlignment="Right" Margin="20" Foreground="#FFC20505" FontSize="19" Content="ZAŁÓŻ KONTO">
             </Button>
             <Label Content="Nie masz konta?" HorizontalAlignment="Left" FontSize="15" VerticalAlignment="Center" Margin="99,0,0,0">  </Label>
             <Label Content="Login:" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,10" FontSize="20" Height="40"/>

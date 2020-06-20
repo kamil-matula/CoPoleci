@@ -10,7 +10,7 @@ namespace CoPoleci
             InitializeComponent();
         }
 
-        #region Events
+      
         private void PowerButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -55,6 +55,6 @@ namespace CoPoleci
                     break;
             }
         }
-        #endregion
+       
     }
 }

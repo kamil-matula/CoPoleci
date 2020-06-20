@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="CoPoleci?" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Background>
@@ -10,15 +11,31 @@
             <GradientStop Color="Black" Offset="1"/>
             <GradientStop Color="#FF2C0303"/>
         </LinearGradientBrush>
+
     </Window.Background>
 
     <Grid>
-        <Button BorderBrush="{x:Null}" Foreground="{x:Null}" Width="30" Height="30" 
-                HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" 
-                Click="PowerButton_Click">
-            <Image Source="Images/powerbtn.png"/>
-        </Button>
+        <StackPanel VerticalAlignment="Top">
+            <Grid Background="Black" Height="10"/>
+            <Grid Margin="5">
+                
+                    
+                    
+                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
+
+                    <Button x:Name="ButtonFechar" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="PowerButton_Click">
+                        <materialDesign:PackIcon Kind="Power"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        
+        <Grid Margin="250,35,0,0" x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center" x:FieldModifier="public"/>
         <Grid x:Name="GridMenu" Width="250" HorizontalAlignment="Left" Background="Black">
+            <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
+                <Grid x:Name="GridCursor" Margin="0 100 0 0" Background="#FF2A0303" Width="10" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top"/>
+            </materialDesign:TransitioningContent>
             <StackPanel>
                 <Image Height="140" Source="Images/COPOLECI1.png"/>
                 <ListView x:Name="ListViewMenu" Foreground="AntiqueWhite" Background="Black"  
@@ -75,6 +92,6 @@
                 </ListView>
             </StackPanel>
         </Grid>
-        <Grid Margin="250,35,0,0" x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center" x:FieldModifier="public"/>
+        
     </Grid>
 </Window>

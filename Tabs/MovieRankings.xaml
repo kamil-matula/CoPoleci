@@ -2,34 +2,40 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" Height="565" Width="550">
-    
+
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="5*" />
-            <RowDefinition Height="1*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Left" Margin="10" Text="Ile filmów?" VerticalAlignment="Bottom" 
-                   FontSize="30" Foreground="White"> </TextBlock>
-        <ComboBox VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Right" Width="100" Height="40"
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <ComboBoxItem Content="TOP 3"/>
-            <ComboBoxItem Content="TOP 5"/>
-            <ComboBoxItem Content="TOP 10"/>
-        </ComboBox>
-        <TextBlock HorizontalAlignment="Left" Margin="10" Text="Kategoria?" 
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Left" Margin="10" Text="Ile filmów?" VerticalAlignment="Bottom" 
+                   FontSize="30" Foreground="White"></TextBlock>
+                <ComboBox VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Right" Width="100" Height="40"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="ComboBox_SelectionChanged">
+                    <ComboBoxItem Content="TOP 3"/>
+                    <ComboBoxItem Content="TOP 5"/>
+                    <ComboBoxItem Content="TOP 10"/>
+                </ComboBox>
+                <TextBlock HorizontalAlignment="Left" Margin="10" Text="Kategoria?" 
                    VerticalAlignment="Bottom" FontSize="30" Foreground="White" Grid.Column="1"/>
-        <ComboBox VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Right" Width="100" 
-                  Height="40" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <ComboBoxItem Content="Najśmieszniejsze"/>
-            <ComboBoxItem Content="Najnowsze"/>
-            <ComboBoxItem Content="Najstarsze"/>
-        </ComboBox>
+                <ComboBox                
+VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Right" Width="100" 
+                  Height="40" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >
+                    <ComboBoxItem Content="Najśmieszniejsze"/>
+                    <ComboBoxItem Content="Najnowsze"/>
+                    <ComboBoxItem Content="Najstarsze"/>
+                </ComboBox>
+            </Grid>
+        </materialDesign:TransitioningContent>
     </Grid>
 </UserControl>
