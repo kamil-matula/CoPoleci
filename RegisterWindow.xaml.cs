@@ -23,5 +23,20 @@ namespace CoPoleci
         {
             InitializeComponent();
         }
+        private void PowerButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoginScreen win = new LoginScreen();
+            win.Show();
+            Close();
+        }
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Obsługa dodawania użytkownika do bazy
+        }
+
     }
 }

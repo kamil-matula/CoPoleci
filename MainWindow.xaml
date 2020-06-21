@@ -18,12 +18,7 @@
         <StackPanel VerticalAlignment="Top">
             <Grid Background="Black" Height="10"/>
             <Grid Margin="5">
-                
-                    
-                    
-                
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
-
                     <Button x:Name="ButtonFechar" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="PowerButton_Click">
                         <materialDesign:PackIcon Kind="Power"/>
                     </Button>

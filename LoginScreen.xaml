@@ -3,9 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
         xmlns:local="clr-namespace:CoPoleci"
         mc:Ignorable="d"
-        Title="CoPoleci?" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="Black">
+        Title="CoPoleci?" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="Black" WindowStyle="None">
     <Grid>
         <Grid Width="400" HorizontalAlignment="Left">
             <Image Source="Images/COPOLECI.png"/>
@@ -24,7 +26,7 @@
             <Button Background="#FF090606" Width="160" Height="70"  Grid.Row="5" HorizontalAlignment="Right" Margin="20" 
                     Foreground="#FFC20505" FontSize="21" Content="ZALOGUJ SIĘ" Click="LoginButton_Click"/>
             <Button Background="#FF090606" Width="160" Height="50"  Grid.Row="0" HorizontalAlignment="Right" Margin="20" 
-                    Foreground="#FFC20505" FontSize="19" Content="ZAŁÓŻ KONTO"/>
+                    Foreground="#FFC20505" FontSize="19" Content="ZAŁÓŻ KONTO" Click="RegisterButton_Click"/>
             <Label Content="Nie masz konta?" HorizontalAlignment="Left" FontSize="15" VerticalAlignment="Center" Margin="99,0,0,0"/>
             <Label Content="Login:" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,10" FontSize="20" Height="40"/>
             <Label Content="Hasło:" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,10" FontSize="20" Height="40"/>
@@ -33,5 +35,15 @@
             <local:TextBoxLogin x:Name="textBoxPassword" Margin="10" FontSize="15" Grid.Row="4" HorizontalAlignment="Left" 
                                 Width="250" Text="{Binding Path = Password, Mode = TwoWay}"/>
         </Grid>
+        <StackPanel VerticalAlignment="Top">
+            <Grid Background="Black" Height="10"/>
+            <Grid Margin="0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0">
+                    <Button x:Name="ButtonFechar" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="PowerButton_Click">
+                        <materialDesign:PackIcon Kind="Power"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>

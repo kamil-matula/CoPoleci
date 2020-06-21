@@ -18,6 +18,10 @@ namespace CoPoleci
         }
 
         #region Metody zdarzeń
+        private void PowerButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             // ODKOMENTOWAĆ PONIŻSZE LINIE KODU JEŚLI W BAZIE ŚWIAT ISTNIEJE TABLICA 
@@ -28,6 +32,12 @@ namespace CoPoleci
             //DBConnection.Login(nick, pwd);
 
             MainWindow win = new MainWindow();
+            win.Show();
+            Close();
+        }
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterWindow win = new RegisterWindow();
             win.Show();
             Close();
         }
