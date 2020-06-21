@@ -32,8 +32,9 @@
             <Label Content="Hasło:" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,10" FontSize="20" Height="40"/>
             <local:TextBoxLogin x:Name="textBoxLogin" Margin="10" FontSize="15" Grid.Row="2" HorizontalAlignment="Left" 
                                 Width="250" Text="{Binding Path = Login, Mode = TwoWay}"/>
-            <local:TextBoxLogin x:Name="textBoxPassword" Margin="10" FontSize="15" Grid.Row="4" HorizontalAlignment="Left" 
-                                Width="250" Text="{Binding Path = Password, Mode = TwoWay}"/>
+           
+            <PasswordBox x:Name="textBoxPassword" Margin="10" FontSize="15" Grid.Row="4" HorizontalAlignment="Left" 
+                                Width="250" local:PasswordBoxAssistant.BindPassword="true" local:PasswordBoxAssistant.BoundPassword="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
         <StackPanel VerticalAlignment="Top">
             <Grid Background="Black" Height="10"/>
