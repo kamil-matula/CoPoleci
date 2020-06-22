@@ -5,9 +5,6 @@ namespace CoPoleci.DAL
 {
     class UserRepo
     {
-        private const string ALL_USERS_QUERY = "SELECT * FROM USERS";
-       
-
         // Wypisuje wszystkich użytkowników (nick + hasło) z tabeli Users:
         public static List<User> GetAllUsers()
         {
@@ -16,7 +13,7 @@ namespace CoPoleci.DAL
             {
                 using (var connection = DBConnection.Instance.Connection)
                 {
-                    MySqlCommand command = new MySqlCommand(ALL_USERS_QUERY, connection);
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM USERS", connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())
@@ -27,19 +24,20 @@ namespace CoPoleci.DAL
             catch { }
             return users;
         }
-        /*
-        public static bool AddUser(User user)
+
+        // Tworzy nowego użytkownika i nadaje mu odpowiednie uprawnienia:
+        public static bool AddUser(string UserID, string Password)
         {
             bool state = false;
             using (var connection = DBConnection.Instance.Connection)
             {
-                MySqlCommand commandcreate = new MySqlCommand($"CREATE USER '{user.UserID}'@'localhost' IDENTIFIED BY '{user.Password}'",  connection);
-                MySqlCommand commandgrantselectmovies = new MySqlCommand($"GRANT SELECT ON MOVIES TO '{user.UserID}'@'localhost'", connection);
-                MySqlCommand commandgrantselectactors = new MySqlCommand($"GRANT SELECT ON ACTORS TO '{user.UserID}'@'localhost'", connection);
-                MySqlCommand commandgrantselectdirectors = new MySqlCommand($"GRANT SELECT ON DIRECTORS TO '{user.UserID}'@'localhost'", connection);
-                MySqlCommand commandgrantselectcompanies = new MySqlCommand($"GRANT SELECT ON COMPANIES TO '{user.UserID}'@'localhost'", connection);
-                MySqlCommand commandgrantpriviligesseen = new MySqlCommand($"GRANT SELECT, INSERT, DELETE, UPDATE ON SEEN TO '{user.UserID}'@'localhost'", connection);
-                MySqlCommand commandinsertusers = new MySqlCommand($"INSERT USERS VALUE ('{user.UserID}', password('{user.Password}'))", connection);
+                MySqlCommand commandcreate = new MySqlCommand($"CREATE USER '{UserID}'@'localhost' IDENTIFIED BY '{Password}'", connection);
+                MySqlCommand commandgrantselectmovies = new MySqlCommand($"GRANT SELECT ON MOVIES TO '{UserID}'@'localhost'", connection);
+                MySqlCommand commandgrantselectactors = new MySqlCommand($"GRANT SELECT ON ACTORS TO '{UserID}'@'localhost'", connection);
+                MySqlCommand commandgrantselectdirectors = new MySqlCommand($"GRANT SELECT ON DIRECTORS TO '{UserID}'@'localhost'", connection);
+                MySqlCommand commandgrantselectcompanies = new MySqlCommand($"GRANT SELECT ON COMPANIES TO '{UserID}'@'localhost'", connection);
+                MySqlCommand commandgrantpriviligesseen = new MySqlCommand($"GRANT SELECT, INSERT, DELETE, UPDATE ON SEEN TO '{UserID}'@'localhost'", connection);
+                MySqlCommand commandinsertusers = new MySqlCommand($"INSERT USERS VALUE ('{UserID}', password('{Password}'))", connection);
 
                 connection.Open();
                 var id1 = commandcreate.ExecuteNonQuery();
@@ -53,7 +51,7 @@ namespace CoPoleci.DAL
                 connection.Close();
             }
             return state;
-        }*/
+        }
 
         // Wykorzystuje komendę PASSWORD występującą w języku MySQL, żeby zahashować stringa (i później porównać w procesie logowania):
         public static string HashPassword(string password)

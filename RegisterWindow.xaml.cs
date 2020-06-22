@@ -1,50 +1,42 @@
 ﻿using CoPoleci.DAL;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace CoPoleci
 {
-    /// <summary>
-    /// Logika interakcji dla klasy RegisterWindow.xaml
-    /// </summary>
     public partial class RegisterWindow : Window
     {
         public RegisterWindow()
         {
             InitializeComponent();
         }
+
         private void PowerButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
+
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             LoginScreen win = new LoginScreen();
             win.Show();
             Close();
         }
+
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-          /*  string nick = textBoxLogin.Text, pwd = textBoxPassword.Password;
-            if (AccountCheck(nick, pwd) == false)
+            string nick = textBoxLogin.Text, pwd = textBoxPassword.Password;
+            if (AccountCheck(nick, pwd) == false) return;
+            if (UserRepo.AddUser(nick, pwd) == false)
+            {
+                MessageBox.Show("Nie udało się utworzyć użytkownika.");
                 return;
-            User newUser = new User(nick, pwd);
-            UserRepo.AddUser(newUser);
+            }
             LoginScreen win = new LoginScreen();
             win.Show();
-            Close();*/
+            Close();
         }
+
         private bool AccountCheck(string nickname, string pwd)
         {
             List<User> ExistingUsers = QueryManager.Users; // root pobiera listę użytkowników z bazy
@@ -59,7 +51,7 @@ namespace CoPoleci
             {
                 if (ExistingUsers[user_index].UserID == nickname)
                 {
-                    MessageBox.Show("Istnieje już użytkownik o takiej nazwie");
+                    MessageBox.Show("Istnieje już użytkownik o takiej nazwie.");
                     return false;
                 }
                 user_index++;
@@ -71,6 +63,5 @@ namespace CoPoleci
             }
             return true;
         }
-
     }
 }

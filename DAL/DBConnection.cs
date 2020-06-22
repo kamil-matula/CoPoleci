@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using System.Diagnostics;
 
 namespace CoPoleci.DAL
 {
@@ -33,7 +32,5 @@ namespace CoPoleci.DAL
         {
             Nickname = user; Password = password;
         }
-
-        public void printBuilder() => Debug.Write(stringBuilder.ToString()); // do testowania
     }
 }

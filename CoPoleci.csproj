@@ -116,10 +116,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DAL\DBConnection.cs" />
+    <Compile Include="DAL\Entities\Actor.cs" />
+    <Compile Include="DAL\Entities\Company.cs" />
     <Compile Include="DAL\Entities\Country.cs" />
+    <Compile Include="DAL\Entities\Director.cs" />
     <Compile Include="DAL\Entities\User.cs" />
+    <Compile Include="DAL\Repositories\ActorRepo.cs" />
+    <Compile Include="DAL\Repositories\CompanyRepo.cs" />
     <Compile Include="DAL\Repositories\CountryRepo.cs" />
     <Compile Include="DAL\QueryManager.cs" />
+    <Compile Include="DAL\Repositories\DirectorRepo.cs" />
+    <Compile Include="DAL\Repositories\MovieRepo.cs" />
     <Compile Include="DAL\Repositories\UserRepo.cs" />
     <Compile Include="RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
@@ -138,7 +145,7 @@
     <Compile Include="Recommender\Result.xaml.cs">
       <DependentUpon>Result.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Movie.cs" />
+    <Compile Include="DAL\Entities\Movie.cs" />
     <Compile Include="Tabs\MovieRankings.xaml.cs">
       <DependentUpon>MovieRankings.xaml</DependentUpon>
     </Compile>
@@ -277,9 +284,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\splashscreen.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="ikona.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="MoviePosters\Alicja w Krainie Czarów.jpg" />

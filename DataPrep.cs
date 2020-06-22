@@ -26,7 +26,8 @@ namespace CoPoleci
                     X_action = Convert.ToDouble(tmp[6].Replace('.', ',')),
                     X_romance = Convert.ToDouble(tmp[7].Replace('.', ',')),
                     X_music = Convert.ToDouble(tmp[8].Replace('.', ',')),
-                    X_criticrate = Convert.ToDouble(tmp[9].Replace('.', ','))
+                    X_criticrate = Convert.ToDouble(tmp[9].Replace('.', ',')),
+                    X_scary = Convert.ToDouble(tmp[10].Replace('.', ','))
                 };
             }
             return movie;

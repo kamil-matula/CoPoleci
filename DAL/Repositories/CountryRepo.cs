@@ -5,7 +5,7 @@ namespace CoPoleci.DAL
 {
     public class CountryRepo
     {
-        private const string ALL_COUNTRY_QUERY = "SELECT * FROM country";
+        private const string ALL_COUNTRIES_QUERY = "SELECT * FROM COUNTRY";
 
         public static List<Country> GetAllCountries()
         {
@@ -14,8 +14,7 @@ namespace CoPoleci.DAL
             {
                 using (var connection = DBConnection.Instance.Connection)
                 {
-                    DBConnection.Instance.printBuilder();
-                    MySqlCommand command = new MySqlCommand(ALL_COUNTRY_QUERY, connection);
+                    MySqlCommand command = new MySqlCommand(ALL_COUNTRIES_QUERY, connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())
