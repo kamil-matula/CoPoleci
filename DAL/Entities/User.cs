@@ -12,5 +12,15 @@ namespace CoPoleci.DAL
             UserID = dataReader["nickname"].ToString();
             Password = dataReader["password"].ToString();
         }
+        public User(string nick, string pwd)
+        {
+            UserID = nick;
+            Password = pwd;
+        }
+
+        public string ToInsert()
+        {
+            return $"('{UserID}', '{Password}')";
+        }
     }
 }

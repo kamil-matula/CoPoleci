@@ -3,6 +3,7 @@ using System.Windows;
 using System.Collections.Generic;
 using CoPoleci.DAL;
 
+
 namespace CoPoleci
 {
     public partial class LoginScreen : Window
@@ -27,9 +28,9 @@ namespace CoPoleci
             // ODKOMENTOWAĆ PONIŻSZE LINIE KODU JEŚLI W BAZIE ŚWIAT ISTNIEJE TABLICA 
             // USERS(nickname char(16), password char(41)) Z CONAJMNIEJ JEDNYM UŻYTKOWNIKIEM!
 
-            //string nick = textBoxLogin.Text, pwd = textBoxPassword.Text;
-            //if (AccountCheck(nick, pwd) == false) return;
-            //DBConnection.Login(nick, pwd);
+            string nick = textBoxLogin.Text, pwd = textBoxPassword.Password;
+            if (AccountCheck(nick, pwd) == false) return;
+            DBConnection.Login(nick, pwd);
 
             MainWindow win = new MainWindow();
             win.Show();

@@ -23,7 +23,7 @@ namespace CoPoleci.DAL
                 UserID = Nickname,
                 Password = Password,
                 Server = "localhost",
-                Database = "swiat",
+                Database = "swiat", //zmienic na "copoleci", gdy już będzie gotowa baza
                 Port = 3306
             };
         }
