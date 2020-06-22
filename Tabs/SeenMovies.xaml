@@ -16,13 +16,15 @@
         
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="7*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="7*"/>
             </Grid.RowDefinitions>
         
-            <TextBlock Grid.Row="0" Text="Tutaj będą wyświetlane obejrzane filmy" Foreground="WhiteSmoke" 
-                   FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-            <ListView Grid.Row="1" Margin="15" ItemsSource="{Binding Countries}" HorizontalAlignment="Center" Height="400">
+            <TextBlock Grid.Row="0" Text="Obejrzane filmy" Foreground="WhiteSmoke" 
+                   FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Label Grid.Row="1" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" Content="Wyszukaj: " Foreground="WhiteSmoke" > </Label>
+            <TextBox Grid.Row="1" Width="390" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="25" Name="searchingBox" TextChanged="SearchingBox_TextChanged" Foreground="WhiteSmoke" />
+                <ListView Name="items" Grid.Row="2" Margin="40" ItemsSource="{Binding Countries}" HorizontalAlignment="Center" Height="400">
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
