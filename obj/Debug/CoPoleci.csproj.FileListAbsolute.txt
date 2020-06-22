@@ -335,3 +335,5 @@ C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\Co
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\LoginScreen.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\LoginScreen.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\LoginScreen.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\Home.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\Home.g.cs

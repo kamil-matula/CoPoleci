@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using CoPoleci.Tabs;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace CoPoleci
@@ -8,20 +9,27 @@ namespace CoPoleci
         public MainWindow()
         {
             InitializeComponent();
+            GridPrincipal.Children.Add(new Home());
         }
 
-      
+
         private void PowerButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            GridPrincipal.Children.Clear();
+            GridPrincipal.Children.Add(new Home());
         }
 
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int index = ListViewMenu.SelectedIndex;
-            
+
             switch (index)
             {
+
                 case 0:
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new SeenMovies());
@@ -55,6 +63,6 @@ namespace CoPoleci
                     break;
             }
         }
-       
+
     }
 }
