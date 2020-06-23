@@ -4,22 +4,25 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d" Height="565" Width="550">
-
+             xmlns:vm="clr-namespace:CoPoleci.DAL"
+             mc:Ignorable="d" Height="auto" Width="auto" Background="#FFD0CFCE">
+    <UserControl.Resources>
+        <vm:QueryManager x:Key="QM"/>
+    </UserControl.Resources>
     <Grid>
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
-            <Grid>
+            <Grid DataContext="{StaticResource QM}">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="5*" />
-                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="7*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock HorizontalAlignment="Left" Margin="10" Text="Ile filmów?" VerticalAlignment="Bottom" 
-                   FontSize="30" Foreground="White"></TextBlock>
+                   FontSize="30" Foreground="White" ></TextBlock>
                 <ComboBox VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Right" Width="100" Height="40"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="ComboBox_SelectionChanged">
                     <ComboBoxItem Content="TOP 3"/>
@@ -35,6 +38,48 @@ VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Right" Width="100"
                     <ComboBoxItem Content="Najnowsze"/>
                     <ComboBoxItem Content="Najstarsze"/>
                 </ComboBox>
+                <ListView Name="items" Grid.Row="2"  Margin="40" ItemsSource="{Binding Countries}" HorizontalAlignment="Center" Height="400" Grid.ColumnSpan="2">
+                    <ListView.View>
+                        <GridView>
+                            <GridView.Columns>
+
+                                <GridViewColumn Width="130">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Poster}" Width="120" Height="120" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                    <GridViewColumn.Header>
+                                        <TextBlock Text="Plakat" Foreground="WhiteSmoke"/>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+
+                                <GridViewColumn Width="210">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}" Foreground="WhiteSmoke" FontSize="20"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                    <GridViewColumn.Header>
+                                        <TextBlock Text="Tytuł" Foreground="WhiteSmoke"/>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+
+                                <GridViewColumn Width="100">
+                                    <GridViewColumn.CellTemplate >
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Population}" Foreground="WhiteSmoke" FontSize="20" HorizontalAlignment="Stretch"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                    <GridViewColumn.Header>
+                                        <TextBlock Text="Rok" Foreground="WhiteSmoke"/>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+
+                            </GridView.Columns>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </Grid>
         </materialDesign:TransitioningContent>
     </Grid>

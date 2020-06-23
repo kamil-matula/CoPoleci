@@ -5,29 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="CoPoleci?" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
-    <Window.Background>
-        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-            <GradientStop Color="Black" Offset="1"/>
-            <GradientStop Color="#FF2C0303"/>
-        </LinearGradientBrush>
-    </Window.Background>
+        Title="CoPoleci?" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Black">
+    <Window.Resources>
+        <Style x:Key="ubuntu" TargetType="ListView">
+            <Setter Property="FontFamily" Value="/fonts/ubuntu-medium.ttf"/>
+        </Style>
+    </Window.Resources>
 
     <Grid>
 
 
         <StackPanel VerticalAlignment="Top" Height="35">
-            <Grid Background="Black" Height="10"/>
+            
             <Grid Margin="0">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0">
-                    <Button x:Name="ButtonPower" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="PowerButton_Click">
-                        <materialDesign:PackIcon Kind="Power"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="-3">
+                    <Button x:Name="ButtonPower" Width="30" Height="30" Background="{x:Null}" 
+                            VerticalAlignment="Top" BorderBrush="{x:Null}" Padding="0" Foreground="#ffc20114" Click="PowerButton_Click">
+                        <materialDesign:PackIcon Kind="Power" Height="22" Width="22"/>
                     </Button>
                 </StackPanel>
             </Grid>
         </StackPanel>
 
-        <Grid Margin="250,30,0,0" x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center" x:FieldModifier="public">
+        <Grid Margin="250,0,0,0" Height="575" x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Bottom" x:FieldModifier="public">
 
         </Grid>
         <Grid x:Name="GridMenu" Width="250" HorizontalAlignment="Left" Background="Black">
@@ -35,14 +35,15 @@
                 <Grid x:Name="GridCursor" Margin="0 100 0 0" Background="#FF2A0303" Width="10" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top"/>
             </materialDesign:TransitioningContent>
             <StackPanel>
-                <Button x:Name="HomeButton" Height="140" Background="Black" BorderBrush="{x:Null}" Click="HomeButton_Click">
+                <Button x:Name="HomeButton" Height="150" Background="Black" BorderBrush="{x:Null}" Click="HomeButton_Click">
                     <Image Height="140" Source="Images/COPOLECI1.png"/>
                 </Button>
 
                 <ListView x:Name="ListViewMenu" Foreground="AntiqueWhite" Background="Black"  
-                          FontFamily="Champagne &amp; Limousines" FontSize="21" BorderBrush="{x:Null}" 
-                          SelectionChanged="ListViewMenu_SelectionChanged" SelectedIndex="-1">
-                    <ListViewItem Height="45" Padding="0">
+                         Margin="0 15 0 0"
+                           FontSize="21" BorderBrush="{x:Null}" 
+                          SelectionChanged="ListViewMenu_SelectionChanged" SelectedIndex="-1"  Style="{StaticResource ubuntu }">
+                    <ListViewItem Height="45" Padding="0" >
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Images/seen.png"/>
                             <TextBlock Text="Obejrzane" Margin="10"/>

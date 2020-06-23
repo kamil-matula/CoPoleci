@@ -262,6 +262,28 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Fonts\CooperHewitt-Bold.otf" />
+    <Resource Include="Fonts\CooperHewitt-BoldItalic.otf" />
+    <Resource Include="Fonts\CooperHewitt-Book.otf" />
+    <Resource Include="Fonts\CooperHewitt-BookItalic.otf" />
+    <Resource Include="Fonts\CooperHewitt-Heavy.otf" />
+    <Resource Include="Fonts\CooperHewitt-HeavyItalic.otf" />
+    <Resource Include="Fonts\CooperHewitt-Light.otf" />
+    <Resource Include="Fonts\CooperHewitt-LightItalic.otf" />
+    <Resource Include="Fonts\CooperHewitt-Medium.otf" />
+    <Resource Include="Fonts\CooperHewitt-MediumItalic.otf" />
+    <Resource Include="Fonts\CooperHewitt-Semibold.otf" />
+    <Resource Include="Fonts\CooperHewitt-SemiboldItalic.otf" />
+    <Resource Include="Fonts\CooperHewitt-Thin.otf" />
+    <Resource Include="Fonts\CooperHewitt-ThinItalic.otf" />
+    <Resource Include="Fonts\Ubuntu-Bold.ttf" />
+    <Resource Include="Fonts\Ubuntu-BoldItalic.ttf" />
+    <Resource Include="Fonts\Ubuntu-Italic.ttf" />
+    <Resource Include="Fonts\Ubuntu-Light.ttf" />
+    <Resource Include="Fonts\Ubuntu-LightItalic.ttf" />
+    <Resource Include="Fonts\Ubuntu-Medium.ttf" />
+    <Resource Include="Fonts\Ubuntu-MediumItalic.ttf" />
+    <Resource Include="Fonts\Ubuntu-Regular.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

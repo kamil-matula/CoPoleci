@@ -12,7 +12,7 @@
             <Image Source="Images/COPOLECI.png" VerticalAlignment="Top" Margin="20">
             </Image>
             <Label Content="Masz już konto?" Foreground="White" FontSize="18" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="132,0,130,125" Height="44" RenderTransformOrigin="0.562,1.163"></Label>
-            <Button Background="#FFC20505" Width="160" Height="50"  Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="70" Foreground="Black" FontSize="22" Content="ZALOGUJ SIĘ" Click="LoginButton_Click">
+            <Button Background="#ffc20114" Width="160" Height="50"  Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="70" Foreground="Black" FontSize="22" Content="ZALOGUJ SIĘ" Click="LoginButton_Click">
             </Button>
         </Grid>
         <Grid Width="400" HorizontalAlignment="Right" Background="#FFD0CFCE">
@@ -26,7 +26,7 @@
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
             <Label Content="Tworzenie konta" Grid.Row="0" HorizontalAlignment="Center" FontSize="50" VerticalAlignment="Center"> </Label>
-            <Button Background="#FF090606" Width="160" Height="70"  Grid.Row="5" HorizontalAlignment="Right" Margin="20" Foreground="#FFC20505" FontSize="19" Content="ZAŁÓŻ KONTO" Click="RegisterButton_Click">
+            <Button Background="#FF090606" Width="160" Height="70"  Grid.Row="5" HorizontalAlignment="Right" Margin="20" Foreground="#ffc20114" FontSize="19" Content="ZAŁÓŻ KONTO" Click="RegisterButton_Click">
             </Button>
             <Label Content="Login:" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,10" FontSize="20" Height="40"/>
             <Label Content="Hasło:" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,10" FontSize="20" Height="40"/>

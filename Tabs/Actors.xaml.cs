@@ -1,4 +1,5 @@
 ﻿using System;
+using CoPoleci.DAL;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,24 @@ namespace CoPoleci
         public Actors()
         {
             InitializeComponent();
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(ListViewActors.ItemsSource);
+            view.Filter = ItemSearcher;
+        }
+        private bool ItemSearcher(object item)
+        {
+            if (String.IsNullOrEmpty(searchingBox.Text))
+                return true;
+            else
+                return ((item as Country).Name.IndexOf(searchingBox.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+
+        private void SearchingBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(ListViewActors.ItemsSource).Refresh();
+        }
+        private void Actor_Clicked(object sender, RoutedEventArgs e)
+        {
+            //tu bedzie pojawianie się kontrolki aktora albo w najgorszym wypadku messageboxa ze szczegółami 
         }
     }
 }
