@@ -1,11 +1,14 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
+using System.Windows.Media.Imaging;
 
 namespace CoPoleci
 {
-    class Movie
+    public class Movie
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        public BitmapImage Poster { get; set; }
         public int Year { get; set; }
         public string Genre { get; set; }
         public double X_fun { get; set; }
@@ -25,6 +28,7 @@ namespace CoPoleci
         {
             Id = (int)dataReader["id"];
             Title = dataReader["title"].ToString();
+            Poster = new BitmapImage(new Uri($@"\MoviePosters\{Title}.jpg", UriKind.Relative));
             Year = (int)dataReader["year"];
             Genre = dataReader["genre"].ToString();
             X_fun = (double)dataReader["X_fun"];
