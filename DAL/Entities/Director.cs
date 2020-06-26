@@ -8,17 +8,17 @@ namespace CoPoleci.DAL
     {
         public ushort Id { get; private set; }
         public string Name { get; private set; }
-        public DateTime Born { get; private set; } // NIE WIEM JAK ZROBIĆ, ŻEBY NIE BYŁO GODZINY
-        public DateTime Died { get; private set; }
+        public string Born { get; private set; }
+        public string Died { get; private set; }
         public BitmapImage Photo { get; private set; }
 
         public Director(MySqlDataReader dataReader)
         {
             Id = (ushort)dataReader["id"];
             Name = dataReader["imię_nazwisko"].ToString();
-            Born = (DateTime)dataReader["urodzony"];
-            try { Died = (DateTime)dataReader["zmarł"]; }  // PROBLEM Z NULLEM
-            catch { Died = DateTime.Today; }
+            Born = ((DateTime)dataReader["urodzony"]).ToShortDateString();
+            if(!dataReader.IsDBNull(dataReader.GetOrdinal("zmarł")))
+                Died = ((DateTime)dataReader["zmarł"]).ToShortDateString();
             Photo = new BitmapImage(new Uri($@"\MoviePosters\Avatar.jpg", UriKind.Relative));
         }
 
