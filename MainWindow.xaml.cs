@@ -6,9 +6,11 @@ namespace CoPoleci
 {
     public partial class MainWindow : Window
     {
+        private TabManager tm;
         public MainWindow()
         {
             InitializeComponent();
+            tm = new TabManager();
             GridPrincipal.Children.Add(new Home());
         }
 
@@ -32,27 +34,27 @@ namespace CoPoleci
 
                 case 0:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new SeenMoviesTab());
+                    GridPrincipal.Children.Add(tm.SeenMovies );
                     break;
                 case 1:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new MoviesTab());
+                    GridPrincipal.Children.Add(tm.Movies);
                     break;
                 case 2:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new ActorsTab());
+                    GridPrincipal.Children.Add(tm.Actors);
                     break;
                 case 3:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new DirectorsTab());
+                    GridPrincipal.Children.Add(tm.Directors);
                     break;
                 case 4:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new CompaniesTab());
+                    GridPrincipal.Children.Add(tm.Companies);
                     break;
                 case 5:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new MovieRankings());
+                    GridPrincipal.Children.Add(tm.Ranking);
                     break;
                 case 6:
                     Questions.Number = 0;

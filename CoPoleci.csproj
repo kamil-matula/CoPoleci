@@ -131,6 +131,7 @@
     <Compile Include="RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TabManager.cs" />
     <Compile Include="Tabs\ActorsTab.xaml.cs">
       <DependentUpon>ActorsTab.xaml</DependentUpon>
     </Compile>
