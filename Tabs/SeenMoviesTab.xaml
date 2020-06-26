@@ -72,8 +72,8 @@
                                                 <Border Width="140" Height="140" CornerRadius="8" HorizontalAlignment="Center" VerticalAlignment="Center">
                                                     <Image Source="{Binding Poster}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                                 </Border>
-                                                <TextBlock Margin="5" Text="{Binding Name}" FontSize="14" Foreground="Black"  />
-                                                <TextBlock Margin="5" Text="{Binding Population}" FontSize="11" Foreground="Black" />
+                                                <TextBlock Text="{Binding Name}" FontSize="12"  Margin ="5 0 0 0 " HorizontalAlignment="Stretch" TextWrapping="Wrap" Foreground="Black"  />
+                                                <TextBlock Margin="5, 0, 0, 0" Text="{Binding Population}" FontSize="11" Foreground="Black" />
                                             </StackPanel>
                                         </Button>
                                     </Border>
