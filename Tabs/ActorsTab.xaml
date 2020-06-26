@@ -9,40 +9,62 @@
              d:DesignHeight="600" d:DesignWidth="800" Background="#FFD0CFCE">
     <UserControl.Resources>
         <vm:QueryManager x:Key="QM"/>
-        <Style x:Key="cooper-hewitt" TargetType="Label">
-            <Setter Property="FontFamily" Value="/fonts/cooperhewitt-light.otf"/>
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="/Fonts/Ubuntu-Medium.ttf #ubuntu" />
+            <Setter Property="FontSize" Value="75"/>
         </Style>
-        <Style x:Key="cooper-hewitt1" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="/fonts/cooperhewitt-light.otf"/>
-        </Style>
-        <Style x:Key="ubuntu" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="/fonts/ubuntu-regular.ttf"/>
-        </Style>
-        <Style x:Key="ubuntu1" TargetType="TextBox">
-            <Setter Property="FontFamily" Value="/fonts/ubuntu-regular.ttf"/>
-        </Style>
+        <Image x:Key="maski" Source="/Images/bactors.png"></Image>
     </UserControl.Resources>
+
+
+
     <Grid>
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
             <Grid DataContext="{StaticResource QM}">
                 <Grid.RowDefinitions>
-                    
-                    <RowDefinition Height="50"/>
+
+                    <RowDefinition Height="80"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="450"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="550"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Style="{StaticResource ubuntu}" Grid.Row="0" Text="Aktorzy" Foreground="Black" 
-                   FontSize="44" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                <Grid Grid.Row="1">
-                    <Label Style="{StaticResource cooper-hewitt}" Margin="10,0" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" Content="Wyszukaj: " Foreground="Black" Background="#FFD0CFCE"  ></Label>
-                    <TextBox Style="{StaticResource ubuntu1}" Margin="20,0" Width="390" HorizontalAlignment="Right" Background="#FFD0CFCE" VerticalAlignment="Center" FontSize="25" Name="searchingBox" TextChanged="SearchingBox_TextChanged" Foreground="Black" />
+                <Grid Grid.Row="0" Margin="10 0 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="60*"/>
+                        <ColumnDefinition Width="30*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Aktorzy"  Foreground="Black" Margin="10 0"
+                    Style="{StaticResource TextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+
                 </Grid>
-                <ScrollViewer Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center">
+                <Grid Grid.Row="1" Margin="10 0 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="60*"/>
+                        <ColumnDefinition Width="30*"/>
+                    </Grid.ColumnDefinitions>
+                    <materialDesign:PackIcon Kind="Magnify" Grid.Column="0" Height="30" Width="30" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox  Width="447" HorizontalAlignment="Left" Background="#FFD0CFCE" VerticalAlignment="Center" FontSize="15" Name="searchingBox" TextChanged="SearchingBox_TextChanged" Foreground="Black" Grid.Column="1"   />
+                </Grid>
+                <Grid Grid.RowSpan="2" Margin="0,0,22.2,0.2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="54*"/>
+                        <ColumnDefinition Width="40*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <WrapPanel Name="icon" HorizontalAlignment="Right" Grid.Column="2" VerticalAlignment="Top" />
+
+
+
+                </Grid>
+
+                <ScrollViewer Grid.Row="2" HorizontalAlignment="Center">
                     <StackPanel Margin="5 10">
-                            <ItemsControl x:Name="ListViewActors" FontFamily="Consolas" ItemsSource="{Binding Countries}">
+                        <ItemsControl x:Name="ListViewActors" ItemsSource="{Binding Countries}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Border Width="140" Margin="10" Height="200" Background="{x:Null}" >
@@ -51,21 +73,21 @@
                                                 <Border Width="140" Height="140" CornerRadius="8" HorizontalAlignment="Center" VerticalAlignment="Center">
                                                     <Image Source="{Binding Poster}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                                 </Border>
-                                                <TextBlock Margin="5" Text="{Binding Name}" FontSize="14" Foreground="Black" Style="{StaticResource cooper-hewitt1}" />
-                                                <TextBlock Margin="5" Text="{Binding Population}" FontSize="11" Foreground="Black" Style="{StaticResource cooper-hewitt1}"/>
+                                                <TextBlock Margin="5" Text="{Binding Name}" FontSize="14" Foreground="Black"  />
+                                                <TextBlock Margin="5" Text="{Binding Population}" FontSize="11" Foreground="Black" />
                                             </StackPanel>
                                         </Button>
                                     </Border>
-                                   
+
                                 </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                                <ItemsControl.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <WrapPanel/>
-                                    </ItemsPanelTemplate>
-                                            
-                                </ItemsControl.ItemsPanel>
-                            </ItemsControl>                       
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
                     </StackPanel>
                 </ScrollViewer>
             </Grid>

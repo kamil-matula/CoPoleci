@@ -284,30 +284,20 @@ C:\Users\domin\source\repos\CoPoleci\bin\Debug\System.Memory.xml
 C:\Users\domin\source\repos\CoPoleci\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\domin\source\repos\CoPoleci\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\CoPoleci.exe.config
-C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\Actors.baml
-C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\Companies.baml
-C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\Directors.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Recommender\Result.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\MovieRankings.baml
-C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\Movies.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Recommender\QuestionPage.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Recommender\PosterPage.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Recommender\Start.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\RegisterWindow.g.cs
-C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\Actors.g.cs
-C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\Companies.g.cs
-C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\Directors.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Recommender\Result.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\MovieRankings.g.cs
-C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\Movies.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Recommender\QuestionPage.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Recommender\PosterPage.g.cs
-C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\SeenMovies.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Recommender\Start.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\TextBoxLogin.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\RegisterWindow.baml
-C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\SeenMovies.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\TextBoxLogin.baml
 C:\Users\domin\source\repos\CoPoleci\bin\Debug\MaterialDesignColors.dll
 C:\Users\domin\source\repos\CoPoleci\bin\Debug\MaterialDesignThemes.Wpf.dll
@@ -339,3 +329,13 @@ C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\Co
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\DirectorsTab.baml
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\MoviesTab.baml
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\SeenMoviesTab.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\ActorsTab.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\CompaniesTab.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\DirectorsTab.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\MoviesTab.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\SeenMoviesTab.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\ActorsTab.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\CompaniesTab.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\DirectorsTab.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\MoviesTab.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\SeenMoviesTab.baml

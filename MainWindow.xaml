@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="CoPoleci?" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Black">
     <Window.Resources>
-        <Style x:Key="ubuntu" TargetType="ListView">
-            <Setter Property="FontFamily" Value="/fonts/ubuntu-medium.ttf"/>
+        <Style x:Key="MenuItems" TargetType="ItemsControl">
+            <Setter Property="FontFamily" Value="/Fonts/Ubuntu-Regular.ttf #ubuntu" />
+            <Setter Property="FontSize" Value="30"/>
         </Style>
     </Window.Resources>
 
@@ -42,7 +43,7 @@
                 <ListView x:Name="ListViewMenu" Foreground="AntiqueWhite" Background="Black"  
                          Margin="0 15 0 0"
                            FontSize="21" BorderBrush="{x:Null}" 
-                          SelectionChanged="ListViewMenu_SelectionChanged" SelectedIndex="-1"  Style="{StaticResource ubuntu }">
+                          SelectionChanged="ListViewMenu_SelectionChanged" SelectedIndex="-1"  Style="{StaticResource MenuItems }">
                     <ListViewItem Height="45" Padding="0" >
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Images/seen.png"/>

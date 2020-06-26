@@ -8,37 +8,72 @@
              mc:Ignorable="d" Height="auto" Width="auto" Background="#FFD0CFCE">
     <UserControl.Resources>
         <vm:QueryManager x:Key="QM"/>
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="/Fonts/Ubuntu-Medium.ttf #ubuntu" />
+            <Setter Property="FontSize" Value="70"/>
+        </Style>
     </UserControl.Resources>
+
+
+
     <Grid>
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
             <Grid DataContext="{StaticResource QM}">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="7*"/>
+
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="450"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="550"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock HorizontalAlignment="Left" Margin="10" Text="Ile filmów?" VerticalAlignment="Bottom" 
-                   FontSize="30" Foreground="White" ></TextBlock>
-                <ComboBox VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Right" Width="100" Height="40"
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="ComboBox_SelectionChanged">
-                    <ComboBoxItem Content="TOP 3"/>
-                    <ComboBoxItem Content="TOP 5"/>
-                    <ComboBoxItem Content="TOP 10"/>
-                </ComboBox>
-                <TextBlock HorizontalAlignment="Left" Margin="10" Text="Kategoria?" 
-                   VerticalAlignment="Bottom" FontSize="30" Foreground="White" Grid.Column="1"/>
-                <ComboBox                
-VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Right" Width="100" 
-                  Height="40" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >
-                    <ComboBoxItem Content="Najśmieszniejsze"/>
-                    <ComboBoxItem Content="Najnowsze"/>
-                    <ComboBoxItem Content="Najstarsze"/>
-                </ComboBox>
-                <ListView Name="items" Grid.Row="2"  Margin="40" ItemsSource="{Binding Countries}" HorizontalAlignment="Center" Height="400" Grid.ColumnSpan="2">
+                <Grid Grid.Row="0" Margin="10 0 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="30*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Rankingi"  Foreground="Black" Margin="10 0"
+                    Style="{StaticResource TextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+
+                </Grid>
+                <Grid Grid.Row="1" Margin="10 0 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="30*"/>
+                    </Grid.ColumnDefinitions>
+                   
+                    <ComboBox Grid.Column="0" VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Center" Width="150" Height="40"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0">
+                        <ComboBoxItem Content="TOP 3"/>
+                        <ComboBoxItem Content="TOP 5"/>
+                        <ComboBoxItem Content="TOP 10"/>
+                    </ComboBox>
+                    
+                    <ComboBox                
+VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Center" Width="150" 
+                  Height="40" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectedIndex="0"  >
+                        <ComboBoxItem Content="Najśmieszniejsze"/>
+                        <ComboBoxItem Content="Najnowsze"/>
+                        <ComboBoxItem Content="Najstarsze"/>
+                    </ComboBox>
+                </Grid>
+                <Grid Grid.RowSpan="2" Margin="0,0,22.2,0.2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="54*"/>
+                        <ColumnDefinition Width="40*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <WrapPanel Name="icon" HorizontalAlignment="Right" Grid.Column="2" VerticalAlignment="Top" />
+
+
+
+                </Grid>
+                
+                <ListView Name="items" Grid.Row="2"  Margin="8" ItemsSource="{Binding Countries}" HorizontalAlignment="Center" Height="400" Grid.ColumnSpan="2">
                     <ListView.View>
                         <GridView>
                             <GridView.Columns>
@@ -50,29 +85,29 @@ VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Right" Width="100"
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                     <GridViewColumn.Header>
-                                        <TextBlock Text="Plakat" Foreground="WhiteSmoke"/>
+                                        <TextBlock Text="Plakat" Foreground="Black"/>
                                     </GridViewColumn.Header>
                                 </GridViewColumn>
 
                                 <GridViewColumn Width="210">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding Name}" Foreground="WhiteSmoke" FontSize="20"/>
+                                            <TextBlock Text="{Binding Name}" Foreground="Black" FontSize="20"/>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                     <GridViewColumn.Header>
-                                        <TextBlock Text="Tytuł" Foreground="WhiteSmoke"/>
+                                        <TextBlock Text="Tytuł" Foreground="Black"/>
                                     </GridViewColumn.Header>
                                 </GridViewColumn>
 
                                 <GridViewColumn Width="100">
                                     <GridViewColumn.CellTemplate >
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding Population}" Foreground="WhiteSmoke" FontSize="20" HorizontalAlignment="Stretch"/>
+                                            <TextBlock Text="{Binding Population}" Foreground="Black" FontSize="20" HorizontalAlignment="Stretch"/>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                     <GridViewColumn.Header>
-                                        <TextBlock Text="Rok" Foreground="WhiteSmoke"/>
+                                        <TextBlock Text="Rok" Foreground="Black"/>
                                     </GridViewColumn.Header>
                                 </GridViewColumn>
 
