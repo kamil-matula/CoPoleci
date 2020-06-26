@@ -39,13 +39,13 @@ namespace CoPoleci
 
         private bool AccountCheck(string nickname, string pwd)
         {
-            List<User> ExistingUsers = QueryManager.Users; // root pobiera listę użytkowników z bazy
-            if (ExistingUsers.Count == 0)
+            if (DBConnection.LoginAsRoot("root_config.txt") == false)
             {
-                MessageBox.Show("Brak dostępu do bazy użytkowników!");
+                MessageBox.Show("Brak dostępu do bazy danych!");
                 return false;
             }
 
+            List<User> ExistingUsers = QueryManager.Users; // root pobiera listę użytkowników z bazy
             int user_index = 0;
             while (user_index < ExistingUsers.Count)
             {

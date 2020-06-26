@@ -13,7 +13,7 @@ namespace CoPoleci.DAL
             {
                 using (var connection = DBConnection.Instance.Connection)
                 {
-                    MySqlCommand command = new MySqlCommand("SELECT * FROM USERS", connection);
+                    MySqlCommand command = new MySqlCommand("select * from users", connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())
@@ -31,29 +31,35 @@ namespace CoPoleci.DAL
             bool state = false;
             using (var connection = DBConnection.Instance.Connection)
             {
-                MySqlCommand commandcreate = new MySqlCommand($"CREATE USER '{UserID}'@'localhost' IDENTIFIED BY '{Password}'", connection);
-                MySqlCommand commandgrantselectmovies = new MySqlCommand($"GRANT SELECT ON MOVIES TO '{UserID}'@'localhost'", connection);
-                MySqlCommand commandgrantselectactors = new MySqlCommand($"GRANT SELECT ON ACTORS TO '{UserID}'@'localhost'", connection);
-                MySqlCommand commandgrantselectdirectors = new MySqlCommand($"GRANT SELECT ON DIRECTORS TO '{UserID}'@'localhost'", connection);
-                MySqlCommand commandgrantselectcompanies = new MySqlCommand($"GRANT SELECT ON COMPANIES TO '{UserID}'@'localhost'", connection);
-                MySqlCommand commandgrantpriviligesseen = new MySqlCommand($"GRANT SELECT, INSERT, DELETE, UPDATE ON SEEN TO '{UserID}'@'localhost'", connection);
-                MySqlCommand commandinsertusers = new MySqlCommand($"INSERT USERS VALUE ('{UserID}', password('{Password}'))", connection);
+                try
+                {
+                    MySqlCommand commandcreate = new MySqlCommand($"create user '{UserID}' identified by '{Password}'", connection);
+                    MySqlCommand commandgrantselectmovies = new MySqlCommand($"grant select on movies to '{UserID}'", connection);
+                    MySqlCommand commandgrantselectactors = new MySqlCommand($"grant select on actors to '{UserID}'", connection);
+                    MySqlCommand commandgrantselectdirectors = new MySqlCommand($"grant select on directors to '{UserID}'", connection);
+                    MySqlCommand commandgrantselectcompanies = new MySqlCommand($"grant select on companies to '{UserID}'", connection);
+                    MySqlCommand commandgrantpriviligesseen = new MySqlCommand($"grant select, insert, delete, update on seen to '{UserID}'", connection);
+                    MySqlCommand commandinsertusers = new MySqlCommand($"insert users value ('{UserID}', MD5('{Password}'))", connection);
+                    MySqlCommand commandgrantselectcountry = new MySqlCommand($"grant select on Country to '{UserID}'", connection);
 
-                connection.Open();
-                var id1 = commandcreate.ExecuteNonQuery();
-                var id2 = commandgrantselectmovies.ExecuteNonQuery();
-                var id3 = commandgrantselectactors.ExecuteNonQuery();
-                var id4 = commandgrantselectdirectors.ExecuteNonQuery();
-                var id5 = commandgrantselectcompanies.ExecuteNonQuery();
-                var id6 = commandgrantpriviligesseen.ExecuteNonQuery();
-                var id7 = commandinsertusers.ExecuteNonQuery();
-                state = true;
-                connection.Close();
+                    connection.Open();
+                    var id1 = commandcreate.ExecuteNonQuery();
+                    var id2 = commandgrantselectmovies.ExecuteNonQuery();
+                    var id3 = commandgrantselectactors.ExecuteNonQuery();
+                    var id4 = commandgrantselectdirectors.ExecuteNonQuery();
+                    var id5 = commandgrantselectcompanies.ExecuteNonQuery();
+                    var id6 = commandgrantpriviligesseen.ExecuteNonQuery();
+                    var id7 = commandinsertusers.ExecuteNonQuery();
+                    var id8 = commandgrantselectcountry.ExecuteNonQuery();
+                    state = true;
+                    connection.Close();
+                }
+                catch { }
             }
             return state;
         }
 
-        // Wykorzystuje komendę PASSWORD występującą w języku MySQL, żeby zahashować stringa (i później porównać w procesie logowania):
+        // Wykorzystuje komendę MD5 występującą w języku MySQL, żeby zahashować stringa (i później porównać w procesie logowania):
         public static string HashPassword(string password)
         {
             string hashed = "";
@@ -61,7 +67,7 @@ namespace CoPoleci.DAL
             {
                 using (var connection = DBConnection.Instance.Connection)
                 {
-                    MySqlCommand command = new MySqlCommand($"SELECT PASSWORD(\"{password}\") PWD", connection);
+                    MySqlCommand command = new MySqlCommand($"select MD5(\"{password}\") PWD", connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())

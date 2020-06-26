@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
-namespace CoPoleci.DAL
+namespace CoPoleci.DAL.Repositories
 {
     class CompanyRepo
     {
-        private const string ALL_COMPANIES_QUERY = "SELECT * FROM COMPANIES";
+        private const string ALL_COMPANIES_QUERY = "select * from companies";
 
         public static List<Company> GetAllCompanies()
         {

@@ -131,15 +131,15 @@
     <Compile Include="RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tabs\Actors.xaml.cs">
-      <DependentUpon>Actors.xaml</DependentUpon>
+    <Compile Include="Tabs\ActorsTab.xaml.cs">
+      <DependentUpon>ActorsTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tabs\Companies.xaml.cs">
-      <DependentUpon>Companies.xaml</DependentUpon>
+    <Compile Include="Tabs\CompaniesTab.xaml.cs">
+      <DependentUpon>CompaniesTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataPrep.cs" />
-    <Compile Include="Tabs\Directors.xaml.cs">
-      <DependentUpon>Directors.xaml</DependentUpon>
+    <Compile Include="Tabs\DirectorsTab.xaml.cs">
+      <DependentUpon>DirectorsTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="Recommender\KNN.cs" />
     <Compile Include="Recommender\Result.xaml.cs">
@@ -152,8 +152,8 @@
     <Compile Include="Tabs\MovieRankings.xaml.cs">
       <DependentUpon>MovieRankings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tabs\Movies.xaml.cs">
-      <DependentUpon>Movies.xaml</DependentUpon>
+    <Compile Include="Tabs\MoviesTab.xaml.cs">
+      <DependentUpon>MoviesTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="Recommender\QuestionPage.xaml.cs">
       <DependentUpon>QuestionPage.xaml</DependentUpon>
@@ -163,8 +163,8 @@
     </Compile>
     <Compile Include="Recommender\Questions.cs" />
     <Compile Include="Recommender\Ratings.cs" />
-    <Compile Include="Tabs\SeenMovies.xaml.cs">
-      <DependentUpon>SeenMovies.xaml</DependentUpon>
+    <Compile Include="Tabs\SeenMoviesTab.xaml.cs">
+      <DependentUpon>SeenMoviesTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="LoginScreen.xaml.cs">
       <DependentUpon>LoginScreen.xaml</DependentUpon>
@@ -179,15 +179,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Tabs\Actors.xaml">
+    <Page Include="Tabs\ActorsTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tabs\Companies.xaml">
+    <Page Include="Tabs\CompaniesTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tabs\Directors.xaml">
+    <Page Include="Tabs\DirectorsTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -215,7 +215,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tabs\Movies.xaml">
+    <Page Include="Tabs\MoviesTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -227,7 +227,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tabs\SeenMovies.xaml">
+    <Page Include="Tabs\SeenMoviesTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

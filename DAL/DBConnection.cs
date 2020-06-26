@@ -1,36 +1,56 @@
 ﻿using MySql.Data.MySqlClient;
+using System.IO;
+using System;
 
 namespace CoPoleci.DAL
 {
-    class DBConnection // klasa typu singleton odpowiadająca za łączenie aplikacji z bazą danych
+    class DBConnection // klasa odpowiadająca za łączenie aplikacji z bazą danych
     {
+        #region Właściwości
         private static MySqlConnectionStringBuilder stringBuilder;
-        private static string Nickname { get; set; } = "root";
-        private static string Password { get; set; } = "";
+        private static string Nickname { get; set; } 
+        private static string Password { get; set; }
+        private static string Server { get; set; }
+        private static string Database { get; set; }
+        private static uint Port { get; set; }
         public static DBConnection Instance
         {
             get => new DBConnection();
         }
-
         public MySqlConnection Connection => new MySqlConnection(stringBuilder.ToString());
+        #endregion
 
-        // przy rejestracji - domyślnie na roota, który ma prawo do tworzenia użytkownika:
         private DBConnection()
         {
             stringBuilder = new MySqlConnectionStringBuilder
             {
                 UserID = Nickname,
                 Password = Password,
-                Server = "localhost",
-                Database = "swiat", //zmienic na "copoleci", gdy już będzie gotowa baza
-                Port = 3306
+                Server = Server,
+                Database = Database,
+                Port = Port
             };
         }
 
-        // przy logowaniu - na własne konto:
+        // logowanie poprzedza podmiana zmiennych nickname i password:
         public static void Login(string user, string password)
         {
             Nickname = user; Password = password;
+        }
+
+        // w procesie rejestracji oraz przy sprawdzaniu poprawności logowania wykorzystywany jest root:
+        public static bool LoginAsRoot(string path)
+        {
+            try
+            {
+                string[] lines = File.ReadAllLines(path);
+                if (lines.Length != 5) return false;
+                Nickname = lines[0]; Password = lines[1]; 
+                Server = lines[2]; Database = lines[3]; 
+                Port = UInt32.Parse(lines[4]);
+                return true;
+            }
+            catch { return false; }
         }
     }
 }

@@ -32,23 +32,23 @@ namespace CoPoleci
 
                 case 0:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new SeenMovies());
+                    GridPrincipal.Children.Add(new SeenMoviesTab());
                     break;
                 case 1:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new Movies());
+                    GridPrincipal.Children.Add(new MoviesTab());
                     break;
                 case 2:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new Actors());
+                    GridPrincipal.Children.Add(new ActorsTab());
                     break;
                 case 3:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new Directors());
+                    GridPrincipal.Children.Add(new DirectorsTab());
                     break;
                 case 4:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new Companies());
+                    GridPrincipal.Children.Add(new CompaniesTab());
                     break;
                 case 5:
                     GridPrincipal.Children.Clear();

@@ -34,19 +34,9 @@ C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\Co
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Recommender\QuestionPage.g.cs
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Recommender\Start.g.cs
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Recommender\Result.baml
-C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\Actors.g.cs
-C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\Companies.g.cs
-C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\Directors.g.cs
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Recommender\Result.g.cs
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\MovieRankings.g.cs
-C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\Movies.g.cs
-C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\SeenMovies.g.cs
-C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\Actors.baml
-C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\Companies.baml
-C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\Directors.baml
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\MovieRankings.baml
-C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\Movies.baml
-C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\SeenMovies.baml
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Recommender\PosterPage.baml
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Recommender\PosterPage.g.cs
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\bin\Debug\Microsoft.Win32.Primitives.dll
@@ -337,3 +327,15 @@ C:\Users\domin\source\repos\CoPoleci\obj\Debug\LoginScreen.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\LoginScreen.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\Home.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\Home.g.cs
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\Home.baml
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\Home.g.cs
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\ActorsTab.g.cs
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\CompaniesTab.g.cs
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\DirectorsTab.g.cs
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\MoviesTab.g.cs
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\SeenMoviesTab.g.cs
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\ActorsTab.baml
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\CompaniesTab.baml
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\DirectorsTab.baml
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\MoviesTab.baml
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Tabs\SeenMoviesTab.baml

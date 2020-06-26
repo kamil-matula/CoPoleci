@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
-namespace CoPoleci.DAL
+namespace CoPoleci.DAL.Repositories
 {
-    public class ActorRepo
+    class ActorRepo
     {
-        private const string ALL_ACTORS_QUERY = "SELECT * FROM ACTORS";
+        private const string ALL_ACTORS_QUERY = "select * from actors";
 
         public static List<Actor> GetAllActors()
         {

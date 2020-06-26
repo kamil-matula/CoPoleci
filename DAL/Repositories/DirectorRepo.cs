@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
-namespace CoPoleci.DAL
+namespace CoPoleci.DAL.Repositories
 {
-    public class DirectorRepo
+    class DirectorRepo
     {
-        private const string ALL_DIRECTORS_QUERY = "SELECT * FROM DIRECTORS";
+        private const string ALL_DIRECTORS_QUERY = "select * from directors";
 
         public static List<Director> GetAllDirectors()
         {

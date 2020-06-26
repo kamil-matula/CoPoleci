@@ -23,11 +23,9 @@ namespace CoPoleci
         {
             Application.Current.Shutdown();
         }
+
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            // ODKOMENTOWAĆ PONIŻSZE LINIE KODU JEŚLI W BAZIE ŚWIAT ISTNIEJE TABLICA 
-            // USERS(nickname char(16), password char(41)) Z CONAJMNIEJ JEDNYM UŻYTKOWNIKIEM!
-
             string nick = textBoxLogin.Text, pwd = textBoxPassword.Password;
             if (AccountCheck(nick, pwd) == false) return;
             DBConnection.Login(nick, pwd);
@@ -36,6 +34,7 @@ namespace CoPoleci
             win.Show();
             Close();
         }
+
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
             RegisterWindow win = new RegisterWindow();
@@ -46,10 +45,16 @@ namespace CoPoleci
         // Sprawdzenie czy jest dostęp do bazy danych i czy istnieje użytkownik o podanych danych (nick + hasło):
         private bool AccountCheck(string nickname, string password)
         {
+            if (DBConnection.LoginAsRoot("root_config.txt") == false)
+            {
+                MessageBox.Show("Brak dostępu do bazy danych!");
+                return false;
+            }
+
             List<User> ExistingUsers = QueryManager.Users; // root pobiera listę użytkowników z bazy
             if (ExistingUsers.Count == 0)
             {
-                MessageBox.Show("Brak dostępu do bazy użytkowników!");
+                MessageBox.Show("Baza użytkowników jest pusta!");
                 return false;
             }
 
