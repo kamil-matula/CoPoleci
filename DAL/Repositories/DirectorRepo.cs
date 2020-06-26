@@ -5,7 +5,7 @@ namespace CoPoleci.DAL.Repositories
 {
     class DirectorRepo
     {
-        private const string ALL_DIRECTORS_QUERY = "select * from directors";
+        private const string ALL_DIRECTORS_QUERY = "select * from reżyserzy";
 
         public static List<Director> GetAllDirectors()
         {

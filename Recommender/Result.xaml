@@ -20,7 +20,7 @@
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <WrapPanel Name="filmImage" Margin="20,0"/>
-                    <ListBox x:Name="listaFilmow" HorizontalAlignment="Left" FontSize="16" 
+                    <ListBox x:Name="listaFilmow" HorizontalAlignment="Left" FontSize="16" Foreground="White"
                              BorderThickness="0" SelectionChanged="listaFilmow_SelectionChanged"/>
                     <WrapPanel Name="popcornImage" Margin="20,0"/>
                 </StackPanel>

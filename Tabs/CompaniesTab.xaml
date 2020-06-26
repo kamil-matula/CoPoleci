@@ -5,15 +5,15 @@
              xmlns:vm="clr-namespace:CoPoleci.DAL"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d"
-              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              d:DesignHeight="600" d:DesignWidth="800" Background="#FFD0CFCE">
     <UserControl.Resources>
         <vm:QueryManager x:Key="QM"/>
         <Style x:Key="TextBlockStyle" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="/Fonts/Ubuntu-Medium.ttf #ubuntu" />
+            <Setter Property="FontFamily" Value="/Fonts/Ubuntu-Medium.ttf #ubuntu"/>
             <Setter Property="FontSize" Value="70"/>
         </Style>
-        <Image x:Key="maski" Source="/Images/bactors.png"></Image>
+        <Image x:Key="maski" Source="/Images/bactors.png"/>
     </UserControl.Resources>
 
 
@@ -22,7 +22,6 @@
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
             <Grid DataContext="{StaticResource QM}">
                 <Grid.RowDefinitions>
-
                     <RowDefinition Height="80"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="450"/>
@@ -37,7 +36,7 @@
                         <ColumnDefinition Width="30*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Wytwórnie"  Foreground="Black" Margin="10 0"
-                    Style="{StaticResource TextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                    Style="{StaticResource TextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
                 </Grid>
                 <Grid Grid.Row="1" Margin="10 0 0 0">
@@ -55,26 +54,22 @@
                         <ColumnDefinition Width="54*"/>
                         <ColumnDefinition Width="40*"/>
                     </Grid.ColumnDefinitions>
-
                     <WrapPanel Name="icon" HorizontalAlignment="Right" Grid.Column="2" VerticalAlignment="Top" />
-
-
-
                 </Grid>
 
                 <ScrollViewer Grid.Row="2" HorizontalAlignment="Center">
                     <StackPanel Margin="5 10">
-                        <ItemsControl x:Name="ListViewCompanies" ItemsSource="{Binding Countries}">
+                        <ItemsControl x:Name="ListViewCompanies" ItemsSource="{Binding Companies}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Border Width="140" Margin="10" Height="200" Background="{x:Null}" >
-                                        <Button Width="auto" Height="auto" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Click="Company_Clicked" >
+                                        <Button Width="auto" Height="auto" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Click="Company_Clicked">
                                             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                                 <Border Width="140" Height="140" CornerRadius="8" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                                    <Image Source="{Binding Poster}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                    <Image Source="{Binding Photo}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                                 </Border>
-                                                <TextBlock Margin="5" Text="{Binding Name}" FontSize="14" Foreground="Black"  />
-                                                <TextBlock Margin="5" Text="{Binding Population}" FontSize="11" Foreground="Black" />
+                                                <TextBlock Margin="5" Text="{Binding Name}" FontSize="14" Foreground="Black"/>
+                                                <TextBlock Margin="5" Text="{Binding HeadQuarters}" FontSize="11" Foreground="Black"/>
                                             </StackPanel>
                                         </Button>
                                     </Border>

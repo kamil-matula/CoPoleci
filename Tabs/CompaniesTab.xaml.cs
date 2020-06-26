@@ -22,17 +22,19 @@ namespace CoPoleci
             if (string.IsNullOrEmpty(searchingBox.Text))
                 return true;
             else
-                return ((item as Country).Name.IndexOf(searchingBox.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+                return ((item as Company).Name.IndexOf(searchingBox.Text, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
         private void SearchingBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(ListViewCompanies.ItemsSource).Refresh();
         }
+
         private void Company_Clicked(object sender, RoutedEventArgs e)
         {
             //tu bedzie pojawianie się kontrolki wytwórni albo w najgorszym wypadku messageboxa ze szczegółami 
         }
+
         private void LoadIcon()
         {
 

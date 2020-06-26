@@ -1,46 +1,57 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Windows.Media.Imaging;
+using System.Collections.Generic;
 
-namespace CoPoleci
+namespace CoPoleci.DAL
 {
     public class Movie
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public BitmapImage Poster { get; set; }
-        public int Year { get; set; }
-        public string Genre { get; set; }
-        public double X_fun { get; set; }
-        public double X_real { get; set; }
-        public double X_age { get; set; }
-        public double X_emo { get; set; }
-        public double X_ambit { get; set; }
-        public double X_action { get; set; }
-        public double X_romance { get; set; }
-        public double X_music { get; set; }
-        public double X_criticrate { get; set; }
-        public double X_scary { get; set; }
+        public byte Id { get; private set; }
+        public string Title { get; private set; }
+        public BitmapImage Poster { get; private set; }
+        public short Year { get; private set; }
+        public string Genre { get; private set; }
+        public double X_fun { get; private set; }
+        public double X_real { get; private set; }
+        public double X_age { get; private set; }
+        public double X_emo { get; private set; }
+        public double X_ambit { get; private set; }
+        public double X_action { get; private set; }
+        public double X_romance { get; private set; }
+        public double X_music { get; private set; }
+        public double X_criminal { get; private set; }
+        public double X_scary { get; private set; }
 
-        public Movie() { }
+        public Movie(List<double> ratings) 
+        {
+            X_fun = ratings[0];
+            X_real = ratings[1];
+            X_age = ratings[2];
+            X_emo = ratings[3];
+            X_ambit = ratings[4];
+            X_action = ratings[5];
+            X_romance = ratings[6];
+            X_music = ratings[7];
+            X_criminal = ratings[8];
+            X_scary = ratings[9];
+        }
 
         public Movie(MySqlDataReader dataReader)
         {
-            Id = (int)dataReader["id"];
-            Title = dataReader["title"].ToString();
+            Id = (byte)dataReader["id"];
+            Title = dataReader["tytuł"].ToString();
             Poster = new BitmapImage(new Uri($@"\MoviePosters\{Title}.jpg", UriKind.Relative));
-            Year = (int)dataReader["year"];
-            Genre = dataReader["genre"].ToString();
-            X_fun = (double)dataReader["X_fun"];
-            X_real = (double)dataReader["X_real"];
-            X_age = (double)dataReader["X_age"];
-            X_emo = (double)dataReader["X_emo"];
-            X_ambit = (double)dataReader["X_ambit"];
-            X_action = (double)dataReader["X_action"];
-            X_romance = (double)dataReader["X_romance"];
-            X_music = (double)dataReader["X_music"];
-            X_criticrate = (double)dataReader["X_criticrate"];
-            X_scary = (double)dataReader["X_scary"];
+            Year = (short)dataReader["rok"];
+            Genre = dataReader["gatunek"].ToString();
+            X_fun = (double)dataReader["zabawność"];
+            X_real = (double)dataReader["realizm"];
+            X_emo = (double)dataReader["wzruszenie"];
+            X_ambit = (double)dataReader["ambitność"];
+            X_action = (double)dataReader["akcja"];
+            X_romance = (double)dataReader["romantyczność"];
+            X_music = (double)dataReader["muzyka"];
+            X_criminal = (double)dataReader["kryminalistyka"];
         }
 
         public override string ToString()

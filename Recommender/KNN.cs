@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace CoPoleci
 {
+    using DAL;
     class KNN
     {
         private readonly int k;
@@ -28,7 +29,7 @@ namespace CoPoleci
                     Math.Abs(movieBase[i].X_age - idealMovie.X_age) + Math.Abs(movieBase[i].X_emo - idealMovie.X_emo) +
                     Math.Abs(movieBase[i].X_ambit - idealMovie.X_ambit) + Math.Abs(movieBase[i].X_action - idealMovie.X_action) +
                     Math.Abs(movieBase[i].X_romance - idealMovie.X_romance) + Math.Abs(movieBase[i].X_music - idealMovie.X_music) +
-                    Math.Abs(movieBase[i].X_criticrate - idealMovie.X_criticrate) + Math.Abs(movieBase[i].X_scary - idealMovie.X_scary);
+                    Math.Abs(movieBase[i].X_criminal - idealMovie.X_criminal) + Math.Abs(movieBase[i].X_scary - idealMovie.X_scary);
             }
             distances = d;
         }

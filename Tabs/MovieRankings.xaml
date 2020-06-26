@@ -44,14 +44,14 @@
                         <ColumnDefinition Width="33*"/>
                         <ColumnDefinition Width="30*"/>
                     </Grid.ColumnDefinitions>
-                   
+
                     <ComboBox Grid.Column="0" VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Center" Width="150" Height="40"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0">
                         <ComboBoxItem Content="TOP 3"/>
                         <ComboBoxItem Content="TOP 5"/>
                         <ComboBoxItem Content="TOP 10"/>
                     </ComboBox>
-                    
+
                     <ComboBox                
 VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Center" Width="150" 
                   Height="40" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectedIndex="0"  >
@@ -72,12 +72,11 @@ VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Center" Width="150"
 
 
                 </Grid>
-                
-                <ListView Name="items" Grid.Row="2"  Margin="8" ItemsSource="{Binding Countries}" HorizontalAlignment="Center" Height="400" Grid.ColumnSpan="2">
+
+                <ListView Name="items" Grid.Row="2"  Margin="8" ItemsSource="{Binding Movies}" HorizontalAlignment="Center" Height="400" Grid.ColumnSpan="2">
                     <ListView.View>
                         <GridView>
                             <GridView.Columns>
-
                                 <GridViewColumn Width="130">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
@@ -92,7 +91,7 @@ VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Center" Width="150"
                                 <GridViewColumn Width="210">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding Name}" Foreground="Black" FontSize="20"/>
+                                            <TextBlock Text="{Binding Title}" Foreground="Black" FontSize="20"/>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                     <GridViewColumn.Header>
@@ -103,7 +102,7 @@ VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Center" Width="150"
                                 <GridViewColumn Width="100">
                                     <GridViewColumn.CellTemplate >
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding Population}" Foreground="Black" FontSize="20" HorizontalAlignment="Stretch"/>
+                                            <TextBlock Text="{Binding Year}" Foreground="Black" FontSize="20" HorizontalAlignment="Stretch"/>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                     <GridViewColumn.Header>

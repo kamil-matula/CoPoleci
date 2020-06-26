@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CoPoleci
+﻿namespace CoPoleci
 {
     public class TabManager
     {
@@ -25,6 +19,5 @@ namespace CoPoleci
             Companies = new CompaniesTab();
             Ranking = new MovieRankings();
         }
-
     }
 }

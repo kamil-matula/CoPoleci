@@ -5,7 +5,7 @@ namespace CoPoleci.DAL.Repositories
 {
     class CompanyRepo
     {
-        private const string ALL_COMPANIES_QUERY = "select * from companies";
+        private const string ALL_COMPANIES_QUERY = "select * from wytwórnie";
 
         public static List<Company> GetAllCompanies()
         {

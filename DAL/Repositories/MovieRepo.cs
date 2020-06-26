@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using System.Diagnostics;
 
 namespace CoPoleci.DAL.Repositories
 {
     class MovieRepo
     {
-        private const string ALL_MOVIES_QUERY = "select * from movies";
+        private const string ALL_MOVIES_QUERY = "select * from filmy";
 
         public static List<Movie> GetAllMovies()
         {

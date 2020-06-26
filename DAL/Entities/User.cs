@@ -4,13 +4,13 @@ namespace CoPoleci.DAL
 {
     class User
     {
-        public string UserID { get; set; }
-        public string Password { get; set; }
+        public string UserID { get; private set; }
+        public string Password { get; private set; }
 
         public User(MySqlDataReader dataReader)
         {
-            UserID = dataReader["nickname"].ToString();
-            Password = dataReader["password"].ToString();
+            UserID = dataReader["login"].ToString();
+            Password = dataReader["hasło"].ToString();
         }
     }
 }

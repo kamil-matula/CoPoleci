@@ -15,7 +15,7 @@ namespace CoPoleci
             "Czy lubisz filmy, w których \n występuje dużo akcji?",
             "Czy zależy Ci, aby film posiadał \n rozwinięty wątek romantyczny?",
             "Czy chcesz, aby w filmie \n było dużo muzyki?",
-            "Czy zależy Ci na tym, aby film był \n dobrze oceniany przez krytyków?",
+            "Czy zależy Ci na tym, aby film \n posiadał wątek kryminalistyczny?",
             "Czy lubisz się bać, \n gdy oglądasz filmy?"
         };
 

@@ -5,7 +5,7 @@ namespace CoPoleci.DAL.Repositories
 {
     class ActorRepo
     {
-        private const string ALL_ACTORS_QUERY = "select * from actors";
+        private const string ALL_ACTORS_QUERY = "select * from aktorzy";
 
         public static List<Actor> GetAllActors()
         {

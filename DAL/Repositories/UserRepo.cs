@@ -13,7 +13,7 @@ namespace CoPoleci.DAL
             {
                 using (var connection = DBConnection.Instance.Connection)
                 {
-                    MySqlCommand command = new MySqlCommand("select * from users", connection);
+                    MySqlCommand command = new MySqlCommand("select * from użytkownicy", connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())
@@ -34,13 +34,13 @@ namespace CoPoleci.DAL
                 try
                 {
                     MySqlCommand commandcreate = new MySqlCommand($"create user '{UserID}' identified by '{Password}'", connection);
-                    MySqlCommand commandgrantselectmovies = new MySqlCommand($"grant select on movies to '{UserID}'", connection);
-                    MySqlCommand commandgrantselectactors = new MySqlCommand($"grant select on actors to '{UserID}'", connection);
-                    MySqlCommand commandgrantselectdirectors = new MySqlCommand($"grant select on directors to '{UserID}'", connection);
-                    MySqlCommand commandgrantselectcompanies = new MySqlCommand($"grant select on companies to '{UserID}'", connection);
-                    MySqlCommand commandgrantpriviligesseen = new MySqlCommand($"grant select, insert, delete, update on seen to '{UserID}'", connection);
-                    MySqlCommand commandinsertusers = new MySqlCommand($"insert users value ('{UserID}', MD5('{Password}'))", connection);
-                    MySqlCommand commandgrantselectcountry = new MySqlCommand($"grant select on Country to '{UserID}'", connection);
+                    MySqlCommand commandgrantselectmovies = new MySqlCommand($"grant select on filmy to '{UserID}'", connection);
+                    MySqlCommand commandgrantselectactors = new MySqlCommand($"grant select on aktorzy to '{UserID}'", connection);
+                    MySqlCommand commandgrantselectdirectors = new MySqlCommand($"grant select on reżyserzy to '{UserID}'", connection);
+                    MySqlCommand commandgrantselectcompanies = new MySqlCommand($"grant select on wytwórnie to '{UserID}'", connection);
+                    MySqlCommand commandgrantpriviligesseen = new MySqlCommand($"grant select, insert, delete, update on obejrzane to '{UserID}'", connection);
+                    MySqlCommand commandinsertusers = new MySqlCommand($"insert użytkownicy value ('{UserID}', MD5('{Password}'))", connection);
+                    MySqlCommand commandgrantselectcountries = new MySqlCommand($"grant select on Country to '{UserID}'", connection);
 
                     connection.Open();
                     var id1 = commandcreate.ExecuteNonQuery();
@@ -50,7 +50,7 @@ namespace CoPoleci.DAL
                     var id5 = commandgrantselectcompanies.ExecuteNonQuery();
                     var id6 = commandgrantpriviligesseen.ExecuteNonQuery();
                     var id7 = commandinsertusers.ExecuteNonQuery();
-                    var id8 = commandgrantselectcountry.ExecuteNonQuery();
+                    var id8 = commandgrantselectcountries.ExecuteNonQuery();
                     state = true;
                     connection.Close();
                 }

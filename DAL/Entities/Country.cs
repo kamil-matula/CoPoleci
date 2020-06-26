@@ -6,10 +6,10 @@ namespace CoPoleci.DAL
 {
     public class Country
     {
-        public string Code { get; set; }
-        public string Name { get; set; }
-        public int Population { get; set; }
-        public BitmapImage Poster { get; set; }
+        public string Code { get; private set; }
+        public string Name { get; private set; }
+        public int Population { get; private set; }
+        public BitmapImage Poster { get; private set; }
 
         public Country(MySqlDataReader dataReader)
         {
@@ -17,7 +17,6 @@ namespace CoPoleci.DAL
             Name = dataReader["name"].ToString();
             Population = (int)dataReader["population"];
             Poster = new BitmapImage(new Uri($@"\MoviePosters\Avatar.jpg", UriKind.Relative));
-
         }
 
         public override string ToString()

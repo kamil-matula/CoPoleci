@@ -20,10 +20,11 @@ namespace CoPoleci
 
         }
 
-         private void Movie_Clicked(object sender, RoutedEventArgs e)
+        private void Movie_Clicked(object sender, RoutedEventArgs e)
         {
             //tu bedzie pojawianie się kontrolki aktora albo w najgorszym wypadku messageboxa ze szczegółami 
         }
+
         private void LoadIcon()
         {
 

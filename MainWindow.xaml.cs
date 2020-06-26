@@ -6,7 +6,7 @@ namespace CoPoleci
 {
     public partial class MainWindow : Window
     {
-        private TabManager tm;
+        private readonly TabManager tm;
         public MainWindow()
         {
             InitializeComponent();
@@ -19,6 +19,7 @@ namespace CoPoleci
         {
             Application.Current.Shutdown();
         }
+
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
             GridPrincipal.Children.Clear();
@@ -34,7 +35,7 @@ namespace CoPoleci
 
                 case 0:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(tm.SeenMovies );
+                    GridPrincipal.Children.Add(tm.SeenMovies);
                     break;
                 case 1:
                     GridPrincipal.Children.Clear();
