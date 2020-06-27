@@ -52,11 +52,42 @@ namespace CoPoleci.DAL
             X_romance = (double)dataReader["romantyczność"];
             X_music = (double)dataReader["muzyka"];
             X_criminal = (double)dataReader["kryminalistyka"];
+            X_age = AgeConverter(Year);
         }
 
         public override string ToString()
         {
             return $"{Id} {Title} {Year} {Genre}";
+        }
+
+        private double AgeConverter(short year)
+        {
+            double yearValue;
+
+            if (year <= 1950)
+                yearValue = 0.0;
+            else if (year <= 1960)
+                yearValue = 0.1;
+            else if (year <= 1970)
+                yearValue = 0.2;
+            else if (year <= 1980)
+                yearValue = 0.3;
+            else if (year <= 1990)
+                yearValue = 0.4;
+            else if (year <= 1999)
+                yearValue = 0.5;
+            else if (year <= 2005)
+                yearValue = 0.6;
+            else if (year <= 2008)
+                yearValue = 0.7;
+            else if (year <= 2012)
+                yearValue = 0.8;
+            else if (year <= 2017)
+                yearValue = 0.9;
+            else
+                yearValue = 1.0;
+
+            return yearValue;
         }
     }
 }

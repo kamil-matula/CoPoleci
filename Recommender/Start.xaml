@@ -13,30 +13,27 @@
             <StackPanel>
 
                 <TextBlock x:Name="QuestionBlock" FontSize="25" HorizontalAlignment="Center" Foreground="White">
-                    Witamy w aplikacji, która wybiera <LineBreak/> idealny dla Ciebie film na wieczór!
+                    Sprawdź, jaki jest idealny<LineBreak/> dla Ciebie film na wieczór!
                 </TextBlock>
 
 
                 <Separator Margin="0,10,0,10"/>
-                <TextBlock FontSize="15" Text="Odpowiedz na 10 pytań, a wybierzemy 5 filmów,&#x0a;       które najbliższe są Twoim oczekiwaniom."
+                <TextBlock FontSize="18" Text="Odpowiedz na 10 pytań, a wybierzemy&#x0a;        5 filmów, które najbliższe są&#x0a;           Twoim oczekiwaniom."
                            HorizontalAlignment="Center" Foreground="White"/>
 
-                <TextBlock x:Name="Authors" Text="Projekt utworzony przez:" TextDecorations="Underline"
-                       FontSize="14" HorizontalAlignment="Center" Margin="7" Foreground="White"/>
-
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <WrapPanel Name="filmIcon" HorizontalAlignment="Left" Margin="50,0"/>
-                    <TextBlock x:Name="Authors1" FontSize="12" HorizontalAlignment="Center" TextAlignment="Center" Foreground="White">
-                        Dominika Limanówka <LineBreak/> Tatiana Cieślar <LineBreak/> Kamil Matula <LineBreak/> kierunek: Informatyka
-                    </TextBlock>
-                    <WrapPanel Name="filmIcon2" HorizontalAlignment="Right" Margin="50,0"/>
-                </StackPanel>
-            </StackPanel>
-
-            <Button x:Name="firstQuestionButton" Content="Pytanie nr 1" FontSize="16"
+                    <WrapPanel Name="filmIcon" HorizontalAlignment="Left" Margin="20,0"/>
+                    
+                    <Button x:Name="firstQuestionButton" Content="Pytanie nr 1" FontSize="16"
                     Click="firstQuestionButton_Click" HorizontalAlignment="Center"
                     Width="160" Height="50" Background="Gold" VerticalAlignment="Bottom"
                     Margin="10"/>
+                    
+                    <WrapPanel Name="filmIcon2" HorizontalAlignment="Right" Margin="20,0"/>
+                </StackPanel>
+            </StackPanel>
+
+            
         </Grid>
     </Grid>
 </UserControl>

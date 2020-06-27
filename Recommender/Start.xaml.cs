@@ -31,16 +31,16 @@ namespace CoPoleci
         {
             Image img = new Image
             {
-                Height = 115,
-                Width = 115,
+                Height = 95,
+                Width = 95,
                 Source = new BitmapImage(new Uri(@"\Images\film.png", UriKind.Relative))
             };
             filmIcon.Children.Add(img);
 
             Image img2 = new Image
             {
-                Height = 115,
-                Width = 115,
+                Height = 95,
+                Width = 95,
                 Source = new BitmapImage(new Uri(@"\Images\filmFlipped.png", UriKind.Relative))
             };
 
