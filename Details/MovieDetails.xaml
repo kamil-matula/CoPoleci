@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="CoPoleci.MovieDetails"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="380" d:DesignWidth="580">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        <WrapPanel Name="posterImage" HorizontalAlignment="Left" Margin="10"/>
+        <StackPanel Grid.Column="2">
+            <TextBlock x:Name="movieTitle_TextBlock" HorizontalAlignment="Left" Margin="5" FontSize="20" 
+                       FontWeight="Bold" Foreground="White"/>
+            <TextBlock x:Name="genre_TextBlock" HorizontalAlignment="Left" Margin="5" FontSize="15" 
+                       FontWeight="Bold" Foreground="White"/>
+            <TextBlock x:Name="year_TextBlock" HorizontalAlignment="Left" Margin="5" FontSize="15" 
+                       FontWeight="Bold" Foreground="White"/>
+        </StackPanel>
+
+        <Button x:Name="ButtonOK" Grid.Row="1" Content="Wróć" Click="ButtonWroc_Click"
+                Height="40" Width="100" VerticalAlignment="Bottom" Margin="10" Background="Gold"/>
+        <Button x:Name="ButtonDodaj" Grid.Row="1" Grid.Column="1" Content="Dodaj do obejrzanych" Click="ButtonDodaj_Click"
+                Height="40" Width="200" VerticalAlignment="Bottom" Margin="10" Background="Gold"/>
+    </Grid>
+</UserControl>

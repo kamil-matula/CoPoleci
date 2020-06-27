@@ -8,7 +8,7 @@ namespace CoPoleci.DAL
     {
         #region Właściwości
         private static MySqlConnectionStringBuilder stringBuilder;
-        private static string Nickname { get; set; } 
+        public static string Nickname { get; private set; } 
         private static string Password { get; set; }
         private static string Server { get; set; }
         private static string Database { get; set; }

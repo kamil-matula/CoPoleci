@@ -5,20 +5,10 @@ namespace CoPoleci.DAL
     using CoPoleci.DAL.Repositories;
     class QueryManager // Klasa zawierająca wyniki zapytań
     {
-        private static List<Country> countries = null;
         private static List<Actor> actors = null;
         private static List<Director> directors = null;
         private static List<Movie> movies = null;
         private static List<Company> companies = null;
-
-        public List<Country> Countries
-        {
-            get
-            {
-                if (countries == null) countries = CountryRepo.GetAllCountries();
-                return countries;
-            }
-        }
 
         public List<Actor> Actors 
         {
@@ -38,7 +28,7 @@ namespace CoPoleci.DAL
             }
         }
 
-        public List<Movie> Movies 
+        public static List<Movie> Movies 
         {
             get
             {
@@ -57,5 +47,7 @@ namespace CoPoleci.DAL
         }
 
         public static List<User> Users { get => UserRepo.GetAllUsers(); }
+
+        public static List<Movie> SeenMovies { get => MovieRepo.GetSeenMovies(); }
     }
 }

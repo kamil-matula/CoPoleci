@@ -32,7 +32,15 @@ namespace CoPoleci
 
         private void Movie_Clicked(object sender, RoutedEventArgs e)
         {
-            //tu bedzie pojawianie się kontrolki aktora albo w najgorszym wypadku messageboxa ze szczegółami 
+            var clickedmovie = QueryManager.Movies.Find(i => i.Title == "Avatar");
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    (window as MainWindow).GridPrincipal.Children.Clear();
+                    (window as MainWindow).GridPrincipal.Children.Add(new MovieDetails(clickedmovie));
+                }
+            }
         }
 
         private void LoadIcon()

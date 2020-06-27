@@ -1,30 +1,26 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Imaging;
 
 namespace CoPoleci
 {
+    using CoPoleci.DAL;
     public partial class PosterPage : UserControl
     {
+        private Movie clickedmovie = null;
         public PosterPage()
         {
             InitializeComponent();
+            clickedmovie = QueryManager.Movies.Find(i => i.Title == Ratings.currentItem);
             LoadImages();
         }
 
         // Załadowanie grafiki będącej plakatem:
         private void LoadImages()
         {
-            movieTitle.Text = Ratings.currentItem;
-            string nameOfPoster = Ratings.currentItem + ".jpg";
-            Image img = new Image
-            {
-                Height = 400,
-                Width = 150,
-                Source = new BitmapImage(new Uri($@"\MoviePosters\{nameOfPoster}", UriKind.Relative))
-            };
-            posterImage.Children.Add(img);
+            movieTitle_TextBlock.Text = clickedmovie.Title;
+            genre_TextBlock.Text = clickedmovie.Genre;
+            year_TextBlock.Text = clickedmovie.Year.ToString();
+            posterImage.Children.Add(new Image { Height = 400, Width = 150, Source = clickedmovie.Poster });
         }
 
         // Powrót do strony końcowej:

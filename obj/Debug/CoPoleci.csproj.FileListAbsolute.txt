@@ -339,3 +339,5 @@ C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\CompaniesTab.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\DirectorsTab.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\MoviesTab.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\SeenMoviesTab.baml
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Details\MovieDetails.baml
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Details\MovieDetails.g.cs
