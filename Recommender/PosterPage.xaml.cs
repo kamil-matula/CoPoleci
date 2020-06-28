@@ -6,7 +6,7 @@ namespace CoPoleci
     using CoPoleci.DAL;
     public partial class PosterPage : UserControl
     {
-        private Movie clickedmovie = null;
+        private readonly Movie clickedmovie = null;
         public PosterPage()
         {
             InitializeComponent();

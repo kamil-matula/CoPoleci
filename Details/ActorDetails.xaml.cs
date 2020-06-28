@@ -6,7 +6,7 @@ namespace CoPoleci
     using CoPoleci.DAL;
     public partial class ActorDetails : UserControl
     {
-        private Actor clickedactor = null;
+        private readonly Actor clickedactor = null;
         public ActorDetails(Actor actor)
         {
             InitializeComponent();
@@ -18,10 +18,9 @@ namespace CoPoleci
         private void LoadImages()
         {
             actorName_TextBlock.Text = clickedactor.Name;
-            actorBorn_TextBlock.Text = ("Data urodzenia: "+clickedactor.Born.ToString());
+            actorBorn_TextBlock.Text = "Data urodzenia: " + clickedactor.Born.ToString();
             try
             {
-               
                 actorDied_TextBlock.Text = ("Data śmierci:      " + clickedactor.Died.ToString());
             }
             catch { }

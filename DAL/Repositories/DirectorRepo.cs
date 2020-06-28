@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
-namespace CoPoleci.DAL.Repositories
+namespace CoPoleci.DAL
 {
     class DirectorRepo
     {

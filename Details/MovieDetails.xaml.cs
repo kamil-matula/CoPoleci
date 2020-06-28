@@ -6,11 +6,21 @@ namespace CoPoleci
     using CoPoleci.DAL;
     public partial class MovieDetails : UserControl
     {
-        private Movie clickedmovie = null;
+        private readonly Movie clickedmovie = null;
         public MovieDetails(Movie movie)
         {
             InitializeComponent();
             clickedmovie = movie;
+            if (clickedmovie.WasSeen == false)
+            {
+                ButtonAdd.Visibility = Visibility.Visible;
+                ButtonRemove.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                ButtonAdd.Visibility = Visibility.Hidden;
+                ButtonRemove.Visibility = Visibility.Visible;
+            }
             LoadImages();
         }
 
@@ -18,9 +28,9 @@ namespace CoPoleci
         private void LoadImages()
         {
             movieTitle_TextBlock.Text = clickedmovie.Title;
-            genre_TextBlock.Text = clickedmovie.Genre;
-            year_TextBlock.Text = clickedmovie.Year.ToString();
-            posterImage.Children.Add(new Image { Height = 400, Width = 150, Source = clickedmovie.Poster });
+            year_TextBlock.Text = "Rok produkcji: " + clickedmovie.Year.ToString();
+            genre_TextBlock.Text = "Gatunek: " + clickedmovie.Genre;
+            posterImage.Children.Add(new Image { Height = 500, Width = 190, Source = clickedmovie.Poster, VerticalAlignment = VerticalAlignment.Top, HorizontalAlignment = HorizontalAlignment.Left });
         }
 
         // Powrót do strony końcowej:
@@ -39,7 +49,26 @@ namespace CoPoleci
         // Dodawanie filmu do ulubionych:
         private void ButtonDodaj_Click(object sender, RoutedEventArgs e)
         {
-            // na razie nie działa :c
+            if (MovieRepo.AddToSeen(clickedmovie) == false)
+            {
+                MessageBox.Show("Nie udało się dodać filmu do obejrzanych!");
+                return;
+            }
+            clickedmovie.WasSeen = true;
+            ButtonAdd.Visibility = Visibility.Hidden;
+            ButtonRemove.Visibility = Visibility.Visible;
+        }
+
+        private void ButtonUsun_Click(object sender, RoutedEventArgs e)
+        {
+            if (MovieRepo.RemoveFromSeen(clickedmovie) == false)
+            {
+                MessageBox.Show("Nie udało się usunąć filmu z obejrzanych!");
+                return;
+            }
+            clickedmovie.WasSeen = false;
+            ButtonAdd.Visibility = Visibility.Visible;
+            ButtonRemove.Visibility = Visibility.Hidden;
         }
     }
 }

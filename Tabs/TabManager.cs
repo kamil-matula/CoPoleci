@@ -7,16 +7,10 @@
         private static DirectorsTab directors = null;
         private static MovieRankings ranking = null;
         private static MoviesTab movies = null;
-        private static SeenMoviesTab seenmovies = null;
 
-        public static SeenMoviesTab SeenMovies
-        {
-            get
-            {
-                if (seenmovies == null) seenmovies = new SeenMoviesTab();
-                return seenmovies;
-            }
-        }
+        public static SeenMoviesTab SeenMovies { get => new SeenMoviesTab(); }
+
+        public static Start Recommender { get => new Start(); }
 
         public static MoviesTab Movies 
         {

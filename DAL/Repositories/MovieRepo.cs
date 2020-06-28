@@ -3,7 +3,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Diagnostics;
 
-namespace CoPoleci.DAL.Repositories
+namespace CoPoleci.DAL
 {
     class MovieRepo
     {
@@ -30,34 +30,61 @@ namespace CoPoleci.DAL.Repositories
 
         public static List<Movie> GetSeenMovies()
         {
-            List<Movie> movies = new List<Movie>();
+            List<int> ids = new List<int>();
             try
             {
                 using (var connection = DBConnection.Instance.Connection)
                 {
-                    MySqlCommand command = new MySqlCommand($"select * from filmy where id in " +
+                    MySqlCommand command = new MySqlCommand($"select id from filmy where id in " +
                         $"(select id_filmu from obejrzane where nick = '{DBConnection.Nickname}')", connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())
-                        movies.Add(new Movie(dataReader));
+                        ids.Add((byte)dataReader["id"]);
                     connection.Close();
                 }
             }
             catch { }
-            return movies;
+
+            List<Movie> allmovies = QueryManager.Movies;
+            List<Movie> seenmovies = new List<Movie>();
+            foreach (int id in ids)
+            {
+                allmovies[id - 1].WasSeen = true;
+                seenmovies.Add(allmovies[id - 1]);
+            }            
+
+            return seenmovies;
         }
 
-        public bool AddToSeen(Movie movie, string rate)
+        public static bool AddToSeen(Movie movie, string rate = "")
         {
             bool state = false;
             try
             {
                 using (var connection = DBConnection.Instance.Connection)
                 {
-                    MySqlCommand command = new MySqlCommand($"insert obejrzane value ('{DBConnection.Nickname}', '{movie.Id}', '{rate}', '{DateTime.Today}')", connection);
+                    MySqlCommand command = new MySqlCommand($"insert obejrzane value ('{DBConnection.Nickname}', '{movie.Id}', '{rate}', '{DateTime.Today.ToShortDateString()}')", connection);
                     connection.Open();
                     _= command.ExecuteNonQuery();
+                    state = true;
+                    connection.Close();
+                }
+            }
+            catch { }
+            return state;
+        }
+
+        public static bool RemoveFromSeen(Movie movie)
+        {
+            bool state = false;
+            try
+            {
+                using (var connection = DBConnection.Instance.Connection)
+                {
+                    MySqlCommand command = new MySqlCommand($"delete from obejrzane where nick = '{DBConnection.Nickname}' and id_filmu = '{movie.Id}'", connection);
+                    connection.Open();
+                    _ = command.ExecuteNonQuery();
                     state = true;
                     connection.Close();
                 }

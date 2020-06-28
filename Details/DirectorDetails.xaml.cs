@@ -6,7 +6,7 @@ namespace CoPoleci
     using CoPoleci.DAL;
     public partial class DirectorDetails : UserControl
     {
-        private Director clickeddirector = null;
+        private readonly Director clickeddirector = null;
         public DirectorDetails(Director director)
         {
             InitializeComponent();
@@ -18,11 +18,11 @@ namespace CoPoleci
         private void LoadImages()
         {
             directorName_TextBlock.Text = clickeddirector.Name;
-            directorBorn_TextBlock.Text = ("Data urodzenia: " + clickeddirector.Born.ToString());
+            directorBorn_TextBlock.Text = "Data urodzenia: " + clickeddirector.Born.ToString();
             try
             {
 
-                directorDied_TextBlock.Text = ("Data śmierci:      " + clickeddirector.Died.ToString());
+                directorDied_TextBlock.Text = "Data śmierci:      " + clickeddirector.Died.ToString();
             }
             catch { }
             image.Children.Add(new Image { Height = 500, Width = 190, Source = clickeddirector.Photo, VerticalAlignment = VerticalAlignment.Top, HorizontalAlignment = HorizontalAlignment.Left });

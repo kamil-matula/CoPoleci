@@ -58,7 +58,7 @@ namespace CoPoleci
                 case 6:
                     Questions.Number = 0;
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new Start());
+                    GridPrincipal.Children.Add(TabManager.Recommender);
                     break;
                 default:
                     break;

@@ -2,8 +2,7 @@
 
 namespace CoPoleci.DAL
 {
-    using CoPoleci.DAL.Repositories;
-    class QueryManager // Klasa zawierająca wyniki zapytań
+    public class QueryManager // Klasa zawierająca wyniki zapytań
     {
         private static List<Actor> actors = null;
         private static List<Director> directors = null;

@@ -22,6 +22,7 @@ namespace CoPoleci.DAL
         public double X_music { get; private set; }
         public double X_criminal { get; private set; }
         public double X_scary { get; private set; }
+        public bool WasSeen { get; set; } = false;
 
         public Movie(List<double> ratings) 
         {
@@ -46,13 +47,14 @@ namespace CoPoleci.DAL
             Genre = dataReader["gatunek"].ToString();
             X_fun = (double)dataReader["zabawność"];
             X_real = (double)dataReader["realizm"];
+            X_age = AgeConverter(Year);
             X_emo = (double)dataReader["wzruszenie"];
             X_ambit = (double)dataReader["ambitność"];
             X_action = (double)dataReader["akcja"];
             X_romance = (double)dataReader["romantyczność"];
             X_music = (double)dataReader["muzyka"];
             X_criminal = (double)dataReader["kryminalistyka"];
-            X_age = AgeConverter(Year);
+            X_scary = (double)dataReader["strach"];
         }
 
         private double AgeConverter(short year)

@@ -6,7 +6,7 @@ namespace CoPoleci
     using CoPoleci.DAL;
     public partial class CompanyDetails : UserControl
     {
-        private Company clickedcompany = null;
+        private readonly Company clickedcompany = null;
         public CompanyDetails(Company company)
         {
             InitializeComponent();
@@ -18,8 +18,8 @@ namespace CoPoleci
         private void LoadImages()
         {
             companyName_TextBlock.Text = clickedcompany.Name;
-            companyHeadQuarter_TextBlock.Text = ("Siedziba: " + clickedcompany.HeadQuarters.ToString());
-            companyFounded_TextBlock.Text = ("Data założenia: " + clickedcompany.Founded.ToString());          
+            companyHeadQuarter_TextBlock.Text = "Siedziba: " + clickedcompany.HeadQuarters.ToString();
+            companyFounded_TextBlock.Text = "Data założenia: " + clickedcompany.Founded.ToString();          
             image.Children.Add(new Image { Height = 500, Width = 190, Source = clickedcompany.Photo, VerticalAlignment = VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Left });
         }
 

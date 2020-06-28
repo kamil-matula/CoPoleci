@@ -2,12 +2,10 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using CoPoleci.DAL;
 
 namespace CoPoleci
 {
-    using DAL;
-    using DAL.Repositories;
-
     public partial class Result : UserControl
     {
         public Result()
