@@ -5,8 +5,6 @@ namespace CoPoleci.DAL
 {
     class CompanyRepo
     {
-        private const string ALL_COMPANIES_QUERY = "select * from wytwórnie";
-
         public static List<Company> GetAllCompanies()
         {
             List<Company> companies = new List<Company>();
@@ -14,7 +12,7 @@ namespace CoPoleci.DAL
             {
                 using (var connection = DBConnection.Instance.Connection)
                 {
-                    MySqlCommand command = new MySqlCommand(ALL_COMPANIES_QUERY, connection);
+                    MySqlCommand command = new MySqlCommand("select * from wytwórnie", connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())

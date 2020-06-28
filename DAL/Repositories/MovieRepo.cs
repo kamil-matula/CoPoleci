@@ -1,14 +1,11 @@
 ﻿using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using System;
-using System.Diagnostics;
 
 namespace CoPoleci.DAL
 {
     class MovieRepo
     {
-        private const string ALL_MOVIES_QUERY = "select * from filmy";
-
         public static List<Movie> GetAllMovies()
         {
             List<Movie> movies = new List<Movie>();
@@ -16,7 +13,7 @@ namespace CoPoleci.DAL
             {
                 using (var connection = DBConnection.Instance.Connection)
                 {
-                    MySqlCommand command = new MySqlCommand(ALL_MOVIES_QUERY, connection);
+                    MySqlCommand command = new MySqlCommand("select * from filmy", connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())
@@ -28,6 +25,7 @@ namespace CoPoleci.DAL
             return movies;
         }
 
+        #region Seen Section
         public static List<Movie> GetSeenMovies()
         {
             List<int> ids = new List<int>();
@@ -35,12 +33,11 @@ namespace CoPoleci.DAL
             {
                 using (var connection = DBConnection.Instance.Connection)
                 {
-                    MySqlCommand command = new MySqlCommand($"select id from filmy where id in " +
-                        $"(select id_filmu from obejrzane where nick = '{DBConnection.Nickname}')", connection);
+                    MySqlCommand command = new MySqlCommand($"select id_filmu from obejrzane where nick = '{DBConnection.Nickname}'", connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())
-                        ids.Add((byte)dataReader["id"]);
+                        ids.Add((byte)dataReader["id_filmu"]);
                     connection.Close();
                 }
             }
@@ -91,6 +88,32 @@ namespace CoPoleci.DAL
             }
             catch { }
             return state;
+        }
+        #endregion
+
+        public static List<Movie> GetMoviesFromCompany(Company company)
+        {
+            List<int> ids = new List<int>();
+            try
+            {
+                using (var connection = DBConnection.Instance.Connection)
+                {
+                    MySqlCommand command = new MySqlCommand($"select id_filmu from wyprodukował where nazwa_wytwórni = '{company.Name}'", connection);
+                    connection.Open();
+                    var dataReader = command.ExecuteReader();
+                    while (dataReader.Read())
+                        ids.Add((byte)dataReader["id_filmu"]);
+                    connection.Close();
+                }
+            }
+            catch { }
+
+            List<Movie> allmovies = QueryManager.Movies;
+            List<Movie> thiscompanymovies = new List<Movie>();
+            foreach (int id in ids)
+                thiscompanymovies.Add(allmovies[id - 1]);
+
+            return thiscompanymovies;
         }
     }
 }

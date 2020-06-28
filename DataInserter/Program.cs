@@ -13,7 +13,8 @@ namespace DataInserter
                 Password = "",
                 Server = "localhost",
                 Database = "CoPoleci",
-                Port = 3306
+                Port = 3306,
+                CharacterSet = "utf8"
             };
 
             string[] lines = File.ReadAllLines(args[0]);

@@ -37,6 +37,37 @@
                     </StackPanel>
                     <WrapPanel Name="posterImage" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" />
                 </Grid>
+                <Grid Grid.Row="1">
+                    <ListView Name="ActorListView" Grid.Row="2"  Margin="2" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+                        <ListView.View>
+                            <GridView>
+                                <GridView.Columns>
+                                    <GridViewColumn Width="100">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image Source="{Binding Photo}" Width="50" Height="80" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                        <GridViewColumn.Header>
+                                            <TextBlock Text="Zdjęcie" Foreground="Black"/>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+
+                                    <GridViewColumn Width="200">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Name}" Foreground="Black" FontSize="15"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                        <GridViewColumn.Header>
+                                            <TextBlock Text="Imię i nazwisko" Foreground="Black"/>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>

@@ -1,9 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using CoPoleci.DAL;
 
 namespace CoPoleci
 {
-    using CoPoleci.DAL;
     public partial class CompanyDetails : UserControl
     {
         private readonly Company clickedcompany = null;
@@ -12,6 +12,8 @@ namespace CoPoleci
             InitializeComponent();
             clickedcompany = company;
             LoadInfo();
+            MovieListView.ItemsSource = MovieRepo.GetMoviesFromCompany(clickedcompany);
+            MovieListView.Items.Refresh();
         }
 
         // Załadowanie informacji:

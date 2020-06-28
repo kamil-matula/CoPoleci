@@ -17,8 +17,9 @@
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
             <Grid >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="3*"/>
                     <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="0.5*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="550"/>
@@ -29,21 +30,59 @@
                         <ColumnDefinition Width="3.4*"/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                        
-                        <TextBlock x:Name="companyName_TextBlock" Grid.Column="1" Grid.Row="0"  Foreground="Black" Margin="10 5"
-                    Style="{StaticResource TextBlockStyle}" TextWrapping="WrapWithOverflow" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                        <TextBlock x:Name="companyHeadQuarter_TextBlock" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom"  Margin="10 5" FontSize="22" TextWrapping="WrapWithOverflow"
-                      />
-                        <TextBlock x:Name="companyFounded_TextBlock" Text="" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 5" FontSize="22" 
-                        />
+                        <TextBlock x:Name="companyName_TextBlock" Grid.Column="1" Grid.Row="0"  Foreground="Black" Margin="10 5" Style="{StaticResource TextBlockStyle}" 
+                                   TextWrapping="WrapWithOverflow" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="companyHeadQuarter_TextBlock" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" 
+                                   VerticalAlignment="Bottom"  Margin="10 5" FontSize="22" TextWrapping="WrapWithOverflow"/>
+                        <TextBlock x:Name="companyFounded_TextBlock" Text="" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 5" FontSize="22"/>
                     </StackPanel>
                     <WrapPanel Name="image" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" />
                 </Grid>
                 <Grid Grid.Row="1">
+                    <ListView Name="MovieListView" Grid.Row="2"  Margin="2" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+                        <ListView.View>
+                            <GridView>
+                                <GridView.Columns>
+                                    <GridViewColumn Width="130">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image Source="{Binding Poster}" Width="120" Height="120" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                        <GridViewColumn.Header>
+                                            <TextBlock Text="Plakat" Foreground="Black"/>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
 
-                    <Button x:Name="ButtonOK" Content="Wróć" Click="ButtonBack_Click"
-                Height="40" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10" Background="Gold"/>
-                    
+                                    <GridViewColumn Width="210">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Title}" Foreground="Black" FontSize="20"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                        <GridViewColumn.Header>
+                                            <TextBlock Text="Tytuł" Foreground="Black"/>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+
+                                    <GridViewColumn Width="100">
+                                        <GridViewColumn.CellTemplate >
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Year}" Foreground="Black" FontSize="20" HorizontalAlignment="Stretch"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                        <GridViewColumn.Header>
+                                            <TextBlock Text="Rok" Foreground="Black"/>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Button x:Name="ButtonOK" Content="Wróć" Click="ButtonBack_Click" Height="40" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10" Background="Gold"/>
                 </Grid>
             </Grid>
         </materialDesign:TransitioningContent>

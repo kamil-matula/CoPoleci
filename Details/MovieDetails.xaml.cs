@@ -22,6 +22,8 @@ namespace CoPoleci
                 ButtonRemove.Visibility = Visibility.Visible;
             }
             LoadInfo();
+            ActorListView.ItemsSource = ActorRepo.GetActorsFromMovie(clickedmovie);
+            ActorListView.Items.Refresh();
         }
 
         // Załadowanie informacji:

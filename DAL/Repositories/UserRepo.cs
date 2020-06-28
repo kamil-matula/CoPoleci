@@ -40,17 +40,15 @@ namespace CoPoleci.DAL
                     MySqlCommand commandgrantselectcompanies = new MySqlCommand($"grant select on wytwórnie to '{UserID}'", connection);
                     MySqlCommand commandgrantpriviligesseen = new MySqlCommand($"grant select, insert, delete, update on obejrzane to '{UserID}'", connection);
                     MySqlCommand commandinsertusers = new MySqlCommand($"insert użytkownicy value ('{UserID}', MD5('{Password}'))", connection);
-                    MySqlCommand commandgrantselectcountries = new MySqlCommand($"grant select on Country to '{UserID}'", connection);
 
                     connection.Open();
-                    var id1 = commandcreate.ExecuteNonQuery();
-                    var id2 = commandgrantselectmovies.ExecuteNonQuery();
-                    var id3 = commandgrantselectactors.ExecuteNonQuery();
-                    var id4 = commandgrantselectdirectors.ExecuteNonQuery();
-                    var id5 = commandgrantselectcompanies.ExecuteNonQuery();
-                    var id6 = commandgrantpriviligesseen.ExecuteNonQuery();
-                    var id7 = commandinsertusers.ExecuteNonQuery();
-                    var id8 = commandgrantselectcountries.ExecuteNonQuery();
+                    _ = commandcreate.ExecuteNonQuery();
+                    _ = commandgrantselectmovies.ExecuteNonQuery();
+                    _ = commandgrantselectactors.ExecuteNonQuery();
+                    _ = commandgrantselectdirectors.ExecuteNonQuery();
+                    _ = commandgrantselectcompanies.ExecuteNonQuery();
+                    _ = commandgrantpriviligesseen.ExecuteNonQuery();
+                    _ = commandinsertusers.ExecuteNonQuery();
                     state = true;
                     connection.Close();
                 }
