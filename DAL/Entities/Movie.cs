@@ -41,7 +41,7 @@ namespace CoPoleci.DAL
         {
             Id = (byte)dataReader["id"];
             Title = dataReader["tytuł"].ToString();
-            Poster = new BitmapImage(new Uri($@"\MoviePosters\{Title}.jpg", UriKind.Relative));
+            Poster = new BitmapImage(new Uri($@"\Graphics\MoviePosters\{Title}.jpg", UriKind.Relative));
             Year = (short)dataReader["rok"];
             Genre = dataReader["gatunek"].ToString();
             X_fun = (double)dataReader["zabawność"];
@@ -53,11 +53,6 @@ namespace CoPoleci.DAL
             X_music = (double)dataReader["muzyka"];
             X_criminal = (double)dataReader["kryminalistyka"];
             X_age = AgeConverter(Year);
-        }
-
-        public override string ToString()
-        {
-            return $"{Id} {Title} {Year} {Genre}";
         }
 
         private double AgeConverter(short year)

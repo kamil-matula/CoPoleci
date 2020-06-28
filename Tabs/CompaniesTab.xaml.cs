@@ -34,7 +34,7 @@ namespace CoPoleci
         {
             Button btn = sender as Button;
 
-            var clickedcompany = QueryManager.Companies.Find(i => i.Name == btn.Tag);
+            var clickedcompany = QueryManager.Companies.Find(i => i.Name == btn.Tag.ToString());
 
             foreach (Window window in Application.Current.Windows)
             {
@@ -57,7 +57,7 @@ namespace CoPoleci
                 HorizontalAlignment = HorizontalAlignment.Right,
                 VerticalAlignment = VerticalAlignment.Top,
                 Margin = new Thickness(25, 0, 0, 0),
-                Source = new BitmapImage(new Uri($@"\Images\{nameOfImage}", UriKind.Relative))
+                Source = new BitmapImage(new Uri($@"\Graphics\Images\{nameOfImage}", UriKind.Relative))
             };
 
             icon.Children.Add(img);

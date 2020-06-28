@@ -10,12 +10,10 @@
     <UserControl.Resources>
         <vm:QueryManager x:Key="QM"/>
         <Style x:Key="TextBlockStyle" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="/Fonts/Ubuntu-Medium.ttf #ubuntu" />
+            <Setter Property="FontFamily" Value="/Graphics/Fonts/Ubuntu-Medium.ttf #ubuntu" />
             <Setter Property="FontSize" Value="75"/>
         </Style>
     </UserControl.Resources>
-
-
 
     <Grid>
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
@@ -63,13 +61,13 @@
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Border Width="140" Margin="10" Height="200" Background="{x:Null}" >
-                                        <Button Tag="{Binding Id}" Width="auto" Height="auto" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Click="Actor_Clicked" >
+                                        <Button Tag="{Binding Id}" Width="auto" Height="auto" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Click="Actor_Clicked">
                                             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                                 <Border Width="140" Height="140" CornerRadius="8" HorizontalAlignment="Center" VerticalAlignment="Center">
                                                     <Image Source="{Binding Photo}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                                 </Border>
-                                                <TextBlock Text="{Binding Name}" FontSize="12"  Margin ="5 0 0 0 " HorizontalAlignment="Stretch" TextWrapping="Wrap" Foreground="Black"  />
-                                                <TextBlock Margin="5,0,0,0" Text="{Binding Born}" FontSize="11" Foreground="Black" />
+                                                <TextBlock Text="{Binding Name}" FontSize="12"  Margin ="5 0 0 0 " HorizontalAlignment="Stretch" TextWrapping="Wrap" Foreground="Black"/>
+                                                <TextBlock Margin="5,0,0,0" Text="{Binding Born}" FontSize="11" Foreground="Black"/>
                                             </StackPanel>
                                         </Button>
                                     </Border>

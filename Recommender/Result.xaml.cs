@@ -41,7 +41,7 @@ namespace CoPoleci
             {
                 Height = 100,
                 Width = 100,
-                Source = new BitmapImage(new Uri(@"\Images\popcorn.png", UriKind.Relative))
+                Source = new BitmapImage(new Uri(@"\Graphics\Images\popcorn.png", UriKind.Relative))
             };
             popcornImage.Children.Add(img);
 
@@ -49,7 +49,7 @@ namespace CoPoleci
             {
                 Height = 110,
                 Width = 110,
-                Source = new BitmapImage(new Uri(@"\Images\filmImage2.png", UriKind.Relative))
+                Source = new BitmapImage(new Uri(@"\Graphics\Images\filmImage2.png", UriKind.Relative))
             };
             filmImage.Children.Add(img2);
         }

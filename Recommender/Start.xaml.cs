@@ -33,7 +33,7 @@ namespace CoPoleci
             {
                 Height = 95,
                 Width = 95,
-                Source = new BitmapImage(new Uri(@"\Images\film.png", UriKind.Relative))
+                Source = new BitmapImage(new Uri(@"\Graphics\Images\film.png", UriKind.Relative))
             };
             filmIcon.Children.Add(img);
 
@@ -41,7 +41,7 @@ namespace CoPoleci
             {
                 Height = 95,
                 Width = 95,
-                Source = new BitmapImage(new Uri(@"\Images\filmFlipped.png", UriKind.Relative))
+                Source = new BitmapImage(new Uri(@"\Graphics\Images\filmFlipped.png", UriKind.Relative))
             };
 
             filmIcon2.Children.Add(img2);

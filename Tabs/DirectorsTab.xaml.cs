@@ -57,7 +57,7 @@ namespace CoPoleci
                 HorizontalAlignment = HorizontalAlignment.Right,
                 VerticalAlignment = VerticalAlignment.Top,
                 Margin = new Thickness(25, 0, 0, 0),
-                Source = new BitmapImage(new Uri($@"\Images\{nameOfImage}", UriKind.Relative))
+                Source = new BitmapImage(new Uri($@"\Graphics\Images\{nameOfImage}", UriKind.Relative))
             };
 
             icon.Children.Add(img);

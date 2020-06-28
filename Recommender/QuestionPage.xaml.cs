@@ -61,7 +61,7 @@ namespace CoPoleci
                     Stretch = Stretch.UniformToFill,
                     Height = 30,
                     Width = 30,
-                    Source = new BitmapImage(new Uri(@"\Images\gwiazdaSzara.png", UriKind.Relative))
+                    Source = new BitmapImage(new Uri(@"\Graphics\Images\gwiazdaSzara.png", UriKind.Relative))
                 };
                 img.MouseEnter += imgRateMinus_MouseEnter;
                 greyStarRate.Children.Add(img);
@@ -73,7 +73,7 @@ namespace CoPoleci
                     Height = 30,
                     Width = 30,
                     Visibility = Visibility.Hidden,
-                    Source = new BitmapImage(new Uri(@"\Images\gwiazda.png", UriKind.Relative))
+                    Source = new BitmapImage(new Uri(@"\Graphics\Images\gwiazda.png", UriKind.Relative))
                 };
                 img1.MouseEnter += imgRatePlus_MouseEnter;
                 img1.MouseLeave += imgRatePlus_MouseLeave;

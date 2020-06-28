@@ -2,7 +2,7 @@
 
 namespace CoPoleci.DAL
 {
-    class User
+    public class User
     {
         public string UserID { get; private set; }
         public string Password { get; private set; }

@@ -16,12 +16,7 @@ namespace CoPoleci.DAL
             Name = dataReader["nazwa"].ToString();
             HeadQuarters = dataReader["siedziba"].ToString();
             Founded = (short)dataReader["rok_założenia"];
-            Photo = new BitmapImage(new Uri($@"\FilmProductionLogos\{Name}.jpg", UriKind.Relative));
-        }
-
-        public override string ToString()
-        {
-            return $"{Name} {HeadQuarters} {Founded}";
+            Photo = new BitmapImage(new Uri($@"\Graphics\FilmProductionLogos\{Name}.jpg", UriKind.Relative));
         }
     }
 }

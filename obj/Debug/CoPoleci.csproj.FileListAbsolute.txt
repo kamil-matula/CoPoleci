@@ -521,3 +521,9 @@ C:\Users\domin\source\repos\CoPoleci\obj\Debug\Details\DirectorDetails.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Details\DirectorDetails.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Details\CompanyDetails.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Details\CompanyDetails.g.cs
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Details\ActorDetails.baml
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Details\CompanyDetails.baml
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Details\DirectorDetails.baml
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Details\ActorDetails.g.cs
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Details\CompanyDetails.g.cs
+C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Details\DirectorDetails.g.cs

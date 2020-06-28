@@ -10,7 +10,7 @@
     <UserControl.Resources>
         <vm:QueryManager x:Key="QM"/>
         <Style x:Key="TextBlockStyle" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="/Fonts/Ubuntu-Medium.ttf #ubuntu"/>
+            <Setter Property="FontFamily" Value="/Graphics/Fonts/Ubuntu-Medium.ttf #ubuntu"/>
             <Setter Property="FontSize" Value="70"/>
         </Style>
     </UserControl.Resources>
@@ -42,7 +42,8 @@
                         <ColumnDefinition Width="30*"/>
                     </Grid.ColumnDefinitions>
                     <materialDesign:PackIcon Kind="Magnify" Grid.Column="0" Height="30" Width="30" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                    <TextBox  Width="447" HorizontalAlignment="Left" Background="#FFD0CFCE" VerticalAlignment="Center" FontSize="15" Name="searchingBox" TextChanged="SearchingBox_TextChanged" Foreground="Black" Grid.Column="1"   />
+                    <TextBox  Width="447" HorizontalAlignment="Left" Background="#FFD0CFCE" VerticalAlignment="Center" FontSize="15" Name="searchingBox" 
+                              TextChanged="SearchingBox_TextChanged" Foreground="Black" Grid.Column="1"/>
                 </Grid>
                 <Grid Grid.RowSpan="2" Margin="0,0,22.2,0.2">
                     <Grid.ColumnDefinitions>

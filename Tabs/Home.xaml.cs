@@ -21,7 +21,7 @@ namespace CoPoleci.Tabs
             {
                 Height = 550,
                 Width = 550,
-                Source = new BitmapImage(new Uri($@"\FunFacts\{nameOfImage}", UriKind.Relative))
+                Source = new BitmapImage(new Uri($@"\Graphics\FunFacts\{nameOfImage}", UriKind.Relative))
             };
             funfact.Children.Add(img);
         }

@@ -19,12 +19,7 @@ namespace CoPoleci.DAL
             Born = ((DateTime)dataReader["urodzony"]).ToShortDateString();
             if (!dataReader.IsDBNull(dataReader.GetOrdinal("zmarł")))
                 Died = ((DateTime)dataReader["zmarł"]).ToShortDateString();
-            Photo = new BitmapImage(new Uri($@"\ActorsPosters\{Id}.jpg", UriKind.Relative));
-        }
-
-        public override string ToString()
-        {
-            return $"{Id} {Name} {Born} {Died}";
+            Photo = new BitmapImage(new Uri($@"\Graphics\ActorsPosters\{Id}.jpg", UriKind.Relative));
         }
     }
 }

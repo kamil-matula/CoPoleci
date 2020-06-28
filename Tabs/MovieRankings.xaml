@@ -9,7 +9,7 @@
     <UserControl.Resources>
         <vm:QueryManager x:Key="QM"/>
         <Style x:Key="TextBlockStyle" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="/Fonts/Ubuntu-Medium.ttf #ubuntu" />
+            <Setter Property="FontFamily" Value="/Graphics/Fonts/Ubuntu-Medium.ttf #ubuntu"/>
             <Setter Property="FontSize" Value="70"/>
         </Style>
     </UserControl.Resources>

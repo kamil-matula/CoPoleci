@@ -13,7 +13,7 @@
             <Setter Property="FontSize" Value="30"/>
         </Style>
         <Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="FontFamily" Value="/Fonts/Ubuntu-Medium.ttf #ubuntu" />
+            <Setter Property="FontFamily" Value="/Graphics/Fonts/Ubuntu-Medium.ttf #ubuntu" />
             <Setter Property="FontSize" Value="21"/>
             <Setter Property="Foreground" Value="#FFC20505" />
             <Setter Property="Background" Value="#FF090606"/>
@@ -28,7 +28,7 @@
     
     <Grid>
         <Grid Width="400" HorizontalAlignment="Left">
-            <Image Source="Images/COPOLECI.png"/>
+            <Image Source="Graphics/Images/COPOLECI.png"/>
         </Grid>
 
         <Grid Width="400" HorizontalAlignment="Right" Background="#FFD0CFCE">

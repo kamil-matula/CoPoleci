@@ -3,12 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="CoPoleci?" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Black">
     <Window.Resources>
         <Style x:Key="MenuItems" TargetType="ItemsControl">
-            <Setter Property="FontFamily" Value="/Fonts/Ubuntu-Regular.ttf #ubuntu" />
+            <Setter Property="FontFamily" Value="/Graphics/Fonts/Ubuntu-Regular.ttf #ubuntu" />
             <Setter Property="FontSize" Value="30"/>
         </Style>
     </Window.Resources>
@@ -37,7 +37,7 @@
             </materialDesign:TransitioningContent>
             <StackPanel>
                 <Button x:Name="HomeButton" Height="150" Background="Black" BorderBrush="{x:Null}" Click="HomeButton_Click">
-                    <Image Height="140" Source="Images/COPOLECI1.png"/>
+                    <Image Height="140" Source="Graphics/Images/COPOLECI1.png"/>
                 </Button>
 
                 <ListView x:Name="ListViewMenu" Foreground="AntiqueWhite" Background="Black"  
@@ -46,49 +46,49 @@
                           SelectionChanged="ListViewMenu_SelectionChanged" SelectedIndex="-1"  Style="{StaticResource MenuItems }">
                     <ListViewItem Height="45" Padding="0" >
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Images/seen.png"/>
+                            <Image Source="Graphics/Images/seen.png"/>
                             <TextBlock Text="Obejrzane" Margin="10"/>
                         </StackPanel>
 
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Images/movie.png"/>
+                            <Image Source="Graphics/Images/movie.png"/>
                             <TextBlock Text="Filmy" Margin="10"/>
                         </StackPanel>
 
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Images/actors.png"/>
+                            <Image Source="Graphics/Images/actors.png"/>
                             <TextBlock Text="Aktorzy" Margin="10"/>
                         </StackPanel>
 
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Images/directors.png"/>
+                            <Image Source="Graphics/Images/directors.png"/>
                             <TextBlock Text="Reżyserowie" Margin="10"/>
                         </StackPanel>
 
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Images/companies.png"/>
+                            <Image Source="Graphics/Images/companies.png"/>
                             <TextBlock Text="Wytwórnie" Margin="10"/>
                         </StackPanel>
 
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Images/ranking.png"/>
+                            <Image Source="Graphics/Images/ranking.png"/>
                             <TextBlock Text="Rankingi" Margin="10"/>
                         </StackPanel>
 
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Images/recommendator.png"/>
+                            <Image Source="Graphics/Images/recommendator.png"/>
                             <TextBlock Text="Co Poleci?" Margin="10"/>
                         </StackPanel>
                     </ListViewItem>
