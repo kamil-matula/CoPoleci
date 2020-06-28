@@ -22,7 +22,7 @@ namespace CoPoleci
             if (string.IsNullOrEmpty(searchingBox.Text))
                 return true;
             else
-                return ((item as Actor).Name.IndexOf(searchingBox.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+                return (item as Actor).Name.IndexOf(searchingBox.Text, StringComparison.OrdinalIgnoreCase) >= 0;
         }
 
         private void SearchingBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -33,21 +33,14 @@ namespace CoPoleci
         private void Actor_Clicked(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
-
             var clickedactor = QueryManager.Actors.Find(i => i.Id == Convert.ToUInt16(btn.Tag));
            
             foreach (Window window in Application.Current.Windows)
-            {
                 if (window.GetType() == typeof(MainWindow))
-                {
-                    (window as MainWindow).GridPrincipal.Children.Clear();
                     (window as MainWindow).GridPrincipal.Children.Add(new ActorDetails(clickedactor));
-                }
-            }
         }
         private void LoadIcon()
         {
-
             string nameOfImage = "bactors.png";
             Image img = new Image
             {
@@ -58,7 +51,6 @@ namespace CoPoleci
                 Margin = new Thickness(25, 0, 0, 0),
                 Source = new BitmapImage(new Uri($@"\Graphics\Images\{nameOfImage}", UriKind.Relative))
             };
-
             icon.Children.Add(img);
         }
     }

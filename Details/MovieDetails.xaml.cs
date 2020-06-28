@@ -1,9 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using CoPoleci.DAL;
 
 namespace CoPoleci
 {
-    using CoPoleci.DAL;
     public partial class MovieDetails : UserControl
     {
         private readonly Movie clickedmovie = null;
@@ -21,11 +21,11 @@ namespace CoPoleci
                 ButtonAdd.Visibility = Visibility.Hidden;
                 ButtonRemove.Visibility = Visibility.Visible;
             }
-            LoadImages();
+            LoadInfo();
         }
 
-        // Załadowanie grafiki będącej plakatem:
-        private void LoadImages()
+        // Załadowanie informacji:
+        private void LoadInfo()
         {
             movieTitle_TextBlock.Text = clickedmovie.Title;
             year_TextBlock.Text = "Rok produkcji: " + clickedmovie.Year.ToString();
@@ -33,21 +33,16 @@ namespace CoPoleci
             posterImage.Children.Add(new Image { Height = 500, Width = 190, Source = clickedmovie.Poster, VerticalAlignment = VerticalAlignment.Top, HorizontalAlignment = HorizontalAlignment.Left });
         }
 
-        // Powrót do strony końcowej:
-        private void ButtonWroc_Click(object sender, RoutedEventArgs e)
+        // Powrót do zakładki:
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
             foreach (Window window in Application.Current.Windows)
-            {
                 if (window.GetType() == typeof(MainWindow))
-                {
-                    (window as MainWindow).GridPrincipal.Children.Clear();
-                    (window as MainWindow).GridPrincipal.Children.Add(TabManager.Movies);
-                }
-            }
+                    (window as MainWindow).GridPrincipal.Children.RemoveAt((window as MainWindow).GridPrincipal.Children.Count - 1);
         }
 
         // Dodawanie filmu do ulubionych:
-        private void ButtonDodaj_Click(object sender, RoutedEventArgs e)
+        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
             if (MovieRepo.AddToSeen(clickedmovie) == false)
             {
@@ -59,7 +54,8 @@ namespace CoPoleci
             ButtonRemove.Visibility = Visibility.Visible;
         }
 
-        private void ButtonUsun_Click(object sender, RoutedEventArgs e)
+        // Usuwanie filmu z ulubionych:
+        private void ButtonRemove_Click(object sender, RoutedEventArgs e)
         {
             if (MovieRepo.RemoveFromSeen(clickedmovie) == false)
             {

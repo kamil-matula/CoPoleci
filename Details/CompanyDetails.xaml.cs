@@ -11,11 +11,11 @@ namespace CoPoleci
         {
             InitializeComponent();
             clickedcompany = company;
-            LoadImages();
+            LoadInfo();
         }
 
-        // Załadowanie grafiki będącej plakatem:
-        private void LoadImages()
+        // Załadowanie informacji:
+        private void LoadInfo()
         {
             companyName_TextBlock.Text = clickedcompany.Name;
             companyHeadQuarter_TextBlock.Text = "Siedziba: " + clickedcompany.HeadQuarters.ToString();
@@ -23,19 +23,12 @@ namespace CoPoleci
             image.Children.Add(new Image { Height = 500, Width = 190, Source = clickedcompany.Photo, VerticalAlignment = VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Left });
         }
 
-        // Powrót do strony końcowej:
-        private void ButtonWroc_Click(object sender, RoutedEventArgs e)
+        // Powrót do zakładki:
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
             foreach (Window window in Application.Current.Windows)
-            {
                 if (window.GetType() == typeof(MainWindow))
-                {
-                    (window as MainWindow).GridPrincipal.Children.Clear();
-                    (window as MainWindow).GridPrincipal.Children.Add(TabManager.Companies);
-                }
-            }
+                    (window as MainWindow).GridPrincipal.Children.RemoveAt((window as MainWindow).GridPrincipal.Children.Count - 1);
         }
-
-      
     }
 }

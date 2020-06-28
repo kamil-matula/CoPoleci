@@ -57,13 +57,8 @@ namespace CoPoleci
         {
             Ratings.currentItem = (listaFilmow.SelectedItem.ToString()).Substring(3);
             foreach (Window window in Application.Current.Windows)
-            {
                 if (window.GetType() == typeof(MainWindow))
-                {
-                    (window as MainWindow).GridPrincipal.Children.Clear();
                     (window as MainWindow).GridPrincipal.Children.Add(new PosterPage());
-                }
-            }
         }
     }
 }

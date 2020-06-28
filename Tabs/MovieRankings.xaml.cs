@@ -27,7 +27,6 @@ namespace CoPoleci
 
         private void LoadIcon()
         {
-
             string nameOfImage = "branking.png";
             Image img = new Image
             {

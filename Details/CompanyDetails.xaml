@@ -41,7 +41,7 @@
                 </Grid>
                 <Grid Grid.Row="1">
 
-                    <Button x:Name="ButtonOK" Content="Wróć" Click="ButtonWroc_Click"
+                    <Button x:Name="ButtonOK" Content="Wróć" Click="ButtonBack_Click"
                 Height="40" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10" Background="Gold"/>
                     
                 </Grid>

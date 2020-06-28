@@ -22,7 +22,7 @@ namespace CoPoleci
             if (string.IsNullOrEmpty(searchingBox.Text))
                 return true;
             else
-                return ((item as Company).Name.IndexOf(searchingBox.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+                return (item as Company).Name.IndexOf(searchingBox.Text, StringComparison.OrdinalIgnoreCase) >= 0;
         }
 
         private void SearchingBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -33,22 +33,15 @@ namespace CoPoleci
         private void Company_Clicked(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
-
             var clickedcompany = QueryManager.Companies.Find(i => i.Name == btn.Tag.ToString());
 
             foreach (Window window in Application.Current.Windows)
-            {
                 if (window.GetType() == typeof(MainWindow))
-                {
-                    (window as MainWindow).GridPrincipal.Children.Clear();
                     (window as MainWindow).GridPrincipal.Children.Add(new CompanyDetails(clickedcompany));
-                }
-            }
         }
 
         private void LoadIcon()
         {
-
             string nameOfImage = "bcompanies.png";
             Image img = new Image
             {
