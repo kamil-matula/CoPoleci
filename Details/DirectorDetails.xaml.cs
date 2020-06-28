@@ -41,10 +41,6 @@ namespace CoPoleci
             }
         }
 
-        // Dodawanie filmu do ulubionych:
-        private void ButtonDodaj_Click(object sender, RoutedEventArgs e)
-        {
-            // na razie nie działa :c
-        }
+       
     }
 }

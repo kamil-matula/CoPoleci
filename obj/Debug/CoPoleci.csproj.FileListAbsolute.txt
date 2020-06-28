@@ -519,3 +519,5 @@ C:\Users\domin\source\repos\CoPoleci\obj\Debug\Details\ActorDetails.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Details\MovieDetails.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Details\DirectorDetails.baml
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Details\DirectorDetails.g.cs
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Details\CompanyDetails.baml
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\Details\CompanyDetails.g.cs

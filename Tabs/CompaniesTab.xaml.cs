@@ -32,7 +32,18 @@ namespace CoPoleci
 
         private void Company_Clicked(object sender, RoutedEventArgs e)
         {
-            //tu bedzie pojawianie się kontrolki wytwórni albo w najgorszym wypadku messageboxa ze szczegółami 
+            Button btn = sender as Button;
+
+            var clickedcompany = QueryManager.Companies.Find(i => i.Name == btn.Tag);
+
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    (window as MainWindow).GridPrincipal.Children.Clear();
+                    (window as MainWindow).GridPrincipal.Children.Add(new CompanyDetails(clickedcompany));
+                }
+            }
         }
 
         private void LoadIcon()

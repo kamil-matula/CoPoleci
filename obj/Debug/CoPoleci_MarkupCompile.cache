@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\domin\source\repos\CoPoleci\App.xaml
-181965789619
+19-1059920010
 
-38-1488851036
+39-87939286
 1421918042668
-Details\ActorDetails.xaml;Details\MovieDetails.xaml;Details\DirectorDetails.xaml;RegisterWindow.xaml;Tabs\ActorsTab.xaml;Tabs\CompaniesTab.xaml;Tabs\DirectorsTab.xaml;Recommender\Result.xaml;MainWindow.xaml;Tabs\Home.xaml;Tabs\MovieRankings.xaml;Tabs\MoviesTab.xaml;Recommender\QuestionPage.xaml;Recommender\PosterPage.xaml;Tabs\SeenMoviesTab.xaml;LoginScreen.xaml;Recommender\Start.xaml;TextBoxLogin.xaml;
+Details\ActorDetails.xaml;Details\CompanyDetails.xaml;Details\MovieDetails.xaml;Details\DirectorDetails.xaml;RegisterWindow.xaml;Tabs\ActorsTab.xaml;Tabs\CompaniesTab.xaml;Tabs\DirectorsTab.xaml;Recommender\Result.xaml;MainWindow.xaml;Tabs\Home.xaml;Tabs\MovieRankings.xaml;Tabs\MoviesTab.xaml;Recommender\QuestionPage.xaml;Recommender\PosterPage.xaml;Tabs\SeenMoviesTab.xaml;LoginScreen.xaml;Recommender\Start.xaml;TextBoxLogin.xaml;
 
 False
 

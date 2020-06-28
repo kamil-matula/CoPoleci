@@ -28,25 +28,22 @@
                         <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="3.4*"/>
                     </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2.5*" />
-                        <RowDefinition Height="1*" />
-                        <RowDefinition Height="1*" />
-                    </Grid.RowDefinitions>
-                    <TextBlock x:Name="actorName_TextBlock" Grid.Column="1" Grid.Row="0"  Foreground="Black" Margin="10 5"
+                    <StackPanel Grid.Column="1">
+                        <TextBlock x:Name="actorName_TextBlock"  Foreground="Black" Margin="10 5"
                     Style="{StaticResource TextBlockStyle}" TextWrapping="WrapWithOverflow" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="actorBorn_TextBlock" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom"  Margin="10 0" FontSize="22" 
+                        <TextBlock x:Name="actorBorn_TextBlock"   HorizontalAlignment="Left" VerticalAlignment="Bottom"  Margin="10 5" FontSize="22" 
                       />
-                    <TextBlock x:Name="actorDied_TextBlock" Text="" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 0" FontSize="22" 
+                        <TextBlock x:Name="actorDied_TextBlock" Text=""  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 5" FontSize="22" 
                         />
-                    <WrapPanel Name="image" Grid.Column="0" Grid.RowSpan="3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    </StackPanel>
+                    <WrapPanel Name="image" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    
                 </Grid>
                 <Grid Grid.Row="1">
 
                     <Button x:Name="ButtonOK" Content="Wróć" Click="ButtonWroc_Click"
                 Height="40" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10" Background="Gold"/>
-                    <Button x:Name="ButtonDodaj"  Content="Dodaj do obejrzanych" Click="ButtonDodaj_Click"
-                Height="40" Width="200" VerticalAlignment="Bottom" Margin="10" Background="Gold"/>
+                  
                 </Grid>
             </Grid>
         </materialDesign:TransitioningContent>

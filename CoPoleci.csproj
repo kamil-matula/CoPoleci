@@ -129,6 +129,9 @@
     <Compile Include="Details\ActorDetails.xaml.cs">
       <DependentUpon>ActorDetails.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Details\CompanyDetails.xaml.cs">
+      <DependentUpon>CompanyDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Details\MovieDetails.xaml.cs">
       <DependentUpon>MovieDetails.xaml</DependentUpon>
     </Compile>
@@ -183,6 +186,10 @@
       <DependentUpon>TextBoxLogin.xaml</DependentUpon>
     </Compile>
     <Page Include="Details\ActorDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\CompanyDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
