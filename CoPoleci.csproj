@@ -126,8 +126,14 @@
     <Compile Include="DAL\Repositories\DirectorRepo.cs" />
     <Compile Include="DAL\Repositories\MovieRepo.cs" />
     <Compile Include="DAL\Repositories\UserRepo.cs" />
+    <Compile Include="Details\ActorDetails.xaml.cs">
+      <DependentUpon>ActorDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Details\MovieDetails.xaml.cs">
       <DependentUpon>MovieDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DirectorDetails.xaml.cs">
+      <DependentUpon>DirectorDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
@@ -176,7 +182,15 @@
     <Compile Include="TextBoxLogin.xaml.cs">
       <DependentUpon>TextBoxLogin.xaml</DependentUpon>
     </Compile>
+    <Page Include="Details\ActorDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Details\MovieDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DirectorDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

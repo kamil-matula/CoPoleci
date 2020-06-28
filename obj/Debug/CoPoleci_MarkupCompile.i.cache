@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\zosta\source\repos\CoPoleci\obj\Debug\
+C:\Users\domin\source\repos\CoPoleci\obj\Debug\
 CoPoleci
 none
 false
 DEBUG;TRACE
-C:\Users\zosta\source\repos\CoPoleci\App.xaml
-16155459414
+C:\Users\domin\source\repos\CoPoleci\App.xaml
+181965789619
 
-37-631862183
-142-1765963734
-Details\MovieDetails.xaml;RegisterWindow.xaml;Tabs\ActorsTab.xaml;Tabs\CompaniesTab.xaml;Tabs\DirectorsTab.xaml;Recommender\Result.xaml;MainWindow.xaml;Tabs\Home.xaml;Tabs\MovieRankings.xaml;Tabs\MoviesTab.xaml;Recommender\QuestionPage.xaml;Recommender\PosterPage.xaml;Tabs\SeenMoviesTab.xaml;LoginScreen.xaml;Recommender\Start.xaml;TextBoxLogin.xaml;
+421605398740
+1421918042668
+Details\ActorDetails.xaml;Details\MovieDetails.xaml;Details\DirectorDetails.xaml;RegisterWindow.xaml;Tabs\ActorsTab.xaml;Tabs\CompaniesTab.xaml;Tabs\DirectorsTab.xaml;Recommender\Result.xaml;MainWindow.xaml;Tabs\Home.xaml;Tabs\MovieRankings.xaml;Tabs\MoviesTab.xaml;Recommender\QuestionPage.xaml;Recommender\PosterPage.xaml;Tabs\SeenMoviesTab.xaml;LoginScreen.xaml;Recommender\Start.xaml;TextBoxLogin.xaml;
 
-False
+True
 

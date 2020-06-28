@@ -60,7 +60,7 @@
                                 <DataTemplate>
                                     <Border Width="140" Margin="10" Height="200" Background="{x:Null}" >
                                         <StackPanel>
-                                        <Button Width="auto" Height="auto" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Click="Movie_Clicked" >
+                                        <Button Tag="{Binding Id}" Width="auto" Height="auto" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Click="Movie_Clicked" >
                                             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                                 <Border Width="140" Height="140" CornerRadius="8" HorizontalAlignment="Center" VerticalAlignment="Center">
                                                     <Image Source="{Binding Poster}" HorizontalAlignment="Center" VerticalAlignment="Center"/>

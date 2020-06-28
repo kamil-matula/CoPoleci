@@ -10,7 +10,7 @@ namespace CoPoleci.DAL
         private static List<Movie> movies = null;
         private static List<Company> companies = null;
 
-        public List<Actor> Actors 
+        public static List<Actor> Actors 
         {
             get
             {
@@ -19,7 +19,7 @@ namespace CoPoleci.DAL
             }
         }
 
-        public List<Director> Directors 
+        public static List<Director> Directors 
         {
             get
             {
@@ -37,7 +37,7 @@ namespace CoPoleci.DAL
             }
         }
 
-        public List<Company> Companies 
+        public static List<Company> Companies 
         {
             get 
             {

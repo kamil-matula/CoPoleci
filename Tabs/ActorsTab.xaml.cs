@@ -32,7 +32,18 @@ namespace CoPoleci
 
         private void Actor_Clicked(object sender, RoutedEventArgs e)
         {
-            //tu bedzie pojawianie się kontrolki aktora albo w najgorszym wypadku messageboxa ze szczegółami 
+            Button btn = sender as Button;
+
+            var clickedactor = QueryManager.Actors.Find(i => i.Id == Convert.ToUInt16(btn.Tag));
+           
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    (window as MainWindow).GridPrincipal.Children.Clear();
+                    (window as MainWindow).GridPrincipal.Children.Add(new ActorDetails(clickedactor));
+                }
+            }
         }
         private void LoadIcon()
         {

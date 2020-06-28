@@ -32,7 +32,9 @@ namespace CoPoleci
 
         private void Movie_Clicked(object sender, RoutedEventArgs e)
         {
-            var clickedmovie = QueryManager.Movies.Find(i => i.Title == "Avatar");
+            Button btn = sender as Button;
+
+            var clickedmovie = QueryManager.Movies.Find(i => i.Id == Convert.ToUInt16(btn.Tag));
             foreach (Window window in Application.Current.Windows)
             {
                 if (window.GetType() == typeof(MainWindow))
