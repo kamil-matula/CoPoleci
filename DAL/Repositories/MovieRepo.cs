@@ -29,15 +29,21 @@ namespace CoPoleci.DAL
         public static List<Movie> GetSeenMovies()
         {
             List<int> ids = new List<int>();
+            List<string> dates = new List<string>();
+            List<string> rates = new List<string>();
             try
             {
                 using (var connection = DBConnection.Instance.Connection)
                 {
-                    MySqlCommand command = new MySqlCommand($"select id_filmu from obejrzane where nick = '{DBConnection.Nickname}'", connection);
+                    MySqlCommand command = new MySqlCommand($"select * from obejrzane where nick = '{DBConnection.Nickname}'", connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())
+                    { 
                         ids.Add((byte)dataReader["id_filmu"]);
+                        dates.Add(((DateTime)dataReader["data"]).ToShortDateString());
+                        rates.Add(dataReader["ocena"].ToString());
+                    }
                     connection.Close();
                 }
             }
@@ -45,18 +51,20 @@ namespace CoPoleci.DAL
 
             List<Movie> allmovies = QueryManager.Movies;
             List<Movie> seenmovies = new List<Movie>();
-            foreach (int id in ids)
+            for (int i = 0; i < ids.Count; i++)
             {
-                allmovies[id - 1].WasSeen = true;
-                seenmovies.Add(allmovies[id - 1]);
+                allmovies[ids[i] - 1].WasSeen = true;
+                allmovies[ids[i] - 1].AddToSeenDate = dates[i];
+                allmovies[ids[i] - 1].Rate = rates[i];
+                seenmovies.Add(allmovies[ids[i] - 1]);
             }            
 
             return seenmovies;
         }
 
-        public static bool AddToSeen(Movie movie, string rate = "")
+        public static bool AddToSeen(Movie movie)
         {
-            bool state = false;
+            bool state = false; string rate = "";
             try
             {
                 using (var connection = DBConnection.Instance.Connection)
@@ -80,6 +88,24 @@ namespace CoPoleci.DAL
                 using (var connection = DBConnection.Instance.Connection)
                 {
                     MySqlCommand command = new MySqlCommand($"delete from obejrzane where nick = '{DBConnection.Nickname}' and id_filmu = '{movie.Id}'", connection);
+                    connection.Open();
+                    _ = command.ExecuteNonQuery();
+                    state = true;
+                    connection.Close();
+                }
+            }
+            catch { }
+            return state;
+        }
+
+        public static bool UpdateRate(Movie movie, string rate)
+        {
+            bool state = false;
+            try
+            {
+                using (var connection = DBConnection.Instance.Connection)
+                {
+                    MySqlCommand command = new MySqlCommand($"update obejrzane set ocena = '{rate}' where nick = '{DBConnection.Nickname}' and id_filmu = '{movie.Id}'", connection);
                     connection.Open();
                     _ = command.ExecuteNonQuery();
                     state = true;

@@ -23,6 +23,8 @@ namespace CoPoleci.DAL
         public double X_criminal { get; private set; }
         public double X_scary { get; private set; }
         public bool WasSeen { get; set; } = false;
+        public string AddToSeenDate { get; set; }
+        public string Rate { get; set; }
 
         public Movie(List<double> ratings) 
         {
