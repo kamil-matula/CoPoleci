@@ -37,7 +37,7 @@ namespace CoPoleci
 
             foreach (Window window in Application.Current.Windows)
                 if (window.GetType() == typeof(MainWindow))
-                    (window as MainWindow).GridPrincipal.Children.Add(new SeenMovieDetails(clickedmovie));
+                    (window as MainWindow).GridPrincipal.Children.Add(new MovieDetails(clickedmovie));
         }
 
         private void LoadIcon()

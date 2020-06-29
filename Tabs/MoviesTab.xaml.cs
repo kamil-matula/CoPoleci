@@ -34,6 +34,7 @@ namespace CoPoleci
         {
             Button btn = sender as Button;
             var clickedmovie = QueryManager.Movies.Find(i => i.Id == Convert.ToUInt16(btn.Tag));
+            _ = QueryManager.SeenMovies; // odświeża właściwości WasSeen, AddToSeenDate i Rate w klasie Movie
 
             foreach (Window window in Application.Current.Windows)
                 if (window.GetType() == typeof(MainWindow))

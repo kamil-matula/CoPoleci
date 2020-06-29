@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using CoPoleci.DAL;
 
@@ -20,16 +18,23 @@ namespace CoPoleci
             {
                 ButtonAdd.Visibility = Visibility.Visible;
                 ButtonRemove.Visibility = Visibility.Hidden;
+                ButtonConfirm.Visibility = Visibility.Hidden;
+                ButtonEdit.Visibility = Visibility.Hidden;
+                Rate_TextBox.Visibility = Visibility.Hidden;
+                Rate_TextBlock.Visibility = Visibility.Hidden;
             }
             else
             {
                 ButtonAdd.Visibility = Visibility.Hidden;
                 ButtonRemove.Visibility = Visibility.Visible;
+                ButtonConfirm.Visibility = Visibility.Hidden;
+                ButtonEdit.Visibility = Visibility.Visible;
+                Rate_TextBox.Visibility = Visibility.Hidden;
+                Rate_TextBlock.Visibility = Visibility.Visible;
             }
+
             LoadInfo();
             LoadIcons();
-            ActorListView.ItemsSource = ActorRepo.GetActorsFromMovie(clickedmovie);
-            ActorListView.Items.Refresh();
         }
 
         // Załadowanie informacji:
@@ -39,11 +44,19 @@ namespace CoPoleci
             year_TextBlock.Text = "Rok produkcji: " + clickedmovie.Year.ToString();
             genre_TextBlock.Text = "Gatunek: " + clickedmovie.Genre;
             posterImage.Children.Add(new Image { Height = 500, Width = 190, Source = clickedmovie.Poster, VerticalAlignment = VerticalAlignment.Top, HorizontalAlignment = HorizontalAlignment.Left });
+
             directorPhoto.Children.Add(new Image { Height = 200, Width = 75, Source = DirectorRepo.GetDirectorsFromMovie(clickedmovie)[0].Photo, HorizontalAlignment=HorizontalAlignment.Left});
             directorName.Text = DirectorRepo.GetDirectorsFromMovie(clickedmovie)[0].Name;
             companyPhoto.Children.Add(new Image { Height = 200, Width = 75, Source = DirectorRepo.GetDirectorsFromMovie(clickedmovie)[0].Photo, HorizontalAlignment = HorizontalAlignment.Left });
             companyName.Text = DirectorRepo.GetDirectorsFromMovie(clickedmovie)[0].Name;
+
+            ActorListView.ItemsSource = ActorRepo.GetActorsFromMovie(clickedmovie);
+            ActorListView.Items.Refresh();
+
+            if (string.IsNullOrEmpty(clickedmovie.Rate)) Rate_TextBlock.Text = "Miejsce na Twój komentarz";
+            else Rate_TextBlock.Text = clickedmovie.Rate;
         }
+
         private void Actor_Clicked(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
@@ -64,6 +77,7 @@ namespace CoPoleci
                 Margin = new Thickness(1, 1, 1, 1),
                 Source = new BitmapImage(new Uri($@"\Graphics\Images\bdirectors.png", UriKind.Relative))
             };
+
             Image img2 = new Image
             {
                 Height = 85,
@@ -72,10 +86,8 @@ namespace CoPoleci
                 VerticalAlignment = VerticalAlignment.Center,
                 Margin = new Thickness(1, 1, 1, 1),
                 Source = new BitmapImage(new Uri($@"\Graphics\Images\bcompanies.png", UriKind.Relative))
-              
-
-
             };
+
             Image img3 = new Image
             {
                 Height = 85,
@@ -85,6 +97,7 @@ namespace CoPoleci
                 Margin = new Thickness(1, 1, 1, 1),
                 Source = new BitmapImage(new Uri($@"\Graphics\Images\bactors.png", UriKind.Relative))
             };
+
             Image img4 = new Image
             {
                 Height = 85,
@@ -94,6 +107,7 @@ namespace CoPoleci
                 Margin = new Thickness(1, 1, 1, 1),
                 Source = new BitmapImage(new Uri($@"\Graphics\Images\bseen.png", UriKind.Relative))
             };
+
             iconDirector.Children.Add(img);
             iconCompany.Children.Add(img2);
             iconActor.Children.Add(img3);
@@ -119,8 +133,13 @@ namespace CoPoleci
                 return;
             }
             clickedmovie.WasSeen = true;
+
             ButtonAdd.Visibility = Visibility.Hidden;
             ButtonRemove.Visibility = Visibility.Visible;
+            ButtonEdit.Visibility = Visibility.Visible;
+            ButtonConfirm.Visibility = Visibility.Hidden;
+            Rate_TextBlock.Visibility = Visibility.Visible;
+            Rate_TextBox.Visibility = Visibility.Hidden;
         }
 
         // Usuwanie filmu z ulubionych:
@@ -132,8 +151,41 @@ namespace CoPoleci
                 return;
             }
             clickedmovie.WasSeen = false;
+            clickedmovie.Rate = "";
+            clickedmovie.AddToSeenDate = "";
+            Rate_TextBlock.Text = "Miejsce na Twój komentarz";
+
             ButtonAdd.Visibility = Visibility.Visible;
             ButtonRemove.Visibility = Visibility.Hidden;
+            ButtonEdit.Visibility = Visibility.Hidden;
+            ButtonConfirm.Visibility = Visibility.Hidden;
+            Rate_TextBlock.Visibility = Visibility.Hidden;
+            Rate_TextBox.Visibility = Visibility.Hidden;
+        }
+
+        private void ButtonEdit_Click(object sender, RoutedEventArgs e)
+        {
+            Rate_TextBlock.Visibility = Visibility.Hidden;
+            Rate_TextBox.Visibility = Visibility.Visible;
+            ButtonEdit.Visibility = Visibility.Hidden;
+            ButtonConfirm.Visibility = Visibility.Visible;
+            Rate_TextBox.Text = clickedmovie.Rate;
+        }
+
+        private void ButtonConfirm_Click(object sender, RoutedEventArgs e)
+        {
+            if (MovieRepo.UpdateRate(clickedmovie, Rate_TextBox.Text) == false)
+            {
+                MessageBox.Show("Nie udało się zmienić komentarza!");
+                return;
+            }
+            _ = QueryManager.SeenMovies; // odświeża właściwości WasSeen, AddToSeenDate i Rate w klasie Movie
+
+            Rate_TextBlock.Text = Rate_TextBox.Text;
+            Rate_TextBlock.Visibility = Visibility.Visible;
+            Rate_TextBox.Visibility = Visibility.Hidden;
+            ButtonEdit.Visibility = Visibility.Visible;
+            ButtonConfirm.Visibility = Visibility.Hidden;
         }
     }
 }

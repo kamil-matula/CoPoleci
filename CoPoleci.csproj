@@ -138,9 +138,6 @@
     <Compile Include="Details\DirectorDetails.xaml.cs">
       <DependentUpon>DirectorDetails.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Details\SeenMovieDetails.xaml.cs">
-      <DependentUpon>SeenMovieDetails.xaml</DependentUpon>
-    </Compile>
     <Compile Include="RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
@@ -201,10 +198,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Details\DirectorDetails.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Details\SeenMovieDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
