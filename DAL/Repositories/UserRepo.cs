@@ -38,6 +38,9 @@ namespace CoPoleci.DAL
                     MySqlCommand commandgrantselectactors = new MySqlCommand($"grant select on aktorzy to '{UserID}'", connection);
                     MySqlCommand commandgrantselectdirectors = new MySqlCommand($"grant select on reżyserzy to '{UserID}'", connection);
                     MySqlCommand commandgrantselectcompanies = new MySqlCommand($"grant select on wytwórnie to '{UserID}'", connection);
+                    MySqlCommand commandgrantselectproduced = new MySqlCommand($"grant select on wyprodukował to '{UserID}'", connection);
+                    MySqlCommand commandgrantselectdirected = new MySqlCommand($"grant select on wyreżyserował to '{UserID}'", connection);
+                    MySqlCommand commandgrantselectplayedin = new MySqlCommand($"grant select on grał_w to '{UserID}'", connection);
                     MySqlCommand commandgrantpriviligesseen = new MySqlCommand($"grant select, insert, delete, update on obejrzane to '{UserID}'", connection);
                     MySqlCommand commandinsertusers = new MySqlCommand($"insert użytkownicy value ('{UserID}', MD5('{Password}'))", connection);
 
@@ -49,6 +52,9 @@ namespace CoPoleci.DAL
                     _ = commandgrantselectcompanies.ExecuteNonQuery();
                     _ = commandgrantpriviligesseen.ExecuteNonQuery();
                     _ = commandinsertusers.ExecuteNonQuery();
+                    _ = commandgrantselectproduced.ExecuteNonQuery();
+                    _ = commandgrantselectdirected.ExecuteNonQuery();
+                    _ = commandgrantselectplayedin.ExecuteNonQuery();
                     state = true;
                     connection.Close();
                 }
