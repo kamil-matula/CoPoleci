@@ -4,6 +4,8 @@ using System.Windows.Controls;
 namespace CoPoleci
 {
     using CoPoleci.DAL;
+    using System;
+
     public partial class DirectorDetails : UserControl
     {
         private readonly Director clickeddirector = null;
@@ -12,6 +14,8 @@ namespace CoPoleci
             InitializeComponent();
             clickeddirector = director;
             LoadInfo();
+            MovieListView.ItemsSource = MovieRepo.GetMoviesFromDirector(clickeddirector);
+            MovieListView.Items.Refresh();
         }
 
         // Załadowanie informacji:
@@ -34,6 +38,17 @@ namespace CoPoleci
             foreach (Window window in Application.Current.Windows)
                 if (window.GetType() == typeof(MainWindow))
                     (window as MainWindow).GridPrincipal.Children.RemoveAt((window as MainWindow).GridPrincipal.Children.Count - 1);
+        }
+
+        private void Movie_Clicked(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            var clickedmovie = QueryManager.Movies.Find(i => i.Id == Convert.ToUInt16(btn.Tag));
+            _ = QueryManager.SeenMovies; // odświeża właściwości WasSeen, AddToSeenDate i Rate w klasie Movie
+
+            foreach (Window window in Application.Current.Windows)
+                if (window.GetType() == typeof(MainWindow))
+                    (window as MainWindow).GridPrincipal.Children.Add(new MovieDetails(clickedmovie));
         }
     }
 }

@@ -141,5 +141,55 @@ namespace CoPoleci.DAL
 
             return thiscompanymovies;
         }
+
+        public static List<Movie> GetMoviesFromDirector(Director director)
+        {
+            List<int> ids = new List<int>();
+            try
+            {
+                using (var connection = DBConnection.Instance.Connection)
+                {
+                    MySqlCommand command = new MySqlCommand($"select id_filmu from wyreżyserował where id_reżysera = '{director.Id}'", connection);
+                    connection.Open();
+                    var dataReader = command.ExecuteReader();
+                    while (dataReader.Read())
+                        ids.Add((byte)dataReader["id_filmu"]);
+                    connection.Close();
+                }
+            }
+            catch { }
+
+            List<Movie> allmovies = QueryManager.Movies;
+            List<Movie> thisdirectormovies = new List<Movie>();
+            foreach (int id in ids)
+                thisdirectormovies.Add(allmovies[id - 1]);
+
+            return thisdirectormovies;
+        }
+
+        public static List<Movie> GetMoviesFromActor(Actor actor)
+        {
+            List<int> ids = new List<int>();
+            try
+            {
+                using (var connection = DBConnection.Instance.Connection)
+                {
+                    MySqlCommand command = new MySqlCommand($"select id_filmu from grał_w where id_aktora = '{actor.Id}'", connection);
+                    connection.Open();
+                    var dataReader = command.ExecuteReader();
+                    while (dataReader.Read())
+                        ids.Add((byte)dataReader["id_filmu"]);
+                    connection.Close();
+                }
+            }
+            catch { }
+
+            List<Movie> allmovies = QueryManager.Movies;
+            List<Movie> thisactormovies = new List<Movie>();
+            foreach (int id in ids)
+                thisactormovies.Add(allmovies[id - 1]);
+
+            return thisactormovies;
+        }
     }
 }

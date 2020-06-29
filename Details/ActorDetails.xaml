@@ -39,7 +39,61 @@
                     <WrapPanel Name="image" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" />
                     
                 </Grid>
+
                 <Grid Grid.Row="1">
+                    <ListView Name="MovieListView" Grid.Row="2"  Margin="2" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+                        <ListView.View>
+                            <GridView>
+                                <GridView.Columns>
+                                    <GridViewColumn Width="130">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button Tag="{Binding Id}" Width="auto" Height="auto" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Click="Movie_Clicked" >
+                                                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                        <Border Width="120" Height="120" CornerRadius="8" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                            <Image Source="{Binding Poster}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                        </Border>
+
+                                                    </StackPanel>
+
+                                                </Button>
+
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                        <GridViewColumn.Header>
+                                            <TextBlock Text="Plakat" Foreground="Black"/>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+
+                                    <GridViewColumn Width="210">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Title}" Foreground="Black" FontSize="20" TextWrapping="WrapWithOverflow"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                        <GridViewColumn.Header>
+                                            <TextBlock Text="Tytuł" Foreground="Black" />
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+
+                                    <GridViewColumn Width="100">
+                                        <GridViewColumn.CellTemplate >
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Year}" Foreground="Black" FontSize="20" HorizontalAlignment="Stretch"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                        <GridViewColumn.Header>
+                                            <TextBlock Text="Rok" Foreground="Black"/>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+
+                <Grid Grid.Row="2">
 
                     <Button x:Name="ButtonOK" Content="Wróć" Click="ButtonBack_Click"
                 Height="40" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10" Background="Gold"/>

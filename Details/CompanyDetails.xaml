@@ -46,7 +46,16 @@
                                     <GridViewColumn Width="130">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Image Source="{Binding Poster}" Width="120" Height="120" />
+                                                <Button Tag="{Binding Id}" Width="auto" Height="auto" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Click="Movie_Clicked" >
+                                                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                        <Border Width="120" Height="120" CornerRadius="8" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                            <Image Source="{Binding Poster}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                        </Border>
+
+                                                    </StackPanel>
+
+                                                </Button>
+                                              
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                         <GridViewColumn.Header>
@@ -57,11 +66,11 @@
                                     <GridViewColumn Width="210">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
-                                                <TextBlock Text="{Binding Title}" Foreground="Black" FontSize="20"/>
+                                                <TextBlock Text="{Binding Title}" Foreground="Black" FontSize="20" TextWrapping="WrapWithOverflow"/>
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                         <GridViewColumn.Header>
-                                            <TextBlock Text="Tytuł" Foreground="Black"/>
+                                            <TextBlock Text="Tytuł" Foreground="Black" />
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
 
