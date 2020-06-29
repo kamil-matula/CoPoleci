@@ -17,8 +17,9 @@
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
             <Grid >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="2.3*"/>
-                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="0.5*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="550"/>
@@ -44,7 +45,7 @@
                     <ListView.View>
                         <GridView>
                             <GridView.Columns>
-                                <GridViewColumn Width="130">
+                                <GridViewColumn Width="150">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Button Tag="{Binding Id}" Width="auto" Height="auto" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Click="Movie_Clicked" >
@@ -64,7 +65,7 @@
                                     </GridViewColumn.Header>
                                 </GridViewColumn>
 
-                                <GridViewColumn Width="210">
+                                <GridViewColumn Width="250">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                                 <TextBlock Text="{Binding Title}" Foreground="Black" FontSize="20" TextWrapping="WrapWithOverflow"/>
@@ -91,12 +92,9 @@
                     </ListView.View>
                 </ListView>
             </Grid>
-            <Grid Grid.Row="2">
-
-                    <Button x:Name="ButtonOK" Content="Wróć" Click="ButtonBack_Click"
-                Height="40" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10" Background="Gold"/>
-                   
-                </Grid>
+                <Grid Grid.Row="2">
+                <Button x:Name="ButtonOK" Content="Wróć" Click="ButtonBack_Click" Height="40" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10" Background="Gold"/>
+            </Grid>
             </Grid>
         </materialDesign:TransitioningContent>
     </Grid>

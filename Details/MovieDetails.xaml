@@ -57,7 +57,7 @@
                                         <WrapPanel Name="iconDirector" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="auto" Width="auto" Margin="0 16 0 0"/>
                                     </StackPanel>
                                     <StackPanel Grid.Column="1">
-
+                                    
                                         <WrapPanel   Width="75" Height="100" Name="directorPhoto"  Margin="0 5 5 0" HorizontalAlignment="Left"/>
 
                                     </StackPanel>
@@ -82,7 +82,7 @@
                                     </StackPanel>
                                     <StackPanel Grid.Column="1">
 
-                                        <WrapPanel   Width="75" Height="100" Name="companyPhoto"  Margin="0 5 5 0" HorizontalAlignment="Left"/>
+                                        <WrapPanel Width="75" Height="100" Name="companyPhoto"  Margin="0 5 5 0" HorizontalAlignment="Left"/>
 
                                     </StackPanel>
                                     <StackPanel Grid.ColumnSpan="2" Grid.Row="1">
@@ -140,18 +140,16 @@
                             <ColumnDefinition Width="3.3*"/>
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="0">
-                            <Button x:Name="ButtonAdd" Background="{x:Null}" Width="auto" Height="auto" Click="ButtonAdd_Click">
-                                <WrapPanel Name="iconSeen" HorizontalAlignment="Left" VerticalAlignment="Center" Height="auto" Width="auto" Margin="0 0 0 0"/>
+                            <Button x:Name="ButtonAdd" Background="Gold" Width="auto" Height="auto" Click="ButtonAdd_Click">
+                                <TextBlock Text="Dodaj do obejrzanych" TextWrapping="Wrap" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center"/>
                             </Button>
-
-                            <Button x:Name="ButtonRemove" Background="LimeGreen" Width="auto" Height="auto" Click="ButtonRemove_Click">
-                                <WrapPanel Name="iconSeenxd" HorizontalAlignment="Left" VerticalAlignment="Center" Height="auto" Width="auto" Margin="0 0 0 0"/>
+                            <Button x:Name="ButtonRemove" Background="Gold" Width="auto" Height="auto" Click="ButtonRemove_Click">
+                                <TextBlock Text="Usuń z obejrzanych" TextWrapping="Wrap" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center"/>
                             </Button>
-
                         </Grid>
                         <Grid Grid.Column="1">
-                            <TextBox x:Name="Rate_TextBox"/>
-                            <TextBlock x:Name="Rate_TextBlock"/>
+                            <TextBox x:Name="Rate_TextBox" Margin="10" FontSize="15"/>
+                            <TextBlock x:Name="Rate_TextBlock" Margin="10" FontSize="15"/>
                         </Grid>
                     </Grid>
                 </Border>

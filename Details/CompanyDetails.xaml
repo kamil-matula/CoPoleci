@@ -39,11 +39,11 @@
                     <WrapPanel Name="image" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" />
                 </Grid>
                 <Grid Grid.Row="1">
-                    <ListView Name="MovieListView" Grid.Row="2"  Margin="2" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+                    <ListView Name="MovieListView" Margin="2" HorizontalAlignment="Center">
                         <ListView.View>
                             <GridView>
                                 <GridView.Columns>
-                                    <GridViewColumn Width="130">
+                                    <GridViewColumn Width="150">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Button Tag="{Binding Id}" Width="auto" Height="auto" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Click="Movie_Clicked" >
@@ -63,7 +63,7 @@
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
 
-                                    <GridViewColumn Width="210">
+                                    <GridViewColumn Width="250">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="{Binding Title}" Foreground="Black" FontSize="20" TextWrapping="WrapWithOverflow"/>

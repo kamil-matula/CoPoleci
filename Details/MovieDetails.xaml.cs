@@ -47,13 +47,13 @@ namespace CoPoleci
 
             directorPhoto.Children.Add(new Image { Height = 200, Width = 75, Source = DirectorRepo.GetDirectorsFromMovie(clickedmovie)[0].Photo, HorizontalAlignment=HorizontalAlignment.Left});
             directorName.Text = DirectorRepo.GetDirectorsFromMovie(clickedmovie)[0].Name;
-            companyPhoto.Children.Add(new Image { Height = 200, Width = 75, Source = DirectorRepo.GetDirectorsFromMovie(clickedmovie)[0].Photo, HorizontalAlignment = HorizontalAlignment.Left });
+            companyPhoto.Children.Add(new Image { Height = 200, Width = 75, Source = CompanyRepo.GetCompanyFromMovie(clickedmovie).Photo, HorizontalAlignment = HorizontalAlignment.Left });
             companyName.Text = CompanyRepo.GetCompanyFromMovie(clickedmovie).Name;
 
             ActorListView.ItemsSource = ActorRepo.GetActorsFromMovie(clickedmovie);
             ActorListView.Items.Refresh();
 
-            if (string.IsNullOrEmpty(clickedmovie.Rate)) Rate_TextBlock.Text = "Miejsce na Twój komentarz";
+            if (string.IsNullOrEmpty(clickedmovie.Rate)) Rate_TextBlock.Text = "Komentarz nie został dodany.";
             else Rate_TextBlock.Text = clickedmovie.Rate;
         }
 
@@ -66,6 +66,7 @@ namespace CoPoleci
                 if (window.GetType() == typeof(MainWindow))
                     (window as MainWindow).GridPrincipal.Children.Add(new ActorDetails(clickedactor));
         }
+
         private void LoadIcons() {
            
             Image img = new Image
@@ -98,20 +99,20 @@ namespace CoPoleci
                 Source = new BitmapImage(new Uri($@"\Graphics\Images\bactors.png", UriKind.Relative))
             };
 
-            Image img4 = new Image
-            {
-                Height = 85,
-                Width = 85,
-                HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Center,
-                Margin = new Thickness(1, 1, 1, 1),
-                Source = new BitmapImage(new Uri($@"\Graphics\Images\bseen.png", UriKind.Relative))
-            };
+            //Image img4 = new Image
+            //{
+            //    Height = 85,
+            //    Width = 85,
+            //    HorizontalAlignment = HorizontalAlignment.Center,
+            //    VerticalAlignment = VerticalAlignment.Center,
+            //    Margin = new Thickness(1, 1, 1, 1),
+            //    Source = new BitmapImage(new Uri($@"\Graphics\Images\bseen.png", UriKind.Relative))
+            //};
 
             iconDirector.Children.Add(img);
             iconCompany.Children.Add(img2);
             iconActor.Children.Add(img3);
-            iconSeen.Children.Add(img4);
+            //iconSeen.Children.Add(img4);
         }
 
         
@@ -153,7 +154,7 @@ namespace CoPoleci
             clickedmovie.WasSeen = false;
             clickedmovie.Rate = "";
             clickedmovie.AddToSeenDate = "";
-            Rate_TextBlock.Text = "Miejsce na Twój komentarz";
+            Rate_TextBlock.Text = "Komentarz nie został dodany.";
 
             ButtonAdd.Visibility = Visibility.Visible;
             ButtonRemove.Visibility = Visibility.Hidden;
@@ -163,6 +164,7 @@ namespace CoPoleci
             Rate_TextBox.Visibility = Visibility.Hidden;
         }
 
+        // Edytowanie komentarza:
         private void ButtonEdit_Click(object sender, RoutedEventArgs e)
         {
             Rate_TextBlock.Visibility = Visibility.Hidden;
@@ -172,6 +174,7 @@ namespace CoPoleci
             Rate_TextBox.Text = clickedmovie.Rate;
         }
 
+        // Zatwierdzanie edycji komentarza:
         private void ButtonConfirm_Click(object sender, RoutedEventArgs e)
         {
             if (MovieRepo.UpdateRate(clickedmovie, Rate_TextBox.Text) == false)
