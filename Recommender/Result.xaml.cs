@@ -13,8 +13,21 @@ namespace CoPoleci
             Movie idealmovie = new Movie(Ratings.RatingsList);
             InitializeComponent();
             string wyniki = "";
-            var movies = MovieRepo.GetAllMovies().ToArray();
+            var MoviesWithoutSeen = MovieRepo.GetAllMovies();
 
+            // Uwzględnianie filmów obejrzanych
+            foreach (var seenMovie in QueryManager.SeenMovies)
+            {
+                foreach (var oneMovie in QueryManager.Movies)
+                {
+                    if (seenMovie.Id == oneMovie.Id)
+                    {
+                        MoviesWithoutSeen.RemoveAt(oneMovie.Id - 1);
+                    }
+                }
+            }
+
+            var movies = MoviesWithoutSeen.ToArray();
             KNN knn = new KNN(5, movies, idealmovie);
             var decyzja = knn.MakeDecision();
 

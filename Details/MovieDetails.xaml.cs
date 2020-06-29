@@ -48,7 +48,7 @@ namespace CoPoleci
             directorPhoto.Children.Add(new Image { Height = 200, Width = 75, Source = DirectorRepo.GetDirectorsFromMovie(clickedmovie)[0].Photo, HorizontalAlignment=HorizontalAlignment.Left});
             directorName.Text = DirectorRepo.GetDirectorsFromMovie(clickedmovie)[0].Name;
             companyPhoto.Children.Add(new Image { Height = 200, Width = 75, Source = DirectorRepo.GetDirectorsFromMovie(clickedmovie)[0].Photo, HorizontalAlignment = HorizontalAlignment.Left });
-            companyName.Text = DirectorRepo.GetDirectorsFromMovie(clickedmovie)[0].Name;
+            companyName.Text = CompanyRepo.GetCompanyFromMovie(clickedmovie).Name;
 
             ActorListView.ItemsSource = ActorRepo.GetActorsFromMovie(clickedmovie);
             ActorListView.Items.Refresh();
