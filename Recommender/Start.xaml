@@ -1,39 +1,43 @@
 ﻿<UserControl x:Class="CoPoleci.Start"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      mc:Ignorable="d" 
-      d:DesignHeight="380" d:DesignWidth="580">
-
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="600" d:DesignWidth="800" Background="#FFD0CFCE">
+    <UserControl.Resources>
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="/Graphics/Fonts/Ubuntu-Medium.ttf #ubuntu" />
+            <Setter Property="FontSize" Value="75"/>
+        </Style>
+    </UserControl.Resources>
     <Grid>
-        <Frame x:Name="MainFrame"/>
-
-        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="460" Height="300">
-            <StackPanel>
-
-                <TextBlock x:Name="QuestionBlock" FontSize="25" HorizontalAlignment="Center" Foreground="White">
-                    Sprawdź, jaki jest idealny<LineBreak/> dla Ciebie film na wieczór!
-                </TextBlock>
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="550" Height="300">
+                <StackPanel>
+                    <TextBlock x:Name="QuestionBlock" FontSize="25" HorizontalAlignment="Center" Foreground="Black" Style="{StaticResource TextBlockStyle}">
+                    Sprawdź, jaki jest idealny <LineBreak/> dla Ciebie film na wieczór!
+                    </TextBlock>
 
 
-                <Separator Margin="0,10,0,10"/>
-                <TextBlock FontSize="18" Text="Odpowiedz na 10 pytań, a wybierzemy&#x0a;        5 filmów, które najbliższe są&#x0a;           Twoim oczekiwaniom."
-                           HorizontalAlignment="Center" Foreground="White"/>
+                    <Separator Margin="0,10,0,10"/>
+                    <TextBlock FontSize="18" HorizontalAlignment="Center" Foreground="Black" TextAlignment="Center">
+                        Odpowiedz na 10 pytań, a wybierzemy <LineBreak/> 5 filmów, które są najbliższe <LineBreak/> Twoim oczekiwaniom.
+                    </TextBlock>
 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <WrapPanel Name="filmIcon" HorizontalAlignment="Left" Margin="20,0"/>
-                    
-                    <Button x:Name="firstQuestionButton" Content="Pytanie nr 1" FontSize="16"
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <WrapPanel Name="filmIcon" HorizontalAlignment="Left" Margin="20,0"/>
+
+                        <Button x:Name="firstQuestionButton" Content="Pytanie nr 1" FontSize="16"
                     Click="firstQuestionButton_Click" HorizontalAlignment="Center"
-                    Width="160" Height="50" Background="Gold" VerticalAlignment="Bottom"
-                    Margin="10"/>
-                    
-                    <WrapPanel Name="filmIcon2" HorizontalAlignment="Right" Margin="20,0"/>
-                </StackPanel>
-            </StackPanel>
+                    Width="150" Height="50" Background="Gold" VerticalAlignment="Center"
+                    Margin="30"/>
 
-            
-        </Grid>
+                        <WrapPanel Name="filmIcon2" HorizontalAlignment="Right" Margin="20,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </materialDesign:TransitioningContent>
     </Grid>
 </UserControl>

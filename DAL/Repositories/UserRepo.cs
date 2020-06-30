@@ -45,20 +45,22 @@ namespace CoPoleci.DAL
                     MySqlCommand commandinsertusers = new MySqlCommand($"insert użytkownicy value ('{UserID}', MD5('{Password}'))", connection);
 
                     connection.Open();
-                    _ = commandcreate.ExecuteNonQuery();
-                    _ = commandgrantselectmovies.ExecuteNonQuery();
-                    _ = commandgrantselectactors.ExecuteNonQuery();
-                    _ = commandgrantselectdirectors.ExecuteNonQuery();
-                    _ = commandgrantselectcompanies.ExecuteNonQuery();
-                    _ = commandgrantpriviligesseen.ExecuteNonQuery();
-                    _ = commandinsertusers.ExecuteNonQuery();
-                    _ = commandgrantselectproduced.ExecuteNonQuery();
-                    _ = commandgrantselectdirected.ExecuteNonQuery();
-                    _ = commandgrantselectplayedin.ExecuteNonQuery();
+                    new MySqlCommand($"start transaction", connection).ExecuteNonQuery();
+                    commandcreate.ExecuteNonQuery();
+                    commandgrantselectmovies.ExecuteNonQuery();
+                    commandgrantselectactors.ExecuteNonQuery();
+                    commandgrantselectdirectors.ExecuteNonQuery();
+                    commandgrantselectcompanies.ExecuteNonQuery();
+                    commandgrantpriviligesseen.ExecuteNonQuery();
+                    commandinsertusers.ExecuteNonQuery();
+                    commandgrantselectproduced.ExecuteNonQuery();
+                    commandgrantselectdirected.ExecuteNonQuery();
+                    commandgrantselectplayedin.ExecuteNonQuery();
+                    new MySqlCommand($"commit", connection).ExecuteNonQuery();
                     state = true;
-                    connection.Close();
                 }
-                catch { }
+                catch { new MySqlCommand($"rollback", connection).ExecuteNonQuery(); }
+                connection.Close();
             }
             return state;
         }

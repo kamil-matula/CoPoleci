@@ -55,7 +55,7 @@
                     <WrapPanel Name="icon" HorizontalAlignment="Right" Grid.Column="2" VerticalAlignment="Top"/>
                 </Grid>
 
-                <ScrollViewer Grid.Row="2" HorizontalAlignment="Center">
+                <ScrollViewer Grid.Row="2" HorizontalAlignment="Center" Height="425">
                     <StackPanel Margin="5 10">
                         <ItemsControl x:Name="ListViewActors" ItemsSource="{Binding Actors}">
                             <ItemsControl.ItemTemplate>

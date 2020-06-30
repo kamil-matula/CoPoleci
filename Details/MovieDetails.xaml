@@ -112,9 +112,10 @@
                                             <Button Tag="{Binding Id}" Width="auto" Height="auto" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Click="Actor_Clicked">
                                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                                     <Border Width="90" Height="90" CornerRadius="8" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                                        <Image Source="{Binding Photo}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                        <Image Source="{Binding Photo}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                                     </Border>
-                                                    <TextBlock Text="{Binding Name}" FontSize="12"  Margin ="5 0 0 0 " HorizontalAlignment="Stretch" TextWrapping="Wrap" Foreground="Black"/>
+                                                    <TextBlock Text="{Binding Name}" FontSize="12"  Margin ="5 0 0 0 " HorizontalAlignment="Stretch" 
+                                                               TextWrapping="Wrap" Foreground="Black" TextAlignment="Center"/>
 
                                                 </StackPanel>
                                             </Button>
@@ -140,16 +141,16 @@
                             <ColumnDefinition Width="3.3*"/>
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="0">
-                            <Button x:Name="ButtonAdd" Background="Gold" Width="auto" Height="auto" Click="ButtonAdd_Click">
+                            <Button x:Name="ButtonAdd" Background="Gold" Width="125" Height="125" Click="ButtonAdd_Click">
                                 <TextBlock Text="Dodaj do obejrzanych" TextWrapping="Wrap" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center"/>
                             </Button>
-                            <Button x:Name="ButtonRemove" Background="Gold" Width="auto" Height="auto" Click="ButtonRemove_Click">
+                            <Button x:Name="ButtonRemove" Background="Gold" Width="125" Height="125" Click="ButtonRemove_Click">
                                 <TextBlock Text="Usuń z obejrzanych" TextWrapping="Wrap" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center"/>
                             </Button>
                         </Grid>
                         <Grid Grid.Column="1">
-                            <TextBox x:Name="Rate_TextBox" Margin="10" FontSize="15"/>
-                            <TextBlock x:Name="Rate_TextBlock" Margin="10" FontSize="15"/>
+                            <TextBox   x:Name="Rate_TextBox"   FontSize="15" TextWrapping="Wrap" Height="115" Width="396" Margin="5" MaxLength="250" MaxLines="5"/>
+                            <TextBlock x:Name="Rate_TextBlock" FontSize="15" TextWrapping="Wrap" Height="115" Width="395" Margin="10"/>
                         </Grid>
                     </Grid>
                 </Border>
