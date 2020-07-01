@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Windows;
+﻿using System.Windows;
 using System.Collections.Generic;
 using CoPoleci.DAL;
 
@@ -8,11 +7,6 @@ namespace CoPoleci
 {
     public partial class LoginScreen : Window
     {
-        #region Własności
-        public string Login { get; set; }
-        public string Password { get; set; }
-        #endregion
-
         public LoginScreen()
         {
             InitializeComponent();
