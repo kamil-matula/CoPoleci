@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System.IO;
-using System;
 
 namespace CoPoleci.DAL
 {
@@ -47,7 +46,7 @@ namespace CoPoleci.DAL
                 if (lines.Length != 5) return false;
                 Nickname = lines[0]; Password = lines[1]; 
                 Server = lines[2]; Database = lines[3]; 
-                Port = UInt32.Parse(lines[4]);
+                Port = uint.Parse(lines[4]);
                 return true;
             }
             catch { return false; }

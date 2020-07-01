@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 using CoPoleci.DAL;
 
 namespace CoPoleci
@@ -13,6 +14,7 @@ namespace CoPoleci
             InitializeComponent();
             clickedcompany = company;
             LoadInfo();
+            LoadIcons();
             MovieListView.ItemsSource = MovieRepo.GetMoviesFromCompany(clickedcompany);
             MovieListView.Items.Refresh();
         }
@@ -34,6 +36,7 @@ namespace CoPoleci
                     (window as MainWindow).GridPrincipal.Children.RemoveAt((window as MainWindow).GridPrincipal.Children.Count - 1);
         }
 
+        // Przejście do filmu:
         private void Movie_Clicked(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
@@ -43,6 +46,21 @@ namespace CoPoleci
             foreach (Window window in Application.Current.Windows)
                 if (window.GetType() == typeof(MainWindow))
                     (window as MainWindow).GridPrincipal.Children.Add(new MovieDetails(clickedmovie));
+        }
+
+        private void LoadIcons()
+        {
+            Image img1 = new Image
+            {
+                Height = 40,
+                Width = 80,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+                Margin = new Thickness(1, 1, 1, 1),
+                Source = new BitmapImage(new Uri($@"\Graphics\Images\arrow.png", UriKind.Relative))
+            };
+
+            array.Children.Add(img1);
         }
     }
 }

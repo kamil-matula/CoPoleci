@@ -9,6 +9,9 @@ namespace CoPoleci
     public partial class MovieDetails : UserControl
     {
         private readonly Movie clickedmovie = null;
+        private Director thismoviesdirector = null;
+        private Company thismoviescompany = null;
+
         public MovieDetails(Movie movie)
         {
             InitializeComponent();
@@ -43,12 +46,18 @@ namespace CoPoleci
             movieTitle_TextBlock.Text = clickedmovie.Title;
             year_TextBlock.Text = "Rok produkcji: " + clickedmovie.Year.ToString();
             genre_TextBlock.Text = "Gatunek: " + clickedmovie.Genre;
-            posterImage.Children.Add(new Image { Height = 510, Width = 194, Source = clickedmovie.Poster, VerticalAlignment = VerticalAlignment.Top, HorizontalAlignment = HorizontalAlignment.Left });
+            posterImage.Children.Add(new Image { Height = 510, Width = 194, Source = clickedmovie.Poster, 
+                VerticalAlignment = VerticalAlignment.Top, HorizontalAlignment = HorizontalAlignment.Left });
 
-            directorPhoto.Children.Add(new Image { Height = 120, Width = 80, Source = DirectorRepo.GetDirectorsFromMovie(clickedmovie)[0].Photo, HorizontalAlignment=HorizontalAlignment.Center, VerticalAlignment=VerticalAlignment.Center});
-            directorName.Text = DirectorRepo.GetDirectorsFromMovie(clickedmovie)[0].Name;
-            companyPhoto.Children.Add(new Image { Height=90, Width = 120, Source = CompanyRepo.GetCompanyFromMovie(clickedmovie).Photo, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Bottom});
-            companyName.Text = CompanyRepo.GetCompanyFromMovie(clickedmovie).Name;
+            thismoviesdirector = DirectorRepo.GetDirectorsFromMovie(clickedmovie)[0]; // w tej chwili jest tylko jeden reżyser na film
+            directorPhoto.Children.Add(new Image { Height = 120, Width = 80, Source = thismoviesdirector.Photo, 
+                HorizontalAlignment=HorizontalAlignment.Center, VerticalAlignment=VerticalAlignment.Center});
+            directorName.Text = thismoviesdirector.Name;
+
+            thismoviescompany = CompanyRepo.GetCompanyFromMovie(clickedmovie);
+            companyPhoto.Children.Add(new Image { Height=90, Width = 120, Source = thismoviescompany.Photo, 
+                HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Bottom});
+            companyName.Text = thismoviescompany.Name;
 
             ActorListView.ItemsSource = ActorRepo.GetActorsFromMovie(clickedmovie);
             ActorListView.Items.Refresh();
@@ -57,6 +66,7 @@ namespace CoPoleci
             else Rate_TextBlock.Text = clickedmovie.Rate;
         }
 
+        // Przejście do strony aktora:
         private void Actor_Clicked(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
@@ -66,13 +76,21 @@ namespace CoPoleci
                 if (window.GetType() == typeof(MainWindow))
                     (window as MainWindow).GridPrincipal.Children.Add(new ActorDetails(clickedactor));
         }
+
+        // Przejście do strony reżysera:
         private void Director_Clicked(object sender, RoutedEventArgs e)
         {
-           //
+            foreach (Window window in Application.Current.Windows)
+                if (window.GetType() == typeof(MainWindow))
+                    (window as MainWindow).GridPrincipal.Children.Add(new DirectorDetails(thismoviesdirector));
         }
+
+        // Przejście do strony wytwórni:
         private void Company_Clicked(object sender, RoutedEventArgs e)
         {
-            //
+            foreach (Window window in Application.Current.Windows)
+                if (window.GetType() == typeof(MainWindow))
+                    (window as MainWindow).GridPrincipal.Children.Add(new CompanyDetails(thismoviescompany));
         }
 
 
