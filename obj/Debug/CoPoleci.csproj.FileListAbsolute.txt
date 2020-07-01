@@ -527,8 +527,6 @@ C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\Co
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Details\ActorDetails.g.cs
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Details\CompanyDetails.g.cs
 C:\Users\mkami\Desktop\Programowanie obiektowe i graficzne\CoPoleci - projekt\CoPoleci\obj\Debug\Details\DirectorDetails.g.cs
-C:\Users\domin\source\repos\CoPoleci\obj\Debug\Details\SeenMovieDetails.baml
-C:\Users\domin\source\repos\CoPoleci\obj\Debug\Details\SeenMovieDetails.g.cs
 C:\Users\zosta\source\repos\sem4\CoPoleci\bin\Debug\CoPoleci.exe.config
 C:\Users\zosta\source\repos\sem4\CoPoleci\bin\Debug\CoPoleci.exe
 C:\Users\zosta\source\repos\sem4\CoPoleci\bin\Debug\CoPoleci.pdb
