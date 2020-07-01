@@ -182,9 +182,6 @@
     <Compile Include="Recommender\Start.xaml.cs">
       <DependentUpon>Start.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TextBoxLogin.xaml.cs">
-      <DependentUpon>TextBoxLogin.xaml</DependentUpon>
-    </Compile>
     <Page Include="Details\ActorDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -262,10 +259,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Recommender\Start.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TextBoxLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

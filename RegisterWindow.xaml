@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:local="clr-namespace:CoPoleci"
         mc:Ignorable="d"
         Title="CoPoleci?" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Black">
     <Grid>
@@ -31,7 +30,7 @@
                     FontSize="19" Content="ZAŁÓŻ KONTO" Click="RegisterButton_Click"/>
             <Label Content="Login:" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,10" FontSize="20" Height="40"/>
             <Label Content="Hasło:" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,10" FontSize="20" Height="40"/>
-            <local:TextBoxLogin x:Name="textBoxLogin" Margin="10" FontSize="15" Grid.Row="2" HorizontalAlignment="Left" Width="250" Text="{Binding Path = Login, Mode = TwoWay}"/>
+            <TextBox x:Name="textBoxLogin" Margin="10" FontSize="15" Grid.Row="2" HorizontalAlignment="Left" Width="250"/>
             <PasswordBox x:Name="textBoxPassword" Margin="10" FontSize="15" Grid.Row="4" HorizontalAlignment="Left" Width="250" />
         </Grid>
         <StackPanel VerticalAlignment="Top">
