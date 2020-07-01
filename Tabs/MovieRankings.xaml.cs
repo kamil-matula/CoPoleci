@@ -15,10 +15,13 @@ namespace CoPoleci
         List<Movie> AllMovies;
         public MovieRankings()
         {
+            
             AllMovies = QueryManager.Movies;
             InitializeComponent();
             LoadIcon();
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(items.ItemsSource);
+            items.ClearValue(ListView.ItemsSourceProperty);
+            items.Items.Clear();
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
