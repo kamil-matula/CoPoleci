@@ -6,14 +6,44 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="CoPoleci?" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Black">
+    <Window.Resources>
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="/Fonts/Ubuntu-Regular.ttf #ubuntu" />
+            <Setter Property="FontSize" Value="30"/>
+        </Style>
+        <Style x:Key="HeadlineStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="/Fonts/Ubuntu-Medium.ttf #ubuntu" />
+            <Setter Property="FontSize" Value="50"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontFamily" Value="/Graphics/Fonts/Ubuntu-Medium.ttf #ubuntu" />
+            <Setter Property="FontSize" Value="21"/>
+            <Setter Property="Foreground" Value="#FFC20505" />
+            <Setter Property="Background" Value="#FF090606"/>
+            <Setter Property="Width" Value="160" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="20" />
+        </Style>
+        <Style x:Key="ButtonStyle2" TargetType="Button">
+            <Setter Property="FontFamily" Value="/Graphics/Fonts/Ubuntu-Medium.ttf #ubuntu" />
+            <Setter Property="FontSize" Value="21"/>
+            <Setter Property="Foreground" Value="#FF090606" />
+            <Setter Property="Background" Value="#FFC20505"/> 
+            <Setter Property="Width" Value="160" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="20" />
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid Width="400" HorizontalAlignment="Left">
             <Image Source="Graphics/Images/COPOLECI.png" VerticalAlignment="Top" Margin="20">
             </Image>
             <Label Content="Masz już konto?" Foreground="White" FontSize="18" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" 
                    HorizontalAlignment="Center" Margin="132,0,130,125" Height="44" RenderTransformOrigin="0.562,1.163"/>
-            <Button Background="#ffc20114" Width="160" Height="50"  Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
-                    Margin="70" Foreground="Black" FontSize="22" Content="ZALOGUJ SIĘ" Click="LoginButton_Click"/>
+            <Button Style="{StaticResource ButtonStyle2}"  Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+                    Margin="70"  Content="ZALOGUJ SIĘ" Click="LoginButton_Click"/>
         </Grid>
         <Grid Width="400" HorizontalAlignment="Right" Background="#FFD0CFCE">
             <Grid.RowDefinitions>
@@ -25,13 +55,14 @@
                 <RowDefinition Height="2*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <Label Content="Tworzenie konta" Grid.Row="0" HorizontalAlignment="Center" FontSize="50" VerticalAlignment="Center"> </Label>
-            <Button Background="#FF090606" Width="160" Height="70"  Grid.Row="5" HorizontalAlignment="Right" Margin="20" Foreground="#ffc20114" 
-                    FontSize="19" Content="ZAŁÓŻ KONTO" Click="RegisterButton_Click"/>
-            <Label Content="Login:" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,10" FontSize="20" Height="40"/>
-            <Label Content="Hasło:" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,10" FontSize="20" Height="40"/>
-            <TextBox x:Name="textBoxLogin" Margin="10" FontSize="15" Grid.Row="2" HorizontalAlignment="Left" Width="250"/>
-            <PasswordBox x:Name="textBoxPassword" Margin="10" FontSize="15" Grid.Row="4" HorizontalAlignment="Left" Width="250" />
+            <Label Content="Tworzenie konta" Grid.Row="0" HorizontalAlignment="Center" Style="{StaticResource HeadlineStyle}" VerticalAlignment="Center"> </Label>
+            <Button   Grid.Row="5" Content="ZAŁÓŻ KONTO" Style="{StaticResource ButtonStyle}" Click="RegisterButton_Click"/>
+            <Label Content="Login:" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,10" Style="{StaticResource LabelStyle}"/>
+            <Label Content="Hasło:" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,10" Style="{StaticResource LabelStyle}"/>
+            <TextBox x:Name="textBoxLogin"  Grid.Row="2" Margin="10 0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top"
+                                Width="250"/>
+            <PasswordBox x:Name="textBoxPassword" Margin="10 0" FontSize="20" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Top"
+                                Width="250" />
         </Grid>
         <StackPanel VerticalAlignment="Top">
             <Grid Background="Black" Height="10"/>

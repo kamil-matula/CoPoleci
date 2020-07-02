@@ -293,10 +293,8 @@ C:\Users\domin\source\repos\CoPoleci\obj\Debug\Tabs\MovieRankings.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Recommender\QuestionPage.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Recommender\PosterPage.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\Recommender\Start.g.cs
-C:\Users\domin\source\repos\CoPoleci\obj\Debug\TextBoxLogin.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\domin\source\repos\CoPoleci\obj\Debug\RegisterWindow.baml
-C:\Users\domin\source\repos\CoPoleci\obj\Debug\TextBoxLogin.baml
 C:\Users\domin\source\repos\CoPoleci\bin\Debug\MaterialDesignColors.dll
 C:\Users\domin\source\repos\CoPoleci\bin\Debug\MaterialDesignThemes.Wpf.dll
 C:\Users\domin\source\repos\CoPoleci\bin\Debug\MaterialDesignColors.pdb

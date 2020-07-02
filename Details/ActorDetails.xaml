@@ -17,9 +17,9 @@
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
             <Grid >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="2*"/>
                     <RowDefinition Height="1.5*"/>
-                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1.7*"/>
+                    <RowDefinition Height="0.3*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="550"/>
@@ -63,22 +63,22 @@
                                     <GridViewColumn Width="250">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
-                                                <TextBlock Text="{Binding Title}" Foreground="Black" FontSize="20" TextWrapping="WrapWithOverflow"/>
+                                                <TextBlock Text="{Binding Title}" Foreground="Black" FontSize="20" TextWrapping="WrapWithOverflow" FontFamily="Leelawadee UI"/>
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                         <GridViewColumn.Header>
-                                            <TextBlock Text="Tytuł" Foreground="Black" />
+                                            <TextBlock Text="Tytuł" Foreground="Black" FontFamily="Leelawadee UI"/>
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
 
                                     <GridViewColumn Width="100">
                                         <GridViewColumn.CellTemplate >
                                             <DataTemplate>
-                                                <TextBlock Text="{Binding Year}" Foreground="Black" FontSize="20" HorizontalAlignment="Stretch"/>
+                                                <TextBlock Text="{Binding Year}" Foreground="Black" FontSize="20" HorizontalAlignment="Stretch" FontFamily="Leelawadee UI"/>
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                         <GridViewColumn.Header>
-                                            <TextBlock Text="Rok" Foreground="Black"/>
+                                            <TextBlock Text="Rok" Foreground="Black" FontFamily="Leelawadee UI"/>
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
 
