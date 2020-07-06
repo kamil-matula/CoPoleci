@@ -13,3 +13,17 @@ but excluding films that the user has already seen.
 SCREENSHOTS:
 
 ![loginscreen](https://user-images.githubusercontent.com/47063149/85290241-f6fc9b00-b498-11ea-8500-da2502fa339b.jpg)
+
+
+SHORT INSTRUCTION:
+After importing "CoPoleci?" database to your server you have to put a file called "root_config.txt" in bin/Debug.
+This file should contain five lines - in sequence: nickname, password, server address, database name and port.
+For example:
+
+root
+mypassword
+localhost
+copoleci
+3306
+
+And that's all! If your server is on and correct file is in the correct place, everything should work. Have fun!
