@@ -21,9 +21,13 @@ This file should contain five lines - in sequence: nickname, password, server ad
 For example:
 
 root
+
 mypassword
+
 localhost
+
 copoleci
+
 3306
 
 And that's all! If your server is on and correct file is in the correct place, everything should work. Have fun!
