@@ -27,7 +27,8 @@ namespace CoPoleci.DAL
                 Password = Password,
                 Server = Server,
                 Database = Database,
-                Port = Port
+                Port = Port,
+                CharacterSet = "utf8"
             };
         }
 
