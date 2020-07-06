@@ -33,15 +33,15 @@ namespace CoPoleci.DAL
             {
                 try
                 {
-                    MySqlCommand commandcreate = new MySqlCommand($"create user '{UserID}' identified by '{Password}'", connection);
-                    MySqlCommand commandgrantselectmovies = new MySqlCommand($"grant select on filmy to '{UserID}'", connection);
-                    MySqlCommand commandgrantselectactors = new MySqlCommand($"grant select on aktorzy to '{UserID}'", connection);
-                    MySqlCommand commandgrantselectdirectors = new MySqlCommand($"grant select on reżyserzy to '{UserID}'", connection);
-                    MySqlCommand commandgrantselectcompanies = new MySqlCommand($"grant select on wytwórnie to '{UserID}'", connection);
-                    MySqlCommand commandgrantselectproduced = new MySqlCommand($"grant select on wyprodukował to '{UserID}'", connection);
-                    MySqlCommand commandgrantselectdirected = new MySqlCommand($"grant select on wyreżyserował to '{UserID}'", connection);
-                    MySqlCommand commandgrantselectplayedin = new MySqlCommand($"grant select on grał_w to '{UserID}'", connection);
-                    MySqlCommand commandgrantpriviligesseen = new MySqlCommand($"grant select, insert, delete, update on obejrzane to '{UserID}'", connection);
+                    MySqlCommand commandcreate = new MySqlCommand($"create user '{UserID}'@'{DBConnection.Server}' identified by '{Password}'", connection);
+                    MySqlCommand commandgrantselectmovies = new MySqlCommand($"grant select on filmy to '{UserID}'@'{DBConnection.Server}'", connection);
+                    MySqlCommand commandgrantselectactors = new MySqlCommand($"grant select on aktorzy to '{UserID}'@'{DBConnection.Server}'", connection);
+                    MySqlCommand commandgrantselectdirectors = new MySqlCommand($"grant select on reżyserzy to '{UserID}'@'{DBConnection.Server}'", connection);
+                    MySqlCommand commandgrantselectcompanies = new MySqlCommand($"grant select on wytwórnie to '{UserID}'@'{DBConnection.Server}'", connection);
+                    MySqlCommand commandgrantselectproduced = new MySqlCommand($"grant select on wyprodukował to '{UserID}'@'{DBConnection.Server}'", connection);
+                    MySqlCommand commandgrantselectdirected = new MySqlCommand($"grant select on wyreżyserował to '{UserID}'@'{DBConnection.Server}'", connection);
+                    MySqlCommand commandgrantselectplayedin = new MySqlCommand($"grant select on grał_w to '{UserID}'@'{DBConnection.Server}'", connection);
+                    MySqlCommand commandgrantpriviligesseen = new MySqlCommand($"grant select, insert, delete, update on obejrzane to '{UserID}'@'{DBConnection.Server}'", connection);
                     MySqlCommand commandinsertusers = new MySqlCommand($"insert użytkownicy value ('{UserID}', MD5('{Password}'))", connection);
 
                     connection.Open();
