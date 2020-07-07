@@ -9,7 +9,7 @@ namespace CoPoleci.DAL
         private static MySqlConnectionStringBuilder stringBuilder;
         public static string Nickname { get; private set; } 
         private static string Password { get; set; }
-        private static string Server { get; set; }
+        public static string Server { get; set; }
         private static string Database { get; set; }
         private static uint Port { get; set; }
         public static DBConnection Instance
