@@ -10,24 +10,17 @@ The user at the entrance indicates how much he or she cares about the specific p
 and the system in response to his or her choices shows him or her a list of several suggestions, 
 but excluding films that the user has already seen. 
 
-SCREENSHOTS:
+## SCREENSHOTS:
 
 ![loginscreen](https://user-images.githubusercontent.com/47063149/85290241-f6fc9b00-b498-11ea-8500-da2502fa339b.jpg)
 
 
-SHORT INSTRUCTION:
-After importing "CoPoleci?" database to your server you have to put a file called "root_config.txt" in bin/Debug.
-This file should contain five lines - in sequence: nickname, password, server address, database name and port.
-For example:
+## SHORT INSTRUCTION:
+After you clone the project first thing you need to do is to edit a file called "root_config.txt" which is in bin/Debug.
+This file contains five lines - in sequence: nickname, password, server address, database name and port.
+By default you can see there is a root's account with no password and localhost server on port 3306.
 
-root
+Second thing is to turn on the server and create+import database - to make it faster you can simply double-click 
+DataInserter.bat file and enter your root's password twice.
 
-mypassword
-
-localhost
-
-copoleci
-
-3306
-
-And that's all! If your server is on and correct file is in the correct place, everything should work. Have fun!
+And this is it. Everything should work now. Have fun!
