@@ -39,13 +39,25 @@ namespace CoPoleci
 
         private bool AccountCheck(string nickname, string pwd)
         {
-            if (DBConnection.LoginAsRoot("root_config.txt") == false)
+            if (pwd.Length == 0 || nickname.Length == 0)
             {
-                MessageBox.Show("Brak dostępu do bazy danych!");
+                MessageBox.Show("Uzupełnij puste pola!");
                 return false;
             }
 
-            List<User> ExistingUsers = QueryManager.Users; // root pobiera listę użytkowników z bazy
+            if (DBConnection.LoginAsRoot("root_config.txt") == false)
+            {
+                MessageBox.Show("Nie odnaleziono pliku konfiguracyjnego!");
+                return false;
+            }
+
+            List<User> ExistingUsers = QueryManager.Users;
+            if (ExistingUsers.Contains(null))
+            {
+                MessageBox.Show("Brak dostępu do bazy!");
+                return false;
+            }
+
             int user_index = 0;
             while (user_index < ExistingUsers.Count)
             {
@@ -55,11 +67,6 @@ namespace CoPoleci
                     return false;
                 }
                 user_index++;
-            }
-            if (pwd.Length == 0 || nickname.Length== 0)
-            {
-                MessageBox.Show("Uzupełnij puste pola!");
-                return false;
             }
             return true;
         }

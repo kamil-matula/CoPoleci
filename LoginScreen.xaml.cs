@@ -41,11 +41,17 @@ namespace CoPoleci
         {
             if (DBConnection.LoginAsRoot("root_config.txt") == false)
             {
-                MessageBox.Show("Brak dostępu do bazy danych!");
+                MessageBox.Show("Nie odnaleziono pliku konfiguracyjnego!");
                 return false;
             }
 
             List<User> ExistingUsers = QueryManager.Users; // root pobiera listę użytkowników z bazy
+            if (ExistingUsers.Contains(null))
+            {
+                MessageBox.Show("Brak dostępu do bazy!");
+                return false;
+            }
+
             if (ExistingUsers.Count == 0)
             {
                 MessageBox.Show("Baza użytkowników jest pusta!");
