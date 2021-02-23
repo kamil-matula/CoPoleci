@@ -1,6 +1,6 @@
 # CoPoleci?
-**CoPoleci?** is a project written for "Object Oriented and Graphic Programming" and "Databases" 
-courses on the IV semester of Informatics on Silesian University of Technology. This simple C#/WPF project 
+**CoPoleci?** is a project written for **Object Oriented and Graphic Programming** and **Databases** 
+courses during the 4th semester of Computer Science at the Silesian University of Technology. This simple C#/WPF project 
 also uses MySql Database.
 
 ### Table of contents
@@ -35,7 +35,7 @@ At the beginning you'll see **login** screen. Here you have to enter your nickna
 If you haven't make an account in this application yet, you'll have to create one. 
 To do it, click the button in the upper right corner.
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/47063149/85290241-f6fc9b00-b498-11ea-8500-da2502fa339b.jpg" alt="LoginScreen" width="450">
+  <img src="https://user-images.githubusercontent.com/43967269/108831817-f2115d80-75ca-11eb-8eb1-2f7e0667273d.png" alt="LoginScreen" width="450">
 </p>
 
 This screen allows you to **register**. Simply enter your new login and password. They will be stored in copoleci database in specific table. 
