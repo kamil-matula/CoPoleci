@@ -10,7 +10,7 @@ namespace CoPoleci
 {
     public partial class QuestionPage : UserControl
     {
-        int intRate = 0, intCount = 1, Rate = 0;
+        private int intRate = 0, intCount = 1, Rate = 0;
         public double wynik;
 
         public QuestionPage()

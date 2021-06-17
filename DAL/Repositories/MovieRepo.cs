@@ -4,18 +4,18 @@ using System;
 
 namespace CoPoleci.DAL
 {
-    class MovieRepo
+    internal class MovieRepo
     {
         public static List<Movie> GetAllMovies()
         {
             List<Movie> movies = new List<Movie>();
             try
             {
-                using (var connection = DBConnection.Instance.Connection)
+                using (MySqlConnection connection = DBConnection.Instance.Connection)
                 {
                     MySqlCommand command = new MySqlCommand("select * from filmy", connection);
                     connection.Open();
-                    var dataReader = command.ExecuteReader();
+                    MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                         movies.Add(new Movie(dataReader));
                     connection.Close();
@@ -33,11 +33,11 @@ namespace CoPoleci.DAL
             List<string> rates = new List<string>();
             try
             {
-                using (var connection = DBConnection.Instance.Connection)
+                using (MySqlConnection connection = DBConnection.Instance.Connection)
                 {
                     MySqlCommand command = new MySqlCommand($"select * from obejrzane where nick = '{DBConnection.Nickname}'", connection);
                     connection.Open();
-                    var dataReader = command.ExecuteReader();
+                    MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                     { 
                         ids.Add((byte)dataReader["id_filmu"]);
@@ -67,7 +67,7 @@ namespace CoPoleci.DAL
             bool state = false; string rate = "";
             try
             {
-                using (var connection = DBConnection.Instance.Connection)
+                using (MySqlConnection connection = DBConnection.Instance.Connection)
                 {
                     MySqlCommand command = new MySqlCommand($"insert obejrzane value ('{DBConnection.Nickname}', '{movie.Id}', '{rate}', '{DateTime.Today.ToString("yyyy-MM-dd")}')", connection);
                     connection.Open();
@@ -85,7 +85,7 @@ namespace CoPoleci.DAL
             bool state = false;
             try
             {
-                using (var connection = DBConnection.Instance.Connection)
+                using (MySqlConnection connection = DBConnection.Instance.Connection)
                 {
                     MySqlCommand command = new MySqlCommand($"delete from obejrzane where nick = '{DBConnection.Nickname}' and id_filmu = '{movie.Id}'", connection);
                     connection.Open();
@@ -103,7 +103,7 @@ namespace CoPoleci.DAL
             bool state = false;
             try
             {
-                using (var connection = DBConnection.Instance.Connection)
+                using (MySqlConnection connection = DBConnection.Instance.Connection)
                 {
                     MySqlCommand command = new MySqlCommand($"update obejrzane set ocena = '{rate}' where nick = '{DBConnection.Nickname}' and id_filmu = '{movie.Id}'", connection);
                     connection.Open();
@@ -122,11 +122,11 @@ namespace CoPoleci.DAL
             List<int> ids = new List<int>();
             try
             {
-                using (var connection = DBConnection.Instance.Connection)
+                using (MySqlConnection connection = DBConnection.Instance.Connection)
                 {
                     MySqlCommand command = new MySqlCommand($"select id_filmu from wyprodukował where nazwa_wytwórni = '{company.Name}'", connection);
                     connection.Open();
-                    var dataReader = command.ExecuteReader();
+                    MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                         ids.Add((byte)dataReader["id_filmu"]);
                     connection.Close();
@@ -147,11 +147,11 @@ namespace CoPoleci.DAL
             List<int> ids = new List<int>();
             try
             {
-                using (var connection = DBConnection.Instance.Connection)
+                using (MySqlConnection connection = DBConnection.Instance.Connection)
                 {
                     MySqlCommand command = new MySqlCommand($"select id_filmu from wyreżyserował where id_reżysera = '{director.Id}'", connection);
                     connection.Open();
-                    var dataReader = command.ExecuteReader();
+                    MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                         ids.Add((byte)dataReader["id_filmu"]);
                     connection.Close();
@@ -172,11 +172,11 @@ namespace CoPoleci.DAL
             List<int> ids = new List<int>();
             try
             {
-                using (var connection = DBConnection.Instance.Connection)
+                using (MySqlConnection connection = DBConnection.Instance.Connection)
                 {
                     MySqlCommand command = new MySqlCommand($"select id_filmu from grał_w where id_aktora = '{actor.Id}'", connection);
                     connection.Open();
-                    var dataReader = command.ExecuteReader();
+                    MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                         ids.Add((byte)dataReader["id_filmu"]);
                     connection.Close();

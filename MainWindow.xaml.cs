@@ -12,7 +12,6 @@ namespace CoPoleci
             GridPrincipal.Children.Add(new Home());
         }
 
-
         private void PowerButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();

@@ -1,12 +1,10 @@
 # CoPoleci?
-**CoPoleci?** is a project written for **Object Oriented and Graphic Programming** and **Databases** 
-courses during the 4th semester of Computer Science at the Silesian University of Technology. This simple C#/WPF project 
-also uses MySql Database.
-
 ### Table of contents
 * [Project description](#project-description)
+* [Used technologies](#used-technologies)
 * [Project setup](#project-setup)
 * [How to use CoPoleci?](#how-to-use-copoleci)
+* [Project status](#project-status)
 
 ### Project description
 **CoPoleci?** is a desktop application and **it is all about movies**. It has its **own database** 
@@ -18,15 +16,18 @@ on artificial intelligence mechanisms. The user at the entrance indicates how mu
 the specific parameters of the film and the system in response to his or her choices shows him or her 
 a list of several suggestions, excluding films that the user has already seen. 
   
+### Used technologies
+The project is written in **C#**, **WPF** technology and it also uses **MySQL** database.
+  
 ### Project setup
-Before you start, make sure that you have installed mySQL on your computer. Without it the application won't work!
+Before you start, make sure that you have installed MySQL on your computer. Without it the application won't work!
 
 After you clone the project (or download the release), the first thing you need to do is 
 to **edit a file called _root_config.txt_** (which is in bin/Debug by default). This file - as it name says - is 
 a configuration of local server administrator. It contains five lines - in sequence: nickname, password, server address, 
 database name and port. By default there is a root's account with no password and localhost server on port 3306. Database
-is of course "copoleci" - you shouldn't change this line. Then you need to **turn on the mySQL server** and **import 
-CoPoleci database** - to make it faster, **you can launch DataInserter.bat file and enter your root's password twice**.
+is of course "copoleci" - you shouldn't change this line. Then you need to **turn on the MySQL server** and **import 
+CoPoleci database** - to make it faster, **you can launch DatabaseImporter.bat file and enter your root's password twice**.
 
 If there was no problem, after these steps you should have the database on your computer and the application should be launched now.
 
@@ -90,3 +91,8 @@ that will be probably the best for you. After that you can of course click one t
 <p align="center">
   <img src="https://user-images.githubusercontent.com/43967269/107990091-f2f72d80-6fd3-11eb-91eb-8c19c56f8016.png" alt="RecommendatorEnd" width="450">
 </p>
+
+### Project status
+The **main goal** of this project was to learn how to use databases (MySQL) in projects with graphical user interface (WPF) and it **has been reached**, but there are still some **featues that can be added**, for example: 
+* improve the performance by **adding asynchronous functions** (each image loads synchronously, resulting in very long rendering of the tabs),
+* **place whole data (database + images) in the cloud**, so it can be easily extended.

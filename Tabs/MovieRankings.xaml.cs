@@ -5,22 +5,21 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 
 namespace CoPoleci
 {
     public partial class MovieRankings : UserControl
     {
-        List<Movie> AllMovies;
+        private List<Movie> AllMovies;
         public MovieRankings()
         {
             
             AllMovies = QueryManager.Movies;
             InitializeComponent();
             LoadIcon();
-            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(items.ItemsSource);
-            items.ClearValue(ListView.ItemsSourceProperty);
+            _ = (CollectionView)CollectionViewSource.GetDefaultView(items.ItemsSource);
+            items.ClearValue(ItemsControl.ItemsSourceProperty);
             items.Items.Clear();
         }
 
@@ -78,7 +77,7 @@ namespace CoPoleci
         private void Movie_Clicked(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
-            var clickedmovie = QueryManager.Movies.Find(i => i.Id == Convert.ToUInt16(btn.Tag));
+            Movie clickedmovie = QueryManager.Movies.Find(i => i.Id == Convert.ToUInt16(btn.Tag));
             _ = QueryManager.SeenMovies; // odświeża właściwości WasSeen, AddToSeenDate i Rate w klasie Movie
 
             foreach (Window window in Application.Current.Windows)
@@ -108,7 +107,7 @@ namespace CoPoleci
             Dictionary<int, short> NewestMovies = new Dictionary<int, short>();
             Dictionary<int, short> OldestMovies = new Dictionary<int, short>();
 
-            items.ClearValue(ListView.ItemsSourceProperty);
+            items.ClearValue(ItemsControl.ItemsSourceProperty);
             items.Items.Clear();
 
             for (int i = 0; i < howMany; i++)
@@ -124,7 +123,7 @@ namespace CoPoleci
 
                 if (min < AllMovies[i].Year)
                 {
-                    var value = NewestMovies.First(val => val.Value == min);
+                    KeyValuePair<int, short> value = NewestMovies.First(val => val.Value == min);
                     NewestMovies.Remove(value.Key);
                     NewestMovies.Add(i, AllMovies[i].Year);
 
@@ -132,24 +131,24 @@ namespace CoPoleci
 
                 if (max > AllMovies[i].Year)
                 {
-                    var value = OldestMovies.First(val => val.Value == max);
+                    KeyValuePair<int, short> value = OldestMovies.First(val => val.Value == max);
                     OldestMovies.Remove(value.Key);
                     OldestMovies.Add(i, AllMovies[i].Year);
                 }
             }
 
-            var OrderedOldMovies = OldestMovies.OrderBy(x => x.Value).ThenBy(y => y.Key);
-            var OrderedNewMovies = NewestMovies.OrderByDescending(x => x.Value).ThenBy(y => y.Key);
+            IOrderedEnumerable<KeyValuePair<int, short>> OrderedOldMovies = OldestMovies.OrderBy(x => x.Value).ThenBy(y => y.Key);
+            IOrderedEnumerable<KeyValuePair<int, short>> OrderedNewMovies = NewestMovies.OrderByDescending(x => x.Value).ThenBy(y => y.Key);
 
             if (OldOrNew == "new")
             {
-                foreach (var movie in OrderedNewMovies)
+                foreach (KeyValuePair<int, short> movie in OrderedNewMovies)
                     items.Items.Add(MovieRepo.GetAllMovies()[movie.Key]);
             }
 
             if (OldOrNew == "old")
             {
-                foreach (var movie in OrderedOldMovies)
+                foreach (KeyValuePair<int, short> movie in OrderedOldMovies)
                     items.Items.Add(MovieRepo.GetAllMovies()[movie.Key]);
             }
             
@@ -158,7 +157,7 @@ namespace CoPoleci
         private void ChooseFunniestMovies(int howMany)
         {
             Dictionary<int, double> FunniestMovies = new Dictionary<int, double>();
-            items.ClearValue(ListView.ItemsSourceProperty);
+            items.ClearValue(ItemsControl.ItemsSourceProperty);
             items.Items.Clear();
 
             for (int i = 0; i < howMany; i++)
@@ -172,16 +171,16 @@ namespace CoPoleci
 
                 if (min < AllMovies[i].X_fun)
                 {
-                    var value = FunniestMovies.First(val => val.Value == min);
+                    KeyValuePair<int, double> value = FunniestMovies.First(val => val.Value == min);
                     FunniestMovies.Remove(value.Key);
                     FunniestMovies.Add(i, AllMovies[i].X_fun);
 
                 }
             }
 
-            var OrderedFunnyMovies = FunniestMovies.OrderByDescending(x => x.Value).ThenBy(y => y.Key);
+            IOrderedEnumerable<KeyValuePair<int, double>> OrderedFunnyMovies = FunniestMovies.OrderByDescending(x => x.Value).ThenBy(y => y.Key);
 
-            foreach (var movie in OrderedFunnyMovies)
+            foreach (KeyValuePair<int, double> movie in OrderedFunnyMovies)
             {
                 items.Items.Add(MovieRepo.GetAllMovies()[movie.Key]);
             }
@@ -190,7 +189,7 @@ namespace CoPoleci
         private void ChooseScariestMovies(int howMany)
         {
             Dictionary<int, double> ScariestMovies = new Dictionary<int, double>();
-            items.ClearValue(ListView.ItemsSourceProperty);
+            items.ClearValue(ItemsControl.ItemsSourceProperty);
             items.Items.Clear();
 
             for (int i = 0; i < howMany; i++)
@@ -204,16 +203,16 @@ namespace CoPoleci
 
                 if (min < AllMovies[i].X_scary)
                 {
-                    var value = ScariestMovies.First(val => val.Value == min);
+                    KeyValuePair<int, double> value = ScariestMovies.First(val => val.Value == min);
                     ScariestMovies.Remove(value.Key);
                     ScariestMovies.Add(i, AllMovies[i].X_scary);
 
                 }
             }
 
-            var OrderedScaryMovies = ScariestMovies.OrderByDescending(x => x.Value).ThenBy(y => y.Key);
+            IOrderedEnumerable<KeyValuePair<int, double>> OrderedScaryMovies = ScariestMovies.OrderByDescending(x => x.Value).ThenBy(y => y.Key);
 
-            foreach (var movie in OrderedScaryMovies)
+            foreach (KeyValuePair<int, double> movie in OrderedScaryMovies)
             {
                 items.Items.Add(MovieRepo.GetAllMovies()[movie.Key]);
             }

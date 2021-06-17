@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using CoPoleci.DAL;
 
-
 namespace CoPoleci
 {
     public partial class LoginScreen : Window

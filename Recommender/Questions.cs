@@ -2,7 +2,7 @@
 
 namespace CoPoleci
 {
-    class Questions
+    internal class Questions
     {
         public static int Number { get; set; } = 0; // aktualny numer pytania
         public static List<string> questions = new List<string> // lista pytań

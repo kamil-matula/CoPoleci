@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\mkami\Desktop\Tmp\CoPoleci\obj\Debug\
+c:\Users\mkami\Desktop\Repozytoria\CoPoleci\obj\Debug\
 CoPoleci
 none
 false
 DEBUG;TRACE
-C:\Users\mkami\Desktop\Tmp\CoPoleci\App.xaml
-18250063217
+c:\Users\mkami\Desktop\Repozytoria\CoPoleci\App.xaml
+181609482979
 
-38-765562401
-1421318699601
+39101849198
+142975495912
 Details\ActorDetails.xaml;Details\CompanyDetails.xaml;Details\MovieDetails.xaml;Details\DirectorDetails.xaml;RegisterWindow.xaml;Tabs\ActorsTab.xaml;Tabs\CompaniesTab.xaml;Tabs\DirectorsTab.xaml;Recommender\Result.xaml;MainWindow.xaml;Tabs\Home.xaml;Tabs\MovieRankings.xaml;Tabs\MoviesTab.xaml;Recommender\QuestionPage.xaml;Recommender\PosterPage.xaml;Tabs\SeenMoviesTab.xaml;LoginScreen.xaml;Recommender\Start.xaml;
 
-False
+True
 

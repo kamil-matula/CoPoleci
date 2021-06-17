@@ -33,7 +33,7 @@ namespace CoPoleci
         private void Company_Clicked(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
-            var clickedcompany = QueryManager.Companies.Find(i => i.Name == btn.Tag.ToString());
+            Company clickedcompany = QueryManager.Companies.Find(i => i.Name == btn.Tag.ToString());
 
             foreach (Window window in Application.Current.Windows)
                 if (window.GetType() == typeof(MainWindow))

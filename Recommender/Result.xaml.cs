@@ -13,12 +13,12 @@ namespace CoPoleci
             Movie idealmovie = new Movie(Ratings.RatingsList);
             InitializeComponent();
             string wyniki = "";
-            var MoviesWithoutSeen = MovieRepo.GetAllMovies();
+            System.Collections.Generic.List<Movie> MoviesWithoutSeen = MovieRepo.GetAllMovies();
 
             // Uwzględnianie filmów obejrzanych
-            foreach (var seenMovie in QueryManager.SeenMovies)
+            foreach (Movie seenMovie in QueryManager.SeenMovies)
             {
-                foreach (var oneMovie in QueryManager.Movies)
+                foreach (Movie oneMovie in QueryManager.Movies)
                 {
                     if (seenMovie.Id == oneMovie.Id)
                     {
@@ -27,13 +27,13 @@ namespace CoPoleci
                 }
             }
 
-            var movies = MoviesWithoutSeen.ToArray();
+            Movie[] movies = MoviesWithoutSeen.ToArray();
             KNN knn = new KNN(5, movies, idealmovie);
-            var decyzja = knn.MakeDecision();
+            System.Collections.Generic.List<string> decyzja = knn.MakeDecision();
 
             int i = 1;
 
-            foreach (var film in decyzja)
+            foreach (string film in decyzja)
             {
                 wyniki += film;
                 wyniki += "  |  ";
@@ -66,9 +66,9 @@ namespace CoPoleci
         }
 
         // Przejście do strony plakatu wybranego filmu:
-        private void listaFilmow_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ListaFilmow_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Ratings.currentItem = (listaFilmow.SelectedItem.ToString()).Substring(3);
+            Ratings.currentItem = listaFilmow.SelectedItem.ToString().Substring(3);
             foreach (Window window in Application.Current.Windows)
                 if (window.GetType() == typeof(MainWindow))
                     (window as MainWindow).GridPrincipal.Children.Add(new PosterPage());

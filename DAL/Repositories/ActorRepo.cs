@@ -1,21 +1,20 @@
 ﻿using System.Collections.Generic;
 using MySql.Data.MySqlClient;
-using System.Diagnostics;
 
 namespace CoPoleci.DAL
 {
-    class ActorRepo
+    internal class ActorRepo
     {
         public static List<Actor> GetAllActors()
         {
             List<Actor> actors = new List<Actor>();
             try
             {
-                using (var connection = DBConnection.Instance.Connection)
+                using (MySqlConnection connection = DBConnection.Instance.Connection)
                 {
                     MySqlCommand command = new MySqlCommand("select * from aktorzy", connection);
                     connection.Open();
-                    var dataReader = command.ExecuteReader();
+                    MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                         actors.Add(new Actor(dataReader));
                     connection.Close();
@@ -30,11 +29,11 @@ namespace CoPoleci.DAL
             List<int> ids = new List<int>();
             try
             {
-                using (var connection = DBConnection.Instance.Connection)
+                using (MySqlConnection connection = DBConnection.Instance.Connection)
                 {
                     MySqlCommand command = new MySqlCommand($"select id_aktora from grał_w where id_filmu = '{movie.Id}'", connection);
                     connection.Open();
-                    var dataReader = command.ExecuteReader();
+                    MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                         ids.Add((ushort)dataReader["id_aktora"]);
                     connection.Close();

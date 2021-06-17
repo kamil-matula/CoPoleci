@@ -30,7 +30,7 @@
                         <WrapPanel Name="filmIcon" HorizontalAlignment="Left" Margin="20,0"/>
 
                         <Button x:Name="firstQuestionButton" Content="Pytanie nr 1" FontSize="16"
-                    Click="firstQuestionButton_Click" HorizontalAlignment="Center"
+                    Click="FirstQuestionButton_Click" HorizontalAlignment="Center"
                     Width="150" Height="50" Background="Gold" VerticalAlignment="Center"
                     Margin="30"/>
 

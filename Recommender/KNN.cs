@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CoPoleci.DAL;
 
 namespace CoPoleci
 {
-    using DAL;
-    class KNN
+    internal class KNN
     {
         private readonly int k;
         private readonly Movie[] movieBase;
@@ -45,7 +45,7 @@ namespace CoPoleci
                 double max = nearestneighbours.Max(kvp => kvp.Value);
                 if (distances[j] < max)
                 {
-                    var item = nearestneighbours.First(kvp => kvp.Value == max);
+                    KeyValuePair<int, double> item = nearestneighbours.First(kvp => kvp.Value == max);
                     nearestneighbours.Remove(item.Key);
                     nearestneighbours.Add(j, distances[j]);
                 }
@@ -57,9 +57,9 @@ namespace CoPoleci
         public List<string> MakeDecision()
         {
             CalculateManhattan();
-            var result = FindNearestNeighbours();
+            Dictionary<int, double> result = FindNearestNeighbours();
             List<string> wyniki = new List<string>();
-            foreach (var res in result)
+            foreach (KeyValuePair<int, double> res in result)
                 wyniki.Add(movieBase[res.Key].Title);
             return wyniki;
         }

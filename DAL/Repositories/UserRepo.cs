@@ -3,7 +3,7 @@ using MySql.Data.MySqlClient;
 
 namespace CoPoleci.DAL
 {
-    class UserRepo
+    internal class UserRepo
     {
         // Wypisuje wszystkich użytkowników (nick + hasło) z tabeli Users:
         public static List<User> GetAllUsers()
@@ -11,11 +11,11 @@ namespace CoPoleci.DAL
             List<User> users = new List<User>();
             try
             {
-                using (var connection = DBConnection.Instance.Connection)
+                using (MySqlConnection connection = DBConnection.Instance.Connection)
                 {
                     MySqlCommand command = new MySqlCommand("select * from użytkownicy", connection);
                     connection.Open();
-                    var dataReader = command.ExecuteReader();
+                    MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                         users.Add(new User(dataReader));
                     connection.Close();
@@ -31,7 +31,7 @@ namespace CoPoleci.DAL
             bool state = false;
             string server = "localhost";
             if (DBConnection.Server != "localhost") server = "%";
-            using (var connection = DBConnection.Instance.Connection)
+            using (MySqlConnection connection = DBConnection.Instance.Connection)
             {
                 try
                 {
@@ -73,11 +73,11 @@ namespace CoPoleci.DAL
             string hashed = "";
             try
             {
-                using (var connection = DBConnection.Instance.Connection)
+                using (MySqlConnection connection = DBConnection.Instance.Connection)
                 {
                     MySqlCommand command = new MySqlCommand($"select MD5(\"{password}\") PWD", connection);
                     connection.Open();
-                    var dataReader = command.ExecuteReader();
+                    MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                         hashed = dataReader["PWD"].ToString();
                     connection.Close();

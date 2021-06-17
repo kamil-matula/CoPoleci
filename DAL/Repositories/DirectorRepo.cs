@@ -3,18 +3,18 @@ using MySql.Data.MySqlClient;
 
 namespace CoPoleci.DAL
 {
-    class DirectorRepo
+    internal class DirectorRepo
     {
         public static List<Director> GetAllDirectors()
         {
             List<Director> directors = new List<Director>();
             try
             {
-                using (var connection = DBConnection.Instance.Connection)
+                using (MySqlConnection connection = DBConnection.Instance.Connection)
                 {
                     MySqlCommand command = new MySqlCommand("select * from reżyserzy", connection);
                     connection.Open();
-                    var dataReader = command.ExecuteReader();
+                    MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                         directors.Add(new Director(dataReader));
                     connection.Close();
@@ -29,11 +29,11 @@ namespace CoPoleci.DAL
             List<int> ids = new List<int>();
             try
             {
-                using (var connection = DBConnection.Instance.Connection)
+                using (MySqlConnection connection = DBConnection.Instance.Connection)
                 {
                     MySqlCommand command = new MySqlCommand($"select id_reżysera from wyreżyserował where id_filmu = '{movie.Id}'", connection);
                     connection.Open();
-                    var dataReader = command.ExecuteReader();
+                    MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                         ids.Add((ushort)dataReader["id_reżysera"]);
                     connection.Close();

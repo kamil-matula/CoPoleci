@@ -3,11 +3,11 @@ using System.IO;
 
 namespace CoPoleci.DAL
 {
-    class DBConnection // klasa odpowiadająca za łączenie aplikacji z bazą danych
+    internal class DBConnection // klasa odpowiadająca za łączenie aplikacji z bazą danych
     {
         #region Właściwości
         private static MySqlConnectionStringBuilder stringBuilder;
-        public static string Nickname { get; private set; } 
+        public static string Nickname { get; private set; }
         private static string Password { get; set; }
         public static string Server { get; set; }
         private static string Database { get; set; }

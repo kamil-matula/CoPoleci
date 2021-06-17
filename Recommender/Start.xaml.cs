@@ -14,7 +14,7 @@ namespace CoPoleci
         }
 
         // Przejście do strony z pierwszym pytaniem:
-        private void firstQuestionButton_Click(object sender, RoutedEventArgs e)
+        private void FirstQuestionButton_Click(object sender, RoutedEventArgs e)
         {
             foreach (Window window in Application.Current.Windows)
             {

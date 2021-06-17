@@ -33,7 +33,7 @@ namespace CoPoleci
         private void SeenMovie_Clicked(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
-            var clickedmovie = QueryManager.SeenMovies.Find(i => i.Id == Convert.ToUInt16(btn.Tag));
+            Movie clickedmovie = QueryManager.SeenMovies.Find(i => i.Id == Convert.ToUInt16(btn.Tag));
 
             foreach (Window window in Application.Current.Windows)
                 if (window.GetType() == typeof(MainWindow))
